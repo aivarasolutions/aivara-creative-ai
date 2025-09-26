@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body { @apply bg-black text-white; }
+
+/* Nice gradient text helper */
+.gradient-text { @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-teal-400 to-yellow-400; }
