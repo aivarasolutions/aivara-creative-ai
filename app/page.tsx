@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Play, Menu, X } from "lucide-react";
+import { Play, Menu, X, Mail, Phone, Instagram, Facebook, Linkedin } from "lucide-react";
 
 export default function AivaraCreativeAI() {
   const [open, setOpen] = useState(false);
@@ -166,7 +166,7 @@ export default function AivaraCreativeAI() {
 
       {/* Footer */}
       <footer className="border-t border-white/10 bg-black/60">
-        <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="h-3 w-3 rounded-full gradient-text inline-block" />
@@ -195,6 +195,31 @@ export default function AivaraCreativeAI() {
               <li>Custom GPTs & Automations</li>
               <li>Reels & Video Content</li>
             </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-3 text-gray-200">Contact Us</h4>
+            <div className="space-y-3">
+              <a href="mailto:Kevin@AivaraSolutions.com" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition">
+                <Mail className="h-4 w-4" />
+                Kevin@AivaraSolutions.com
+              </a>
+              <a href="tel:310-400-0032" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition">
+                <Phone className="h-4 w-4" />
+                310-400-0032
+              </a>
+              <div className="flex gap-3 mt-4">
+                <a href="https://instagram.com/aivarasolutions" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="Follow us on Instagram">
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a href="https://www.facebook.com/share/1RtPaToeGh/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="Follow us on Facebook">
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a href="https://www.linkedin.com/company/aivara-solutions-llc/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="Connect with us on LinkedIn">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
           </div>
 
           <div>
