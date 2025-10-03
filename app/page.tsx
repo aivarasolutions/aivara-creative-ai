@@ -89,20 +89,20 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <Section className="bg-black/60">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 gradient-text">Our Services</h2>
+      <Section className="bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 text-black">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-black">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <Link key={index} href={service.href}>
-              <Card className="bg-black/60 border border-white/10 hover:border-teal-400/50 transition-all h-full group cursor-pointer">
+              <Card className="bg-white/90 backdrop-blur-sm border border-black/10 hover:bg-white transition-all h-full group cursor-pointer">
                 <CardContent className="p-8 text-center">
-                  <div className="mb-4 text-teal-400 flex justify-center group-hover:scale-110 transition-transform">
+                  <div className="mb-4 text-black flex justify-center group-hover:scale-110 transition-transform">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-200 group-hover:text-white transition">
+                  <h3 className="text-xl font-semibold mb-3 text-black transition">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{service.description}</p>
+                  <p className="text-gray-700 text-sm">{service.description}</p>
                 </CardContent>
               </Card>
             </Link>
