@@ -6,7 +6,7 @@
     "category": "AI",
     "summary": "24/7 AI support agent answering trip FAQs, routing leads, and capturing bookings.",
     "url": "https://richaf.global",
-    "image": "/images/portfolio/ai-richaf-bot.svg",
+    "image": "/images/portfolio/ai-richaf-bot.png",
     "imageAlt": "RichAF Travel AI support chat UI",
     "tags": ["chatbot", "lead-capture", "travel"]
   },
@@ -17,7 +17,7 @@
     "category": "AI",
     "summary": "Apollo-driven outreach + automations: list building, sequencing, inbox management.",
     "url": "https://ipm.services",
-    "image": "/images/portfolio/ai-ipm-apollo.svg",
+    "image": "/images/portfolio/ai-ipm-apollo.png",
     "imageAlt": "Apollo automation dashboard for IPM",
     "tags": ["apollo", "automation", "crm"]
   },
@@ -28,7 +28,7 @@
     "category": "AI",
     "summary": "Automated SaaS onboarding flows: welcome, KYC, guided checklists, and NPS loops.",
     "url": "https://liftfi.io",
-    "image": "/images/portfolio/ai-liftfi-onboarding.svg",
+    "image": "/images/portfolio/ai-liftfi-onboarding.png",
     "imageAlt": "LiftFi onboarding automation screens",
     "tags": ["saas", "onboarding", "automation"]
   },
@@ -39,7 +39,7 @@
     "category": "Web",
     "summary": "Conversion-focused storefront with trip SKUs, streamlined checkout, and SEO structure.",
     "url": "https://richaf.global",
-    "image": "/images/portfolio/web-richaf-store.svg",
+    "image": "/images/portfolio/web-richaf-store.png",
     "imageAlt": "RichAF Global e-commerce homepage",
     "tags": ["ecommerce", "seo", "ux"]
   },
@@ -50,7 +50,7 @@
     "category": "Web",
     "summary": "From logo system to site and donation UX—clarity, trust, and accessible storytelling.",
     "url": "https://servantofagape.com",
-    "image": "/images/portfolio/web-servantofagape.svg",
+    "image": "/images/portfolio/web-servantofagape.png",
     "imageAlt": "Servant of Agape brand and site preview",
     "tags": ["branding", "nonprofit", "web"]
   },
@@ -61,7 +61,7 @@
     "category": "Web",
     "summary": "Technical SEO + content pillars driving rankings for short-term rental keywords.",
     "url": "https://ipm.services",
-    "image": "/images/portfolio/web-ipm-seo.svg",
+    "image": "/images/portfolio/web-ipm-seo.png",
     "imageAlt": "IPM SEO analytics dashboard",
     "tags": ["seo", "content", "technical-seo"]
   },
@@ -72,7 +72,7 @@
     "category": "Logistics",
     "summary": "Driver assignment, live ETAs, and exception alerts to reduce missed windows.",
     "url": "https://mtstranspo.com",
-    "image": "/images/portfolio/log-mts-route.svg",
+    "image": "/images/portfolio/log-mts-route.png",
     "imageAlt": "MTS route optimization dashboard",
     "tags": ["routing", "dispatch", "analytics"]
   },
@@ -83,7 +83,7 @@
     "category": "Logistics",
     "summary": "Batching, zone clustering, and proof-of-delivery workflows integrated to TMS.",
     "url": "https://freightsynctms.com",
-    "image": "/images/portfolio/log-freightsync-lastmile.svg",
+    "image": "/images/portfolio/log-freightsync-lastmile.png",
     "imageAlt": "FreightSync last-mile optimization UI",
     "tags": ["last-mile", "tms", "ops"]
   },
