@@ -19,8 +19,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/50 border-b border-white/10">
       <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="h-3 w-3 rounded-full gradient-text inline-block" />
+        <Link href="/" className="flex items-center gap-3">
+          <img src="/favicon.svg" alt="Aivara Solutions Logo" className="h-8 w-8" />
           <span className="text-lg font-semibold tracking-wide">Aivara Solutions</span>
         </Link>
 

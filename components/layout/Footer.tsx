@@ -7,8 +7,8 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-black/60">
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="h-3 w-3 rounded-full gradient-text inline-block" />
+          <div className="flex items-center gap-3 mb-4">
+            <img src="/favicon.svg" alt="Aivara Solutions Logo" className="h-8 w-8" />
             <span className="font-semibold">Aivara Solutions</span>
           </div>
           <p className="text-sm text-gray-400">
