@@ -5,7 +5,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/section";
 import { PortfolioCard } from "@/components/ui/portfolio-card";
-import type { Metadata } from "next";
 
 export default function PortfolioPage() {
   const [filter, setFilter] = useState("All");

@@ -31,19 +31,24 @@ export function Header() {
           </Link>
           
           {/* Services Dropdown */}
-          <div className="relative group">
+          <div className="relative">
             <button 
               className="text-sm text-gray-300 hover:text-white transition flex items-center gap-1"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              onClick={() => setServicesOpen(!servicesOpen)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget)) {
+                  setTimeout(() => setServicesOpen(false), 200);
+                }
+              }}
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
             >
               Services
-              <ChevronDown className="h-3 w-3" />
+              <ChevronDown className={`h-3 w-3 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
             {servicesOpen && (
               <div 
-                className="absolute top-full left-0 mt-2 w-56 bg-black/95 border border-white/10 rounded-xl shadow-xl py-2"
-                onMouseEnter={() => setServicesOpen(true)}
+                className="absolute top-full left-0 mt-2 w-56 bg-black/95 border border-white/10 rounded-xl shadow-xl py-2 z-50"
                 onMouseLeave={() => setServicesOpen(false)}
               >
                 {serviceItems.map((item) => (
@@ -51,6 +56,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition"
+                    onClick={() => setServicesOpen(false)}
                   >
                     {item.label}
                   </Link>
