@@ -1,0 +1,201 @@
+Here’s a single, copy-paste **Replit AI prompt** that updates your **Portfolio** and **Homepage** to match your new items—while **keeping your current design, colors, and components**. It also instructs Replit to wire screenshot thumbnails for each project.
+
+---
+
+**Prompt for Replit AI**
+
+> **Goal:** Update the site’s **Portfolio** and **Homepage portfolio teaser** to reflect the new items below. Keep all existing styling, color tokens, typography, spacing, and card components. Do **not** change the brand palette or layout system. Reuse current PortfolioCard/Section/Grid components.
+>
+> ### 0) Detect & Reuse
+>
+> * Detect the stack (likely Next.js/React with Tailwind). Reuse the existing `Portfolio` data shape. If a data file exists (e.g., `/data/portfolio.json`), update it; otherwise, create one that feeds the current components without changing their props.
+> * Keep existing image sizes/aspect ratios for thumbnails. Keep lazy-loading and responsive image behavior as is.
+>
+> ### 1) Data model (keep current, but ensure fields exist)
+>
+> Each portfolio item should have at least:
+>
+> ```ts
+> {
+>   id: string,              // slug or unique id
+>   title: string,
+>   client?: string,
+>   category: "AI" | "Web" | "Logistics" | "Music",
+>   summary: string,         // 1–2 sentence blurb
+>   url?: string,            // live link
+>   image: string,           // local path to screenshot thumbnail
+>   imageAlt: string,
+>   tags?: string[],         // short keywords
+>   media?: { audioUrl?: string } // for Music if supported by UI
+> }
+> ```
+>
+> If your current system uses different keys, **map these fields into whatever the component expects**—don’t refactor components.
+>
+> ### 2) Add/Update Portfolio Items
+>
+> Replace the current items with exactly the following. Where “change to …” appears, **update the title/summary accordingly**.
+>
+> **AI**
+>
+> 1. **AI Customer Support Bot (Rich AF Travel AI)**
+>
+>    * `category`: AI
+>    * `client`: RichAF Travel
+>    * `url`: `https://richaf.global`
+>    * `summary`: “24/7 AI support agent answering trip FAQs, routing leads, and capturing bookings.”
+>    * `tags`: ["chatbot", "lead-capture", "travel"]
+>    * `image`: `/images/portfolio/ai-richaf-bot.jpg` (screenshot)
+>    * `imageAlt`: “RichAF Travel AI support chat UI”
+> 2. **Marketing Automation Platform (Apollo) for IPM**
+>
+>    * `category`: AI
+>    * `client`: International Property Management (IPM)
+>    * `url`: `https://ipm.services`
+>    * `summary`: “Apollo-driven outreach + automations: list building, sequencing, inbox management.”
+>    * `tags`: ["apollo", "automation", "crm"]
+>    * `image`: `/images/portfolio/ai-ipm-apollo.jpg`
+>    * `imageAlt`: “Apollo automation dashboard for IPM”
+> 3. **SaaS Onboarding Automation for LiftFi (formerly AI Training Platform)**
+>
+>    * `category`: AI
+>    * `client`: Lift Fi
+>    * `url`: `https://liftfi.io`
+>    * `summary`: “Automated SaaS onboarding flows: welcome, KYC, guided checklists, and NPS loops.”
+>    * `tags`: ["saas", "onboarding", "automation"]
+>    * `image`: `/images/portfolio/ai-liftfi-onboarding.jpg`
+>    * `imageAlt`: “LiftFi onboarding automation screens”
+>
+> **Web**
+> 4. **E-commerce Redesign for RichAF.Global (Travel Agency)**
+>
+> * `category`: Web
+>
+> * `client`: RichAF Global
+>
+> * `url`: `https://richaf.global`
+>
+> * `summary`: “Conversion-focused storefront with trip SKUs, streamlined checkout, and SEO structure.”
+>
+> * `tags`: ["ecommerce", "seo", "ux"]
+>
+> * `image`: `/images/portfolio/web-richaf-store.jpg`
+>
+> * `imageAlt`: “RichAF Global e-commerce homepage”
+>
+> 5. **Startup Brand Identity for ServantofAgape.com (Philanthropy)**
+>
+>    * `category`: Web
+>    * `client`: Servant of Agape
+>    * `url`: `https://servantofagape.com`
+>    * `summary`: “From logo system to site and donation UX—clarity, trust, and accessible storytelling.”
+>    * `tags`: ["branding", "nonprofit", "web"]
+>    * `image`: `/images/portfolio/web-servantofagape.jpg`
+>    * `imageAlt`: “Servant of Agape brand and site preview”
+> 6. **SEO Campaign Success for IPM (ipm.services)**
+>
+>    * `category`: Web
+>    * `client`: International Property Management (IPM)
+>    * `url`: `https://ipm.services`
+>    * `summary`: “Technical SEO + content pillars driving rankings for short-term rental keywords.”
+>    * `tags`: ["seo", "content", "technical-seo"]
+>    * `image`: `/images/portfolio/web-ipm-seo.jpg`
+>    * `imageAlt`: “IPM SEO analytics dashboard”
+>
+> **Logistics**
+> 7. **Route Optimization Dashboard (MTStranspo.com)**
+>
+> * `category`: Logistics
+>
+> * `client`: MTS Transportation
+>
+> * `url`: `https://mtstranspo.com`
+>
+> * `summary`: “Driver assignment, live ETAs, and exception alerts to reduce missed windows.”
+>
+> * `tags`: ["routing", "dispatch", "analytics"]
+>
+> * `image`: `/images/portfolio/log-mts-route.jpg`
+>
+> * `imageAlt`: “MTS route optimization dashboard”
+>
+> 8. **Last-Mile Delivery Optimization (FreightSyncTMS.com)**
+>
+>    * `category`: Logistics
+>    * `client`: FreightSync TMS
+>    * `url`: `https://freightsynctms.com`
+>    * `summary`: “Batching, zone clustering, and proof-of-delivery workflows integrated to TMS.”
+>    * `tags`: ["last-mile", "tms", "ops"]
+>    * `image`: `/images/portfolio/log-freightsync-lastmile.jpg`
+>    * `imageAlt`: “FreightSync last-mile optimization UI”
+>
+> **Remove:** Warehouse management system item.
+>
+> **Music**
+> 9. **Clothing Line Song – “Blow Up” for Blow Up Online**
+>
+> * `category`: Music
+>
+> * `client`: Blow Up Online
+>
+> * `summary`: “High-energy brand anthem for product drops and ads.”
+>
+> * `tags`: ["anthem", "fashion", "promo"]
+>
+> * `image`: `/images/portfolio/music-blowup.jpg`
+>
+> * `imageAlt`: “Blow Up Online artwork”
+>
+> * `media`: { "audioUrl": "/media/music/blow-up.mp3" }
+>
+> 10. **Business Theme Song – “Live Like You Own It” for IPM**
+>
+>     * `category`: Music
+>     * `client`: IPM
+>     * `summary`: “Signature theme for campaigns, reels, and events.”
+>     * `tags`: ["theme", "branding"]
+>     * `image`: `/images/portfolio/music-ipm-llyoi.jpg`
+>     * `imageAlt`: “IPM theme song cover”
+>     * `media`: { "audioUrl": "/media/music/live-like-you-own-it.mp3" }
+> 11. **Nail Studio Jingle – “Isabella Nails Studio”**
+>
+>     * `category`: Music
+>     * `client`: Isabella Nails Studio
+>     * `summary`: “Catchy 20–30s hook for local ads and social loops.”
+>     * `tags`: ["jingle", "local", "beauty"]
+>     * `image`: `/images/portfolio/music-isabella.jpg`
+>     * `imageAlt`: “Isabella Nails Studio artwork”
+>     * `media`: { "audioUrl": "/media/music/isabella-nails.mp3" }
+>
+> ### 3) Thumbnails / Screenshots
+>
+> * For each item with a `url`, generate a **screenshot thumbnail** using our existing screenshot or OG-image utility if available. Save under `/public/images/portfolio/*.jpg` using the filenames above. If no screenshot utility exists, **create temporary placeholders** matching existing thumbnail dimensions and alt text; keep the paths above so we can swap images later.
+> * Ensure all images are optimized (next/image or current optimization), correct aspect ratio, and have descriptive `alt`.
+>
+> ### 4) Portfolio Page Behavior
+>
+> * Keep the existing **category filter tabs** (AI | Web | Logistics | Music). Ensure the new items appear under the correct tabs.
+> * Preserve card hover states, shadows, and alignment.
+> * Cards link to `url` in a new tab if present; Music cards also render a small play icon if `media.audioUrl` exists (if the UI already supports it). Do not redesign; gently extend if the prop already exists.
+>
+> ### 5) Homepage Portfolio Teaser
+>
+> * Update the homepage “Selected Work / Portfolio” strip to pull 6 of the new items (mix of categories).
+> * Keep existing CTA: “View All Work” → `/portfolio`.
+>
+> ### 6) Accessibility & SEO
+>
+> * Keep semantic headings; ensure images have `alt`.
+> * Update structured data/OG if your template auto-reads from data.
+> * Do not change routes or global styles.
+>
+> ### 7) Deliverables
+>
+> * Updated `/data/portfolio.json` (or the equivalent source) with the items above.
+> * New image files or placeholders in `/public/images/portfolio/`.
+> * Updated Portfolio page and Homepage teaser pulling from the new data.
+> * No visual regressions to spacing, colors, or typography.
+
+---
+
+If your repo uses a different data path or prop naming, Replit should map these entries to your existing structure without altering your components.

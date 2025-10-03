@@ -10,6 +10,7 @@ import { Section } from "@/components/ui/section";
 import { PortfolioCard } from "@/components/ui/portfolio-card";
 import { motion } from "framer-motion";
 import { Lightbulb, Globe, Truck, Music } from "lucide-react";
+import portfolioData from "@/public/data/portfolio.json";
 
 export default function HomePage() {
   const [portfolioFilter, setPortfolioFilter] = useState("All");
@@ -41,18 +42,19 @@ export default function HomePage() {
     },
   ];
 
-  const portfolioItems = [
-    { title: "AI Training Platform", category: "AI", image: "/images/portfolio/ai-training.jpg", description: "Custom onboarding automation" },
-    { title: "E-Commerce Redesign", category: "Web", image: "/images/portfolio/ecommerce.jpg", description: "Full-stack site with SEO" },
-    { title: "Route Optimization Dashboard", category: "Logistics", image: "/images/portfolio/logistics.jpg", description: "Real-time tracking system" },
-    { title: "Restaurant Jingle", category: "Music", image: "/images/portfolio/restaurant-jingle.jpg", description: "Brand sound identity", hasAudio: true },
-    { title: "Startup Brand Identity", category: "Web", image: "/images/portfolio/startup-brand.jpg", description: "Logo, web, and messaging" },
-    { title: "Podcast Theme Song", category: "Music", image: "/images/portfolio/podcast-theme.jpg", description: "Custom intro music", hasAudio: true },
+  // Select 6 items for homepage teaser - mix of categories
+  const featuredPortfolio = [
+    portfolioData[0], // AI - RichAF Bot
+    portfolioData[3], // Web - RichAF E-commerce
+    portfolioData[6], // Logistics - MTS Route
+    portfolioData[8], // Music - Blow Up
+    portfolioData[1], // AI - IPM Apollo
+    portfolioData[4], // Web - Servant of Agape
   ];
 
   const filteredPortfolio = portfolioFilter === "All" 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === portfolioFilter);
+    ? featuredPortfolio 
+    : featuredPortfolio.filter(item => item.category === portfolioFilter);
 
   return (
     <div className="bg-black text-white min-h-screen w-full">
@@ -129,8 +131,22 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {filteredPortfolio.slice(0, 6).map((item, index) => (
-            <PortfolioCard key={index} {...item} />
+          {filteredPortfolio.map((item, index) => (
+            <a 
+              key={item.id} 
+              href={item.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <PortfolioCard 
+                title={item.title}
+                category={item.category}
+                image={item.image}
+                description={item.summary}
+                hasAudio={!!item.media?.audioUrl}
+              />
+            </a>
           ))}
         </div>
 
