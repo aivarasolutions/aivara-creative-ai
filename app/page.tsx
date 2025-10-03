@@ -137,26 +137,26 @@ export default function HomePage() {
             if (hasEmbed) {
               return (
                 <div key={item.id} className="bg-black/70 border border-white/10 rounded-lg overflow-hidden hover:border-white/20 transition-all">
+                  <div className="aspect-video bg-black overflow-hidden">
+                    <iframe 
+                      width="100%" 
+                      height="100%" 
+                      scrolling="no" 
+                      frameBorder="no" 
+                      allow="autoplay" 
+                      src={(item.media as any).embedUrl}
+                      className="w-full h-full"
+                    ></iframe>
+                  </div>
                   <div className="p-6">
                     <div className="text-xs text-teal-400 mb-2">{item.category}</div>
                     <h3 className="text-xl font-semibold mb-2 text-gray-200">{item.title}</h3>
                     <p className="text-sm text-gray-400 mb-4">{item.summary}</p>
-                    <div className="aspect-video bg-black rounded overflow-hidden">
-                      <iframe 
-                        width="100%" 
-                        height="100%" 
-                        scrolling="no" 
-                        frameBorder="no" 
-                        allow="autoplay" 
-                        src={(item.media as any).embedUrl}
-                        className="w-full h-full"
-                      ></iframe>
-                    </div>
                     <a 
                       href={item.url} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center text-teal-400 hover:text-teal-300 text-sm"
+                      className="inline-flex items-center text-teal-400 hover:text-teal-300 text-sm"
                     >
                       Listen on SoundCloud →
                     </a>
