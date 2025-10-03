@@ -63,9 +63,9 @@ export function Footer() {
 
         <div>
           <h4 className="text-sm font-semibold mb-3 text-gray-200">Get Updates</h4>
-          <form className="flex gap-2">
-            <input type="email" placeholder="Email address" className="flex-1 p-3 rounded-xl bg-black/70 border border-white/10 text-white" />
-            <Button className="px-5">Join</Button>
+          <form className="flex flex-col gap-2">
+            <input type="email" placeholder="Email address" className="w-full p-3 rounded-xl bg-black/70 border border-white/10 text-white text-sm" />
+            <Button className="w-full">Join</Button>
           </form>
         </div>
       </div>
