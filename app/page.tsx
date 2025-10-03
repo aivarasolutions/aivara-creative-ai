@@ -42,14 +42,14 @@ export default function HomePage() {
     },
   ];
 
-  // Select 6 items for homepage teaser - mix of categories
+  // Select 6 items for homepage portfolio section
   const featuredPortfolio = [
-    portfolioData[0], // AI - RichAF Bot
-    portfolioData[3], // Web - RichAF E-commerce
-    portfolioData[6], // Logistics - MTS Route
-    portfolioData[8], // Music - Blow Up
-    portfolioData[1], // AI - IPM Apollo
-    portfolioData[4], // Web - Servant of Agape
+    portfolioData[0], // AI Customer Support Bot
+    portfolioData[1], // Marketing Automation Platform (Apollo)
+    portfolioData[6], // Route Optimization Dashboard
+    portfolioData[2], // SaaS Onboarding Automation
+    portfolioData[9], // Business Theme Song – "Live Like You Own It"
+    portfolioData[4], // Startup Brand Identity
   ];
 
   const filteredPortfolio = portfolioFilter === "All" 
@@ -111,7 +111,7 @@ export default function HomePage() {
 
       {/* Portfolio Teaser */}
       <Section className="bg-gradient-to-r from-pink-600/10 via-teal-500/10 to-yellow-400/10">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 gradient-text">Selected Work</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 gradient-text">Portfolio</h2>
         
         {/* Filter Bar */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">
