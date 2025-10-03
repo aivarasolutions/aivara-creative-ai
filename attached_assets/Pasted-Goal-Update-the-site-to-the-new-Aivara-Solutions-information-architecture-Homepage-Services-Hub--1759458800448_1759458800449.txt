@@ -1,0 +1,142 @@
+Goal: Update the site to the new Aivara Solutions information architecture (Homepage + Services Hub + Division pages + Aivara Music landing) using the existing visual style (fonts, spacing, components) and current color tokens/variables. Do not change the brand palette or global styles; reuse existing components where possible.
+
+Before you code:
+
+Detect the stack (Next.js/React/Tailwind or plain HTML/CSS, etc.).
+
+Reuse current layout, header, footer, button, card, grid utilities.
+
+Keep current SEO config (title template, OpenGraph), only extend with new copy below.
+
+1) Navigation
+
+Primary nav (order): Home, Services, Portfolio, Blog (if exists), Contact.
+
+Services gets a dropdown with: AI & Education, Web & Marketing, Logistics, Aivara Music.
+
+Use existing NavBar component; only add routes/links.
+
+2) Homepage (new sections, same style)
+
+Keep hero + current look; replace headlines with:
+
+Hero H1: “Technology + Creativity for the Modern Business.”
+
+Subhead: “AI & Education • Web & Marketing • Logistics • Aivara Music”
+
+Hero CTA buttons: “Explore Services” (links to /services) and “Get a Quote” (links to /contact).
+
+Add a 4-card Services Overview section under hero (reuse existing Card component and current colors):
+
+Card 1 (AI & Education): short text = “Onboarding, automation, and beginner-friendly training.” Link /services/ai-education.
+
+Card 2 (Web & Marketing): “Websites, SEO, branding, and growth campaigns.” Link /services/web-marketing.
+
+Card 3 (Logistics): “Last-mile, routing, and operational tech.” Link /services/logistics.
+
+Card 4 (Aivara Music): “Custom jingles and sound identity for brands.” Link /services/music.
+
+Add a Selected Work / Portfolio teaser (3–6 items, use existing PortfolioCard): include a filter bar with categories: All | AI | Web | Logistics | Music. Clicking “View All Work” goes to /portfolio.
+
+Add a Strip CTA near footer:
+
+Headline: “One team. Many ways to win.”
+
+Button: “Book a discovery call” → /contact.
+
+3) Services Hub (/services)
+
+Build a grid of four service cards (same component as Homepage) with longer blurbs and a secondary CTA:
+
+AI & Education → “Automation audits, starter playbooks, team training.”
+
+Web & Marketing → “Full-stack sites, conversion copy, SEO, paid social.”
+
+Logistics → “Dispatch workflows, tracking, analytics.”
+
+Aivara Music → “Theme songs, jingles, background tracks, licensing.”
+Each card: Primary CTA “Learn more” → respective detail page.
+
+4) Division Pages (new routes)
+
+Create four pages under /services/:
+
+/services/ai-education
+
+/services/web-marketing
+
+/services/logistics
+
+/services/music (Aivara Music landing)
+
+Shared page layout: sticky page title, intro paragraph, bullet services list, 2–4 case study tiles, FAQ accordion, contact CTA block.
+
+Copy blocks (use as placeholders, keep typography as is):
+
+AI & Education – Intro: “We turn AI into practical wins: audits, simple automations, and hands-on training your team can actually use.”
+Bullets: “Automation setup • Onboarding playbooks • Team workshops • Tool selection & governance”
+
+Web & Marketing – Intro: “Websites and campaigns built for speed, clarity, and conversions—backed by clean engineering and sharp messaging.”
+Bullets: “Web design/dev • SEO & analytics • Brand identity • Performance marketing”
+
+Logistics – Intro: “From dispatch to doorstep, we streamline routes, tracking, and ops dashboards to cut costs and missed windows.”
+Bullets: “Route planning • Driver ops • Tracking dashboards • Systems integration”
+
+Aivara Music – Intro: “Your brand’s sound identity—custom jingles, themes, and background tracks that make people remember you.”
+Bullets: “Custom jingles • Theme songs • Background loops • Licensing & deliverables”
+
+5) Aivara Music page extras (/services/music)
+
+Audio player section: reusable component that lists tracks from a local JSON (e.g. /data/music.json) with fields: { title, client, src, cover, tags }.
+
+Video/Reel embed grid: accept shortlinks (TikTok/IG/YouTube).
+
+Portfolio grid: tiles show client logo/name + play button.
+
+“Order Your Jingle” CTA: button → /contact or /quote?service=music.
+
+Optional: mini form inline (name, brand, use-case, vibe, deadline); submit to existing forms endpoint.
+
+6) Portfolio page (/portfolio)
+
+Add a category filter (AI | Web | Logistics | Music).
+
+Each item supports optional audio/video preview if category = Music.
+
+Keep existing card design and spacing.
+
+7) Routing & Files
+
+Create routes as needed. If using Next.js:
+
+app/services/page.tsx (hub)
+
+app/services/(ai-education|web-marketing|logistics|music)/page.tsx
+
+Reuse components/Card, components/Section, components/FAQ, components/AudioPlayer.
+
+If plain HTML, add services/index.html and four subpages; reuse CSS classes.
+
+8) Content & Assets
+
+Add /data/music.json with 6–12 sample entries (use existing media folder paths).
+
+Do not hardcode colors; use the current CSS variables/tokens (e.g., --brand, --accent, etc.).
+
+Icons: reuse your icon set; if none, use existing SVG system.
+
+9) SEO / Meta
+
+Homepage meta description: “Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.”
+
+Each service page gets a concise meta description and OpenGraph image (reuse existing OG template).
+
+10) Performance & QA
+
+No layout shifts; preserve current container widths and breakpoints.
+
+Ensure keyboard focus, aria-labels on audio controls, alt text on thumbnails.
+
+Lighthouse ≥ 90 for Performance/Accessibility/Best Practices.
+
+Deliverables: updated pages, routes, components, and sample data wired to UI, with all styles consistent with the current site.

@@ -2,8 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Aivara Solutions — Creative AI Studio",
-  description: "Creative AI for brands & creators: jingles, theme songs, reels, custom GPTs, and AI marketing.",
+  title: {
+    default: "Aivara Solutions — Technology + Creativity for the Modern Business",
+    template: "%s | Aivara Solutions",
+  },
+  description: "Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Tech Startup Jingle",
+    "client": "InnovateNow",
+    "src": "/audio/tech-startup-jingle.mp3",
+    "cover": "/images/music/tech-startup.jpg",
+    "tags": ["upbeat", "tech", "30sec"]
+  },
+  {
+    "title": "Coffee Shop Theme",
+    "client": "Brew & Co",
+    "src": "/audio/coffee-shop-theme.mp3",
+    "cover": "/images/music/coffee-shop.jpg",
+    "tags": ["chill", "acoustic", "loop"]
+  },
+  {
+    "title": "Fitness Brand Anthem",
+    "client": "PowerFit",
+    "src": "/audio/fitness-anthem.mp3",
+    "cover": "/images/music/fitness-brand.jpg",
+    "tags": ["energetic", "motivational", "60sec"]
+  },
+  {
+    "title": "Real Estate Signature Sound",
+    "client": "Luxury Homes Group",
+    "src": "/audio/real-estate-sound.mp3",
+    "cover": "/images/music/real-estate.jpg",
+    "tags": ["elegant", "professional", "15sec"]
+  },
+  {
+    "title": "E-Commerce Checkout Tune",
+    "client": "ShopSmart",
+    "src": "/audio/ecommerce-checkout.mp3",
+    "cover": "/images/music/ecommerce.jpg",
+    "tags": ["friendly", "quick", "10sec"]
+  },
+  {
+    "title": "Podcast Intro Music",
+    "client": "The Business Hour",
+    "src": "/audio/podcast-intro.mp3",
+    "cover": "/images/music/podcast.jpg",
+    "tags": ["professional", "intro", "20sec"]
+  },
+  {
+    "title": "Restaurant Background Loop",
+    "client": "Bella Vista",
+    "src": "/audio/restaurant-loop.mp3",
+    "cover": "/images/music/restaurant.jpg",
+    "tags": ["ambient", "sophisticated", "loop"]
+  },
+  {
+    "title": "Gaming App Sound Identity",
+    "client": "PixelQuest",
+    "src": "/audio/gaming-identity.mp3",
+    "cover": "/images/music/gaming.jpg",
+    "tags": ["playful", "digital", "brand"]
+  },
+  {
+    "title": "Wellness Brand Theme",
+    "client": "Zen Life",
+    "src": "/audio/wellness-theme.mp3",
+    "cover": "/images/music/wellness.jpg",
+    "tags": ["calm", "healing", "45sec"]
+  },
+  {
+    "title": "Educational Platform Jingle",
+    "client": "LearnHub",
+    "src": "/audio/educational-jingle.mp3",
+    "cover": "/images/music/education.jpg",
+    "tags": ["bright", "inspiring", "30sec"]
+  },
+  {
+    "title": "Fashion Brand Signature",
+    "client": "Vogue Collective",
+    "src": "/audio/fashion-signature.mp3",
+    "cover": "/images/music/fashion.jpg",
+    "tags": ["stylish", "modern", "brand"]
+  },
+  {
+    "title": "Automotive Showroom Music",
+    "client": "AutoElite",
+    "src": "/audio/automotive-music.mp3",
+    "cover": "/images/music/automotive.jpg",
+    "tags": ["powerful", "premium", "loop"]
+  }
+]
