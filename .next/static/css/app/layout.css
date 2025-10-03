@@ -766,6 +766,9 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -1125,6 +1128,10 @@ body {
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+.hover\:text-teal-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(94 234 212 / var(--tw-text-opacity, 1));
 }
 .hover\:text-white:hover {
   --tw-text-opacity: 1;

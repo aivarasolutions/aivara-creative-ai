@@ -93,12 +93,12 @@
     "client": "Blow Up Online",
     "category": "Music",
     "summary": "High-energy brand anthem for product drops and ads.",
-    "url": "https://blowuponline.com",
+    "url": "https://soundcloud.com/thatbvmpz/blow-up-6-that-bvmpz?si=5ec1988ae9c94e9e80bec38f19a93b92&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing#t=0%3A30",
     "image": "/images/portfolio/music-blowup.svg",
     "imageAlt": "Blow Up Online artwork",
     "tags": ["anthem", "fashion", "promo"],
     "media": {
-      "audioUrl": "/media/music/blow-up.mp3"
+      "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2166741768&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
     }
   },
   {
@@ -107,12 +107,12 @@
     "client": "IPM",
     "category": "Music",
     "summary": "Signature theme for campaigns, reels, and events.",
-    "url": "https://ipm.services",
+    "url": "https://soundcloud.com/thatbvmpz/live-like-you-own-it?si=8424c2cc2ab74af1895cfe1b6b89ae56&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing#t=0%3A21",
     "image": "/images/portfolio/music-ipm-llyoi.svg",
     "imageAlt": "IPM theme song cover",
     "tags": ["theme", "branding"],
     "media": {
-      "audioUrl": "/media/music/live-like-you-own-it.mp3"
+      "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2174567340&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
     }
   },
   {
@@ -121,12 +121,12 @@
     "client": "Isabella Nails Studio",
     "category": "Music",
     "summary": "Catchy 20–30s hook for local ads and social loops.",
-    "url": "https://isabellanailsstudio.com",
+    "url": "https://soundcloud.com/thatbvmpz/isabella-nails-studio?in=thatbvmpz/sets/aivara-music-theme-songs&si=411d4d8ce3f6427a8184e64b1acd640b&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing#t=0%3A40",
     "image": "/images/portfolio/music-isabella.svg",
     "imageAlt": "Isabella Nails Studio artwork",
     "tags": ["jingle", "local", "beauty"],
     "media": {
-      "audioUrl": "/media/music/isabella-nails.mp3"
+      "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2136698598&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
     }
   }
 ]
