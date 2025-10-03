@@ -64,7 +64,7 @@ export default function HomePage() {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-5xl md:text-7xl font-bold gradient-text"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text"
         >
           Technology + Creativity for the Modern Business
         </motion.h1>
@@ -94,15 +94,12 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <Link key={index} href={service.href}>
-              <Card className="bg-white/90 backdrop-blur-sm border border-black/10 hover:bg-white transition-all h-full group cursor-pointer">
+              <Card className="bg-black/70 backdrop-blur-lg border border-white/10 hover:bg-black/80 transition-all h-full group cursor-pointer">
                 <CardContent className="p-8 text-center">
-                  <div className="mb-4 text-black flex justify-center group-hover:scale-110 transition-transform">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-black transition">
+                  <h3 className="text-xl font-semibold mb-4 text-teal-300 group-hover:text-teal-200 transition">
                     {service.title}
                   </h3>
-                  <p className="text-gray-700 text-sm">{service.description}</p>
+                  <p className="text-gray-300 text-sm">{service.description}</p>
                 </CardContent>
               </Card>
             </Link>
