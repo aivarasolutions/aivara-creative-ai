@@ -20,7 +20,10 @@ export function Header() {
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/50 border-b border-white/10">
       <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <img src="/images/aivara-logo.png" alt="Aivara Solutions Logo" className="h-10 w-auto mix-blend-screen" />
+          <div className="h-10 w-10 overflow-hidden flex items-center justify-center bg-white rounded-md">
+            <img src="/images/aivara-logo.png" alt="Aivara Solutions Icon" className="h-16 w-16 object-cover object-top" style={{ marginTop: '-8px' }} />
+          </div>
+          <span className="text-lg font-semibold tracking-wide">Aivara Solutions</span>
         </Link>
 
         {/* Desktop Nav */}

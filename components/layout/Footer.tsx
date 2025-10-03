@@ -7,8 +7,11 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-black/60">
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         <div>
-          <div className="mb-4">
-            <img src="/images/aivara-logo.png" alt="Aivara Solutions Logo" className="h-12 w-auto mix-blend-screen" />
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-10 w-10 overflow-hidden flex items-center justify-center bg-white rounded-md">
+              <img src="/images/aivara-logo.png" alt="Aivara Solutions Icon" className="h-16 w-16 object-cover object-top" style={{ marginTop: '-8px' }} />
+            </div>
+            <span className="font-semibold">Aivara Solutions</span>
           </div>
           <p className="text-sm text-gray-400">
             Technology + Creativity for the Modern Business. AI & Education, Web & Marketing, Logistics, and Aivara Music.
