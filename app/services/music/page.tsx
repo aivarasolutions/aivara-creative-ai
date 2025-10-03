@@ -3,10 +3,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/ui/faq";
-import { AudioPlayer } from "@/components/ui/audio-player";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import musicData from "@/public/data/music.json";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -84,7 +82,25 @@ export default function MusicPage() {
 
           <div className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 text-teal-300">Listen to Our Work</h2>
-            <AudioPlayer tracks={musicData} />
+            <div className="bg-black/60 border border-white/10 rounded-lg overflow-hidden p-4">
+              <iframe 
+                width="100%" 
+                height="600" 
+                scrolling="no" 
+                frameBorder="no" 
+                allow="autoplay" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2058721338&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+                className="w-full"
+              ></iframe>
+              <a 
+                href="https://soundcloud.com/thatbvmpz/sets/aivara-music-theme-songs?si=5d5005cf1b9f43cf940c46f12fcd7990&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center text-teal-400 hover:text-teal-300 text-sm"
+              >
+                View Full Playlist on SoundCloud →
+              </a>
+            </div>
           </div>
 
           <div className="mb-12">
