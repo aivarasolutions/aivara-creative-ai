@@ -41,14 +41,9 @@ export async function POST(req: Request) {
             FNAME: firstName,
             LNAME: lastName,
             PHONE: phone || '',
+            MESSAGE: message.substring(0, 255),
           },
           tags: ['Contact Form', service],
-          marketing_permissions: [
-            {
-              marketing_permission_id: 'contact_inquiry',
-              enabled: true,
-            },
-          ],
         }),
       }
     );
@@ -78,6 +73,7 @@ export async function POST(req: Request) {
                   FNAME: firstName,
                   LNAME: lastName,
                   PHONE: phone || '',
+                  MESSAGE: message.substring(0, 255),
                 },
               }),
             }
