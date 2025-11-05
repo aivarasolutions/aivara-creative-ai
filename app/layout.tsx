@@ -1,7 +1,21 @@
 import "./globals.css";
 import type { Metadata } from "next";
 
+const getSiteUrl = () => {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL;
+  }
+  if (process.env.REPLIT_DEV_DOMAIN) {
+    return `https://${process.env.REPLIT_DEV_DOMAIN}`;
+  }
+  return 'https://aivarasolutions.com';
+};
+
+const siteUrl = getSiteUrl();
+const logoUrl = `${siteUrl}/images/aivara-logo.png`;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Aivara Solutions — Technology + Creativity for the Modern Business",
     template: "%s | Aivara Solutions",
@@ -10,10 +24,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aivara Solutions — Technology + Creativity for the Modern Business",
     description: "Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.",
+    url: siteUrl,
     siteName: "Aivara Solutions",
     images: [
       {
-        url: "/images/aivara-logo.png",
+        url: logoUrl,
         width: 1200,
         height: 1200,
         alt: "Aivara Solutions Logo",
@@ -26,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aivara Solutions — Technology + Creativity for the Modern Business",
     description: "Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.",
-    images: ["/images/aivara-logo.png"],
+    images: [logoUrl],
   },
   icons: {
     icon: [
