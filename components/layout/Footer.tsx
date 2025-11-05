@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Mail, Phone, Instagram, Facebook, Linkedin } from "lucide-react";
+import { NewsletterForm } from "@/components/ui/NewsletterForm";
 
 export function Footer() {
   return (
@@ -61,13 +61,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold mb-3 text-gray-200">Get Updates</h4>
-          <form className="flex flex-col gap-2">
-            <input type="email" placeholder="Email address" className="w-full p-3 rounded-xl bg-black/70 border border-white/10 text-white text-sm" />
-            <Button className="w-full">Join</Button>
-          </form>
-        </div>
+        <NewsletterForm />
       </div>
       <div className="border-t border-white/10 text-center text-xs text-gray-500 py-6">
         © {new Date().getFullYear()} Aivara Solutions. All rights reserved.
