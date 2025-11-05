@@ -1,8 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aivarasolutions.com";
-
 export const metadata: Metadata = {
   title: {
     default: "Aivara Solutions — Technology + Creativity for the Modern Business",
@@ -12,11 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aivara Solutions — Technology + Creativity for the Modern Business",
     description: "Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.",
-    url: siteUrl,
     siteName: "Aivara Solutions",
     images: [
       {
-        url: `${siteUrl}/images/aivara-logo.png`,
+        url: "/images/aivara-logo.png",
         width: 1200,
         height: 1200,
         alt: "Aivara Solutions Logo",
@@ -29,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aivara Solutions — Technology + Creativity for the Modern Business",
     description: "Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.",
-    images: [`${siteUrl}/images/aivara-logo.png`],
+    images: ["/images/aivara-logo.png"],
   },
   icons: {
     icon: [
