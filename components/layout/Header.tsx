@@ -21,6 +21,7 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <img src="/images/aivara-logo.png" alt="Aivara Solutions" className="h-12 w-auto" />
+          <span className="text-lg font-semibold tracking-wide">Aivara Solutions</span>
         </Link>
 
         {/* Desktop Nav */}
