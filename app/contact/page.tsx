@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
+import { ContactForm } from "@/components/ui/ContactForm";
 import { Mail, Phone, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -29,53 +29,7 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-black/60 border border-white/10 rounded-2xl p-8">
-              <h2 className="text-2xl font-semibold mb-6">Send us a message</h2>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input 
-                    type="text" 
-                    placeholder="Your Name" 
-                    className="p-4 rounded-xl bg-black/70 border border-white/20 text-white"
-                    required
-                  />
-                  <input 
-                    type="email" 
-                    placeholder="Your Email" 
-                    className="p-4 rounded-xl bg-black/70 border border-white/20 text-white"
-                    required
-                  />
-                </div>
-                
-                <input 
-                  type="tel" 
-                  placeholder="Phone Number (optional)" 
-                  className="w-full p-4 rounded-xl bg-black/70 border border-white/20 text-white"
-                />
-                
-                <select 
-                  className="w-full p-4 rounded-xl bg-black/70 border border-white/20 text-white"
-                  required
-                >
-                  <option value="">Select a Service</option>
-                  <option value="ai-education">AI & Education</option>
-                  <option value="web-marketing">Web & Marketing</option>
-                  <option value="logistics">Logistics</option>
-                  <option value="music">Aivara Music</option>
-                  <option value="multiple">Multiple Services</option>
-                  <option value="other">Other</option>
-                </select>
-                
-                <textarea 
-                  placeholder="Tell us about your project..." 
-                  className="w-full p-4 rounded-xl bg-black/70 border border-white/20 text-white" 
-                  rows={6}
-                  required
-                ></textarea>
-                
-                <Button className="w-full px-10 py-6 text-lg">Send Message</Button>
-              </form>
-            </div>
+            <ContactForm />
 
             {/* Contact Info */}
             <div className="space-y-8">
