@@ -40,9 +40,9 @@ components/
     └── AudioPlayer.tsx            # Audio player component
 
 public/
-├── favicon.png                    # Website favicon (Aivara logo)
+├── favicon.png                    # Website favicon (full colorful gradient logo)
 ├── images/
-│   ├── aivara-icon.png           # Aivara Solutions logo icon
+│   ├── aivara-logo.png           # Aivara Solutions full logo (gradient A + text)
 │   └── portfolio/                 # Client project screenshots
 │       ├── richaf-bot.png
 │       ├── ipm-apollo.png
@@ -80,7 +80,7 @@ public/
 - **Colors**: Pink (#db2777), Teal (#14b8a6), Yellow (#facc15)
 - **Typography**: Gradient text effects on headings
 - **Cards**: Dark with backdrop blur and gradient borders
-- **Logo**: Blue/orange "A" icon + "Aivara Solutions" text
+- **Logo**: Colorful gradient "A" symbol with full "AIVARA SOLUTIONS" text (pink-purple-blue-teal-yellow gradient)
 
 ## Deployment
 - **Target**: Autoscale (stateless website)
@@ -88,12 +88,18 @@ public/
 - **Start**: `npm start`
 
 ## Recent Changes
+- **2025-11-05**: Mailchimp Integration & Logo Update
+  - Integrated Mailchimp for newsletter signups (footer form)
+  - Connected contact form to Mailchimp (stores all inquiry data + tags)
+  - Contact inquiries tagged with "Contact Form" + service type
+  - Updated logo to full colorful gradient design (A symbol + AIVARA SOLUTIONS text)
+  - Simplified environment to 3 Mailchimp variables only
+
 - **2025-10-03**: Complete site restructure
   - Created new information architecture with 4 service pages
   - Built portfolio system with category filtering
   - Added 11 real client projects with screenshots
   - Integrated SoundCloud music embeds
-  - Updated logo to blue/orange icon with text
   - Implemented dropdown navigation
   - Created contact page with service-specific forms
   - Added FAQ sections to all service pages
@@ -110,3 +116,21 @@ public/
 - Smooth animations and transitions
 - Real client data (no mock/placeholder content)
 - SoundCloud embeds for music portfolio items
+- Mailchimp-only integration for all form submissions (no separate email service)
+- Contact form messages stored as custom merge fields in Mailchimp
+
+## Environment Variables (Vercel)
+```
+MAILCHIMP_API_KEY=your_mailchimp_api_key
+MAILCHIMP_AUDIENCE_ID=your_mailchimp_audience_id
+MAILCHIMP_API_SERVER=us20
+```
+
+## Mailchimp Setup Notes
+- Newsletter signups go directly to Mailchimp audience
+- Contact form submissions:
+  - Add subscriber to audience
+  - Tag with "Contact Form" + selected service
+  - Store message in custom MESSAGE merge field (max 255 chars)
+  - Add full message + timestamp to Notes section
+- To view inquiries: Filter by "Contact Form" tag in Mailchimp dashboard
