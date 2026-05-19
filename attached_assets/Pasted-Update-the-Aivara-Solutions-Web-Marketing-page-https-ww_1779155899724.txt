@@ -1,0 +1,255 @@
+Update the Aivara Solutions Web & Marketing page:
+https://www.aivarasolutions.com/services/web-marketing
+
+Goal:
+Add a new premium section to sell two real estate / property development website packages under Web & Marketing services.
+
+Place the new section after “What We Offer” and before “Case Studies.”
+
+SECTION TITLE:
+Real Estate Website Launch Packages
+
+Intro copy:
+For property owners, developers, short-term rental operators, and real estate brands, Aivara Solutions builds the digital foundation needed to launch professionally, capture leads, and prepare for future booking, marketing, and property management systems.
+
+Create two premium pricing/package cards side by side on desktop and stacked on mobile.
+
+Use modern luxury card styling:
+- subtle gradients
+- rounded corners
+- soft shadows
+- premium spacing
+- hover animations
+- responsive layout
+- visually emphasize the “Recommended” package
+
+==================================================
+PACKAGE 1
+==================================================
+
+Title:
+Simple Starter
+
+Price:
+$1,500 – $2,500
+
+Subtitle:
+Best for properties still under development or businesses that need a clean online presence quickly.
+
+Includes:
+- Domain setup + DNS
+- Coming Soon / park page
+- Mobile-friendly branded landing page
+- 1 business email setup
+- Contact form integration
+- Social links
+- Hosting setup
+- SSL/security setup
+- Basic SEO setup
+- WhatsApp button integration
+- Existing logo/branding implementation if provided by client
+
+NOT INCLUDED:
+- Custom logo design
+- Ongoing hosting costs
+- Domain renewal fees
+- Google Workspace/email subscription costs
+- Premium integrations or paid plugins
+
+CTA button:
+Request Starter Package
+
+==================================================
+PACKAGE 2
+==================================================
+
+Title:
+Professional Build
+
+Price:
+$3,500 – $6,500
+
+Badge:
+Recommended
+
+Subtitle:
+Best for luxury properties, multi-unit developments, rental businesses, and brands preparing for future booking or property management operations.
+
+Includes:
+- Everything in Simple Starter
+- Full website structure
+- Branded logo placement, colors, and fonts
+- Lead capture form
+- Google Maps embed
+- SEO page structure
+- GA4 + Meta Pixel setup
+- Future booking integration prep
+- CRM integration prep
+- OTA integration prep
+- Branded automation system planning
+- Basic branding guidance/refinement
+
+NOT INCLUDED:
+- Full custom branding package
+- Advanced custom logo design package
+- Monthly hosting or software subscriptions
+- Booking engine subscription costs
+- Third-party CRM/software fees
+
+CTA button:
+Request Professional Build
+
+==================================================
+OPTIONAL ADD-ONS SECTION
+==================================================
+
+Create a premium subsection below the package cards titled:
+
+Optional Add-Ons
+
+Include:
+- Professional logo design
+- Full branding kit
+- Drone / video / photo content
+- Booking engine integration
+- CRM integration
+- AI chatbot
+- Owner portal
+- Multi-property management system
+- Ongoing website maintenance
+- SEO and paid ads management
+
+==================================================
+PAYMENT PLANS SECTION
+==================================================
+
+Create a visually attractive section below the packages titled:
+
+Flexible Payment Options Available
+
+Copy:
+We understand that every project and development timeline is different. Flexible payment plans and phased project agreements are available for qualified clients.
+
+Options may include:
+- Split milestone payments
+- 2–3 month development agreements
+- Ongoing monthly service retainers
+- Future expansion phases
+
+Add another short paragraph:
+
+Most projects begin with an upfront setup payment followed by milestone or monthly payments during the development process.
+
+Add another note in smaller text:
+Website ownership, premium assets, backend transfers, and final deployment may remain under Aivara Solutions management until final payment has been completed.
+
+==================================================
+THIRD-PARTY COSTS SECTION
+==================================================
+
+Add another clean section below payment plans titled:
+
+Additional Third-Party Costs May Apply
+
+Copy:
+Some services require third-party subscriptions or annual renewals billed separately unless otherwise agreed upon.
+
+Examples include:
+- Domain registration & renewals
+- Hosting plans
+- Google Workspace/business email subscriptions
+- Booking software subscriptions
+- Premium plugins/apps
+- CRM software
+- Automation platforms
+
+Add a final note:
+Monthly hosting, maintenance, marketing, and property management services are available separately.
+
+==================================================
+FAQ SECTION UPDATE
+==================================================
+
+Add these FAQ questions and answers into the existing FAQ section.
+
+Q:
+Do you build websites for real estate or rental properties?
+
+A:
+Yes. We build websites for property owners, developers, short-term rentals, boutique stays, and real estate brands.
+
+Q:
+Can you set up domain, email, and hosting?
+
+A:
+Yes. We can handle domain setup, DNS, branded business emails, hosting, SSL, and basic launch infrastructure.
+
+Q:
+Are domain and hosting fees included in the package price?
+
+A:
+No. Domain renewals, hosting plans, email subscriptions, and some third-party software costs are billed separately unless otherwise agreed upon.
+
+Q:
+Is logo design included?
+
+A:
+Existing logos and branding can be implemented into the website. Full custom logo and branding packages are available as optional add-on services.
+
+Q:
+Can the website connect to booking tools later?
+
+A:
+Yes. We can prepare the site for future booking engines, CRM systems, OTA links, owner portals, and automation workflows.
+
+Q:
+Do you offer payment plans?
+
+A:
+Yes. Flexible milestone and monthly payment structures are available for qualified projects depending on scope and timeline.
+
+Q:
+Do you offer ongoing support?
+
+A:
+Yes. Monthly maintenance, SEO, analytics, marketing, and property management support are available separately.
+
+==================================================
+DESIGN + UX REQUIREMENTS
+==================================================
+
+- Match the current Aivara Solutions branding, fonts, colors, and overall design system.
+- Make the page feel more premium, luxurious, and conversion-focused.
+- Ensure excellent mobile responsiveness.
+- Add smooth spacing and section transitions.
+- Use subtle motion/hover effects.
+- Keep accessibility and readability strong.
+- Do NOT remove existing sections like:
+  - What We Offer
+  - Case Studies
+  - FAQ
+  - Existing CTA sections
+
+==================================================
+BUTTON BEHAVIOR
+==================================================
+
+All CTA buttons should:
+- link to the existing Get a Quote / Contact page
+- include hover animations
+- track clicks through analytics events if analytics already exists on the site
+
+==================================================
+SEO
+==================================================
+
+Improve on-page SEO for:
+- real estate website development
+- vacation rental website design
+- Airbnb website setup
+- property management websites
+- Houston real estate web design
+- booking website development
+- rental property branding
+
+Add proper heading hierarchy and semantic structure.
