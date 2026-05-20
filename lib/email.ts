@@ -1,9 +1,8 @@
 import { Resend } from 'resend';
 
-// To send to Kevin@AivaraSolutions.com, verify aivarasolutions.com at https://resend.com/domains
-// and set NOTIFICATION_EMAIL=Kevin@AivaraSolutions.com + FROM_EMAIL=notifications@aivarasolutions.com
-const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'kevin.a.jackson21@gmail.com';
-const FROM_EMAIL = process.env.NOTIFICATION_FROM || 'Aivara Website <onboarding@resend.dev>';
+// aivarasolutions.com is verified in Resend, so we can send from and to the custom domain
+const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'Kevin@AivaraSolutions.com';
+const FROM_EMAIL = process.env.NOTIFICATION_FROM || 'Aivara Website <notifications@aivarasolutions.com>';
 
 function getResend() {
   const apiKey = process.env.RESEND_API_KEY;
