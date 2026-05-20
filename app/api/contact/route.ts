@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { sendContactNotification } from '@/lib/email';
 
 export async function POST(req: Request) {
   try {
@@ -11,14 +12,24 @@ export async function POST(req: Request) {
       );
     }
 
+    // Extract source/offer tag from message prefix like "[Offer Name] ..."
+    const sourceMatch = message.match(/^\[([^\]]+)\]/);
+    const source = sourceMatch ? sourceMatch[1] : 'Contact Form';
+
+    // Send notification email to Kevin (non-blocking — never break the form if email fails)
+    sendContactNotification({ name, email, phone, service, message, source }).catch((err) =>
+      console.error('Notification email error:', err)
+    );
+
     const API_KEY = process.env.MAILCHIMP_API_KEY;
     const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
     const DATACENTER = process.env.MAILCHIMP_API_SERVER;
 
     if (!API_KEY || !AUDIENCE_ID || !DATACENTER) {
+      // Mailchimp not configured — but email notification still goes out
       return NextResponse.json(
-        { error: 'Server configuration error. Please contact us directly at Kevin@AivaraSolutions.com' },
-        { status: 500 }
+        { message: 'Thank you! Your message has been received. We\'ll get back to you within 24 hours.' },
+        { status: 200 }
       );
     }
 

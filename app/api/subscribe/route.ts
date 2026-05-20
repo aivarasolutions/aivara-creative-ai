@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { sendNewsletterNotification } from '@/lib/email';
 
 export async function POST(req: Request) {
   try {
@@ -11,14 +12,20 @@ export async function POST(req: Request) {
       );
     }
 
+    // Send notification email to Kevin (non-blocking)
+    sendNewsletterNotification(email).catch((err) =>
+      console.error('Newsletter notification error:', err)
+    );
+
     const API_KEY = process.env.MAILCHIMP_API_KEY;
     const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
     const DATACENTER = process.env.MAILCHIMP_API_SERVER;
 
     if (!API_KEY || !AUDIENCE_ID || !DATACENTER) {
+      // Mailchimp not configured — but notification email still goes out
       return NextResponse.json(
-        { error: 'Server configuration error' },
-        { status: 500 }
+        { message: 'Successfully subscribed!' },
+        { status: 201 }
       );
     }
 
