@@ -1,0 +1,55 @@
+Add a new professional section near the bottom of the Aivara Solutions homepage, right above the final CTA/contact section.
+
+Section title:
+“The Tools We Use to Build, Automate & Scale Businesses”
+
+Section subtitle:
+“We combine strategy, AI, automation, development, content creation, and business systems using a modern technology stack trusted by high-performing teams.”
+
+Important wording:
+Do NOT say we are official partners with these companies. Instead use language like “Powered by industry-leading tools” or “Built with modern business technology.” Make it look professional, but do not claim official partnerships.
+
+Create the section as a clean, modern logo grid with grouped categories. Each category should have a title, short one-line description, and the logos/tool names underneath.
+
+Use these categories and tools:
+
+1. AI Strategy & Automation
+Description: AI planning, workflow automation, research, content systems, and business optimization.
+Tools: ChatGPT, Manus, Runway
+
+2. App & Portal Development
+Description: Custom portals, dashboards, client systems, databases, deployments, and code management.
+Tools: Replit, Supabase, Vercel, GitHub
+
+3. Email & Client Communication
+Description: Transactional emails, client updates, marketing flows, team notifications, and business communication.
+Tools: Resend, Mailchimp, Google Workspace, Slack
+
+4. Creative Production
+Description: Social media graphics, videos, brand assets, campaigns, short-form content, and presentations.
+Tools: Canva, CapCut, Runway
+
+5. Websites, Domains & Infrastructure
+Description: Websites, landing pages, domains, hosting, DNS, and online business infrastructure.
+Tools: Squarespace, GoDaddy, Vercel
+
+Design requirements:
+- Match the existing Aivara Solutions branding, colors, fonts, and spacing.
+- Use a dark, premium, modern AI/tech agency style if it matches the current website.
+- Use cards or grouped panels for each category.
+- Add subtle hover effects to each logo/tool item.
+- Make the section fully responsive on mobile, tablet, and desktop.
+- On desktop, show the categories in a clean grid.
+- On mobile, stack them cleanly with enough spacing.
+- Use either official logo icons if already available in the project/assets, or create clean text-based logo pills if logos are not available.
+- Do not hotlink random logos from the internet unless the project already has a proper icon/logo package.
+- If official logos are not available, use simple branded text badges with each tool name.
+- Add small disclaimer text at the bottom:
+“Logos and product names are trademarks of their respective owners. Aivara Solutions uses these tools as part of its technology stack.”
+
+Add a small CTA under the section:
+“Want this kind of system built for your business?”
+Button text: “Build My Business Stack”
+Button should scroll or link to the contact/consultation section.
+
+Make the section polished and professional so visitors understand that Aivara Solutions uses a serious stack to build websites, portals, automations, email systems, content, and business operations.

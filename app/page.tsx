@@ -191,6 +191,105 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Tech Stack Section */}
+      <Section className="bg-black">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-600/20 via-teal-500/20 to-yellow-400/20 border border-white/10 mb-6">
+              <span className="text-xs uppercase tracking-wider text-gray-200 font-semibold">
+                Powered by Industry-Leading Tools
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-6">
+              The Tools We Use to Build, Automate &amp; Scale Businesses
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              We combine strategy, AI, automation, development, content creation, and business
+              systems using a modern technology stack trusted by high-performing teams.
+            </p>
+          </div>
+
+          {(() => {
+            const categories = [
+              {
+                title: "AI Strategy & Automation",
+                description:
+                  "AI planning, workflow automation, research, content systems, and business optimization.",
+                tools: ["ChatGPT", "Manus", "Runway"],
+              },
+              {
+                title: "App & Portal Development",
+                description:
+                  "Custom portals, dashboards, client systems, databases, deployments, and code management.",
+                tools: ["Replit", "Supabase", "Vercel", "GitHub"],
+              },
+              {
+                title: "Email & Client Communication",
+                description:
+                  "Transactional emails, client updates, marketing flows, team notifications, and business communication.",
+                tools: ["Resend", "Mailchimp", "Google Workspace", "Slack"],
+              },
+              {
+                title: "Creative Production",
+                description:
+                  "Social media graphics, videos, brand assets, campaigns, short-form content, and presentations.",
+                tools: ["Canva", "CapCut", "Runway"],
+              },
+              {
+                title: "Websites, Domains & Infrastructure",
+                description:
+                  "Websites, landing pages, domains, hosting, DNS, and online business infrastructure.",
+                tools: ["Squarespace", "GoDaddy", "Vercel"],
+              },
+            ];
+
+            return (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {categories.map((cat, idx) => (
+                  <div key={idx} className="group relative h-full">
+                    <div className="absolute -inset-0.5 bg-gradient-to-br from-pink-600/30 via-teal-500/30 to-yellow-400/30 rounded-2xl blur opacity-0 group-hover:opacity-60 transition duration-500"></div>
+                    <Card className="relative h-full bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 rounded-2xl transition-all duration-500 group-hover:border-white/20 group-hover:-translate-y-1">
+                      <CardContent className="p-7 flex flex-col h-full">
+                        <h3 className="text-xl font-bold mb-2 text-white">{cat.title}</h3>
+                        <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+                          {cat.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mt-auto">
+                          {cat.tools.map((tool, i) => (
+                            <span
+                              key={i}
+                              className="inline-flex items-center px-3.5 py-1.5 rounded-full text-sm font-medium text-gray-200 bg-black/60 border border-white/10 hover:border-teal-500/50 hover:bg-black/80 hover:text-white transition-all duration-300 cursor-default"
+                            >
+                              {tool}
+                            </span>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
+
+          <p className="text-xs text-gray-500 italic text-center mt-10 max-w-3xl mx-auto">
+            Logos and product names are trademarks of their respective owners. Aivara Solutions
+            uses these tools as part of its technology stack.
+          </p>
+
+          <div className="mt-12 text-center">
+            <p className="text-lg text-gray-300 mb-5">
+              Want this kind of system built for your business?
+            </p>
+            <Link href="/contact">
+              <Button className="px-8 py-4 text-base font-semibold transition-transform hover:scale-[1.03]">
+                Build My Business Stack
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
       {/* CTA Strip */}
       <Section className="bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 text-black text-center">
         <h2 className="text-4xl md:text-6xl font-bold mb-6">One team. Many ways to win.</h2>
