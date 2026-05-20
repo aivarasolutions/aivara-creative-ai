@@ -89,7 +89,7 @@ export default function HomePage() {
         "Staff usage guide",
       ],
       cta: "Start With AI Automation",
-      href: "/contact?offer=ai-automation",
+      href: "/ai-automation-small-business",
       recommended: false,
     },
     {
@@ -105,7 +105,7 @@ export default function HomePage() {
         "Admin dashboard",
       ],
       cta: "Build My Portal",
-      href: "/contact?offer=portal",
+      href: "/custom-client-portals",
       recommended: true,
     },
     {
@@ -121,7 +121,7 @@ export default function HomePage() {
         "Reporting dashboard",
       ],
       cta: "Launch My Lead System",
-      href: "/contact?offer=google-ads",
+      href: "/google-ads-lead-system",
       recommended: false,
     },
   ];
