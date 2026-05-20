@@ -10,10 +10,11 @@ export function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const serviceItems = [
-    { label: "AI & Education", href: "/services/ai-education" },
-    { label: "Web & Marketing", href: "/services/web-marketing" },
-    { label: "Logistics", href: "/services/logistics" },
-    { label: "Aivara Music", href: "/services/music" },
+    { label: "AI Automation", href: "/#offers" },
+    { label: "Portals & Dashboards", href: "/#offers" },
+    { label: "Lead Generation", href: "/#offers" },
+    { label: "AI Training", href: "/contact" },
+    { label: "Creative Media", href: "/contact" },
   ];
 
   return (

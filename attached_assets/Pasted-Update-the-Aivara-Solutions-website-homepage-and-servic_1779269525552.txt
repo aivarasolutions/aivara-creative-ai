@@ -1,0 +1,200 @@
+Update the Aivara Solutions website homepage and services structure to make it more conversion-focused for Google Ads and high-ticket service sales.
+
+Current website positioning is too broad with:
+AI & Education • Web & Marketing • Logistics • Aivara Music
+
+Update the website so Aivara Solutions is positioned as a modern AI-powered business systems agency that builds websites, portals, automations, AI workflows, lead generation systems, and creative content engines.
+
+IMPORTANT:
+Do not remove the existing brand identity, logo, colors, or overall premium tech/creative feel. Improve the structure, copy, and service positioning while keeping the site polished, modern, responsive, and professional.
+
+New primary positioning:
+
+Hero headline:
+“AI-Powered Systems for Modern Businesses”
+
+Hero subheadline:
+“Aivara Solutions builds websites, portals, automations, AI workflows, marketing systems, and creative content engines for businesses ready to operate smarter.”
+
+Hero CTA buttons:
+Primary: “Book a Free Strategy Call”
+Secondary: “Explore Our Services”
+
+Add a small trust/audience line under the hero:
+“Built for service businesses, property managers, logistics teams, travel brands, creators, and growing companies.”
+
+Replace the main services section with this title:
+“What We Build”
+
+Create 6 service cards:
+
+1. AI Automation Systems
+Description:
+“Automate customer support, lead follow-up, admin tasks, research, reporting, and repetitive workflows using practical AI systems.”
+
+2. Websites, Portals & Dashboards
+Description:
+“Modern websites, secure client portals, owner dashboards, internal tools, and reporting systems built around your business operations.”
+
+3. Lead Generation & Marketing Automation
+Description:
+“Google Ads, landing pages, CRM capture, email follow-up, tracking, analytics, and reporting systems designed to turn traffic into leads.”
+
+4. AI Training & Business Onboarding
+Description:
+“Hands-on AI training, workflow planning, prompt systems, staff onboarding, and custom playbooks for business teams.”
+
+5. Creative Content & Brand Media
+Description:
+“Social media graphics, short-form videos, brand assets, presentations, campaign content, and custom business music.”
+
+6. Industry-Specific Business Systems
+Description:
+“Custom systems for property management, logistics, travel, rentals, local service businesses, creators, and agencies.”
+
+Each service card should have a small CTA link/button:
+“Learn More”
+
+Add a new section after the services called:
+“High-Impact Systems You Can Launch First”
+
+Section subtitle:
+“Start with the systems that save time, create better client experiences, and generate measurable business value.”
+
+Create 3 featured offer cards:
+
+Offer 1:
+Title: “AI Automation Starter System”
+Description:
+“For businesses that want to save time, respond faster, and reduce manual work.”
+Bullets:
+- AI chatbot or assistant setup
+- Lead capture workflow
+- Email follow-up automation
+- Internal task automation
+- Staff usage guide
+CTA: “Start With AI Automation”
+
+Offer 2:
+Title: “Client Portal Buildout”
+Description:
+“For businesses that need a secure place for clients, owners, or teams to track work.”
+Bullets:
+- Login system
+- Client dashboard
+- File uploads
+- Project or request tracking
+- Email notifications
+- Admin dashboard
+CTA: “Build My Portal”
+
+Offer 3:
+Title: “Google Ads Lead System”
+Description:
+“For businesses that need more leads, better tracking, and automated follow-up.”
+Bullets:
+- Google Ads setup
+- Conversion-focused landing page
+- Lead form and CRM capture
+- Conversion tracking
+- Follow-up automation
+- Reporting dashboard
+CTA: “Launch My Lead System”
+
+Add a new industries section:
+Title:
+“Built for Businesses That Need Real Systems”
+
+Subtitle:
+“We design practical technology and automation around the way your business actually operates.”
+
+Create clean badges or cards for these industries:
+- Property Management
+- Logistics & Transportation
+- Travel, Tours & Rentals
+- Local Service Businesses
+- Creators & Personal Brands
+- Consultants & Agencies
+
+Update the existing portfolio section so the projects align with the new service positioning. Keep existing portfolio examples if already present, but update labels/copy where needed.
+
+Suggested portfolio items:
+- AI Customer Support Bot
+- Marketing Automation Platform
+- Route Optimization Dashboard
+- SaaS Onboarding Automation
+- Client Portal / Owner Dashboard
+- Brand Identity + Website Buildout
+- Business Theme Song / Brand Sound Identity
+
+Add a new tools section near the bottom of the homepage, right above the final CTA/contact section.
+
+Section title:
+“The Tools We Use to Build, Automate & Scale Businesses”
+
+Section subtitle:
+“Powered by industry-leading platforms for AI, development, automation, communication, creative production, and business infrastructure.”
+
+Important:
+Do NOT say Aivara Solutions is officially partnered with these companies. Use safe language like “tools we use,” “powered by,” “built with,” or “technology stack.” Do not claim official partnerships.
+
+Group the tools like this:
+
+1. AI Strategy & Automation
+Tools: ChatGPT, Manus, Runway
+
+2. App & Portal Development
+Tools: Replit, Supabase, Vercel, GitHub
+
+3. Email & Client Communication
+Tools: Resend, Mailchimp, Google Workspace, Slack
+
+4. Creative Production
+Tools: Canva, CapCut, Runway
+
+5. Websites, Domains & Infrastructure
+Tools: Squarespace, GoDaddy, Vercel
+
+Design the tools section as a clean logo grid or text badge grid.
+Use official logo assets only if they already exist in the project or if there is a safe existing icon package. Do not hotlink random images from the internet. If logos are not available, use polished text badges/pills with each tool name.
+
+Add a small disclaimer under the tools section:
+“Logos and product names are trademarks of their respective owners. Aivara Solutions uses these tools as part of its technology stack.”
+
+Update the final CTA section:
+
+Headline:
+“Ready to Build a Smarter Business System?”
+
+Text:
+“Tell us what you’re trying to build, automate, or improve. We’ll help map the right system and tools for your business.”
+
+Primary button:
+“Book a Free Strategy Call”
+
+Secondary button:
+“Get a Quote”
+
+Navigation updates:
+Update the nav/services links so they reflect the new service categories:
+- AI Automation
+- Portals & Dashboards
+- Lead Generation
+- AI Training
+- Creative Media
+- Contact
+
+Design requirements:
+- Keep the current Aivara Solutions visual identity.
+- Make the homepage look like a premium AI/tech agency.
+- Use modern cards, spacing, icons, subtle gradients, and professional section separation.
+- Make the page fully responsive on mobile, tablet, and desktop.
+- Make CTA buttons clear and repeated throughout the page.
+- Ensure the copy is clean, professional, and not too wordy.
+- Avoid making false claims about official partnerships.
+- Avoid using placeholder lorem ipsum.
+- Keep SEO-friendly headings.
+- Make sure all buttons either scroll to the contact section or link to the appropriate service/contact route if those routes exist.
+- If separate service pages do not exist yet, keep the buttons anchored to homepage sections for now.
+
+After completing the update, give me a summary of what files were changed and what sections were added.
