@@ -136,10 +136,10 @@ export default function HomePage() {
     { icon: <Briefcase className="h-5 w-5" />, label: "Consultants & Agencies" },
   ];
 
-  // Brand logos: monochrome white SVGs.
-  // CDN logos via Simple Icons; trademark-restricted brands self-hosted in /public/images/logos/.
-  // logo=null means no logo available — pill renders text-only as fallback.
+  // Brand logos: colored SVGs via Simple Icons CDN; trademark-restricted brands self-hosted.
+  // si(slug) = brand color; siWhite(slug) = forced white (for brands whose default color is too dark on black bg).
   const si = (slug: string) => `https://cdn.simpleicons.org/${slug}`;
+  const siWhite = (slug: string) => `https://cdn.simpleicons.org/${slug}/ffffff`;
   const toolCategories: {
     title: string;
     tools: { name: string; logo: string | null }[];
@@ -157,14 +157,14 @@ export default function HomePage() {
       tools: [
         { name: "Replit", logo: si("replit") },
         { name: "Supabase", logo: si("supabase") },
-        { name: "Vercel", logo: si("vercel") },
+        { name: "Vercel", logo: siWhite("vercel") },
         { name: "GitHub", logo: si("github") },
       ],
     },
     {
       title: "Email & Client Communication",
       tools: [
-        { name: "Resend", logo: si("resend") },
+        { name: "Resend", logo: siWhite("resend") },
         { name: "Mailchimp", logo: si("mailchimp") },
         { name: "Google Workspace", logo: si("google") },
         { name: "Slack", logo: "/images/logos/slack.svg" },
@@ -179,11 +179,20 @@ export default function HomePage() {
       ],
     },
     {
+      title: "Payments & Financial Operations",
+      tools: [
+        { name: "Stripe", logo: si("stripe") },
+        { name: "PayPal", logo: si("paypal") },
+        { name: "QuickBooks", logo: si("quickbooks") },
+        { name: "Square", logo: siWhite("square") },
+      ],
+    },
+    {
       title: "Websites, Domains & Infrastructure",
       tools: [
-        { name: "Squarespace", logo: si("squarespace") },
+        { name: "Squarespace", logo: siWhite("squarespace") },
         { name: "GoDaddy", logo: si("godaddy") },
-        { name: "Vercel", logo: si("vercel") },
+        { name: "Vercel", logo: siWhite("vercel") },
       ],
     },
   ];
