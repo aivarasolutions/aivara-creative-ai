@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "BaSkd0_Dg-LshAWtjLo15"
+uri = "file://public/images/portfolio/site-aivara-music.png"
+type = "image"
+title = "aivara ai music studio"

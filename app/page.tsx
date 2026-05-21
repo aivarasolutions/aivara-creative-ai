@@ -475,7 +475,7 @@ export default function HomePage() {
                   "Full lead generation setup with landing pages, conversion tracking, Google Tag Manager, GA4 events, automated follow-up, and reporting.",
                 icon: <Target className="h-10 w-10" />,
                 gradient: "from-yellow-400 via-orange-500 to-pink-500",
-                image: null,
+                image: "/images/portfolio/site-aivara.jpg",
               },
               {
                 title: "RichAF.Global Guidebook Funnel",
@@ -515,7 +515,7 @@ export default function HomePage() {
                   "Custom business theme songs, jingles, intros, and audio branding for campaigns, reels, events, and brand storytelling.",
                 icon: <Music className="h-10 w-10" />,
                 gradient: "from-orange-500 via-pink-500 to-purple-500",
-                image: null,
+                image: "/images/portfolio/site-aivara-music.png",
               },
             ].map((item, index) => (
               <div key={index} className="group relative h-full">
@@ -523,14 +523,11 @@ export default function HomePage() {
                 <Card className="relative h-full bg-black/70 border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-white/20 group-hover:-translate-y-1">
                   <div className={`relative aspect-video overflow-hidden bg-gradient-to-br ${item.gradient}`}>
                     {item.image ? (
-                      <>
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
-                        />
-                        <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-50 mix-blend-overlay`}></div>
-                      </>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="absolute inset-0 opacity-20" style={{
