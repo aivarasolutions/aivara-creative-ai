@@ -435,8 +435,8 @@ export default function HomePage() {
                   "Client dashboard for project requests, service tracking, budgets, approvals, file uploads, and automated email notifications.",
                 icon: <LayoutDashboard className="h-10 w-10" />,
                 gradient: "from-pink-500 via-purple-500 to-blue-500",
-                image: null,
-                url: "/contact",
+                image: "/images/portfolio/site-aivara-portal.png",
+                url: "https://portal.aivarasolutions.com",
               },
               {
                 title: "FreightSync TMS Owner Portal",
@@ -469,7 +469,7 @@ export default function HomePage() {
                 icon: <Waves className="h-10 w-10" />,
                 gradient: "from-cyan-400 via-blue-500 to-purple-500",
                 image: "/images/portfolio/site-wavesandy.png",
-                url: "https://booking.wavesandy.com",
+                url: "https://book.wavesandy.com",
               },
               {
                 title: "Google Ads Lead Generation System",
