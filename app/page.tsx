@@ -445,7 +445,7 @@ export default function HomePage() {
                   "Transportation dashboard for vehicle owners to track loads, revenue, expenses, weekly settlements, reporting, and future GPS integrations.",
                 icon: <Truck className="h-10 w-10" />,
                 gradient: "from-blue-500 via-teal-500 to-green-500",
-                image: "/images/portfolio/log-freightsync-lastmile.png",
+                image: "/images/portfolio/site-freightsync.png",
               },
               {
                 title: "IPM Owner & Property Portal",
@@ -465,7 +465,7 @@ export default function HomePage() {
                   "Event and rental marketing system with booking pages, campaign landing pages, analytics tracking, Meta Pixel, and conversion-focused content.",
                 icon: <Waves className="h-10 w-10" />,
                 gradient: "from-cyan-400 via-blue-500 to-purple-500",
-                image: null,
+                image: "/images/portfolio/site-wavesandy.png",
               },
               {
                 title: "Google Ads Lead Generation System",
@@ -485,7 +485,7 @@ export default function HomePage() {
                   "Digital travel guide system with branded landing pages, paid guidebook funnel, email capture, content strategy, and destination-based monetization.",
                 icon: <Plane className="h-10 w-10" />,
                 gradient: "from-purple-500 via-pink-500 to-orange-400",
-                image: "/images/portfolio/web-richaf-store.png",
+                image: "/images/portfolio/site-richaf.png",
               },
               {
                 title: "Hidden Jade Experiences Brand Assets",
@@ -495,7 +495,7 @@ export default function HomePage() {
                   "Tourism-focused creative buildout including brochure design, service presentation, visual branding, and guest-facing marketing materials.",
                 icon: <Compass className="h-10 w-10" />,
                 gradient: "from-green-500 via-teal-500 to-cyan-500",
-                image: null,
+                image: "/images/portfolio/site-hiddenjade.png",
               },
               {
                 title: "AI Customer Support Bot",
