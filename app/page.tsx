@@ -266,13 +266,13 @@ export default function HomePage() {
       <Section id="services" className="bg-black">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-10">
               <Image
                 src="/images/aivara-logo.png"
                 alt="Aivara Solutions"
-                width={240}
-                height={80}
-                className="h-16 md:h-20 w-auto"
+                width={480}
+                height={160}
+                className="h-28 md:h-36 lg:h-40 w-auto"
                 priority={false}
               />
             </div>
