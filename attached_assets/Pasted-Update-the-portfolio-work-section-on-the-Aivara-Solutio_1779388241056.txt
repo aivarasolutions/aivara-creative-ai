@@ -1,0 +1,99 @@
+Update the portfolio/work section on the Aivara Solutions homepage.
+
+The current portfolio cards are too generic and no longer fully match the new Aivara positioning. Replace the current cards with stronger examples of real Aivara-built systems, owned brand projects, internal builds, and client-facing work.
+
+Rename the section:
+
+“Systems, Brands & Builds Powered by Aivara”
+
+Section subtitle:
+
+“From client portals and AI automations to booking systems, lead funnels, dashboards, and creative campaigns — these are the types of systems we build to help businesses operate and grow smarter.”
+
+Add a small note under the subtitle:
+
+“Some projects shown are internal Aivara-built systems, owned brands, or client-facing builds currently in development.”
+
+Update the portfolio cards to use these 6 primary homepage items:
+
+1. Aivara Client Portal
+Category: Portal / AI Automation
+Badge: Internal Build
+Description:
+“Client dashboard for project requests, service tracking, budgets, approvals, file uploads, and automated email notifications.”
+
+2. FreightSync TMS Owner Portal
+Category: Logistics / Dashboard
+Badge: Logistics System
+Description:
+“Transportation dashboard for vehicle owners to track loads, revenue, expenses, weekly settlements, reporting, and future GPS integrations.”
+
+3. IPM Owner & Property Portal
+Category: Property Management / Portal
+Badge: Property Management
+Description:
+“Owner-facing property management portal for reservations, expenses, occupancy, payouts, reports, and property performance tracking.”
+
+4. Wave Sandy Booking & Campaign System
+Category: Travel / Rentals / Marketing
+Badge: Booking + Marketing
+Description:
+“Event and rental marketing system with booking pages, campaign landing pages, analytics tracking, Meta Pixel, and conversion-focused content.”
+
+5. Google Ads Lead Generation System
+Category: Marketing / Lead Gen
+Badge: Lead Generation
+Description:
+“Full lead generation setup with landing pages, conversion tracking, Google Tag Manager, GA4 events, automated follow-up, and reporting.”
+
+6. RichAF.Global Guidebook Funnel
+Category: Travel / Digital Product
+Badge: Travel Tech
+Description:
+“Digital travel guide system with branded landing pages, paid guidebook funnel, email capture, content strategy, and destination-based monetization.”
+
+Optional additional cards if there is space or if a View More layout exists:
+
+7. Hidden Jade Experiences Brand Assets
+Category: Creative / Tourism
+Badge: Creative Production
+Description:
+“Tourism-focused creative buildout including brochure design, service presentation, visual branding, and guest-facing marketing materials.”
+
+8. AI Customer Support Bot
+Category: AI / Automation
+Badge: AI Automation
+Description:
+“24/7 AI assistant designed to answer FAQs, capture leads, route requests, and support customers across travel, rentals, and service businesses.”
+
+9. Brand Sound Identity
+Category: Creative / Music
+Badge: Creative Media
+Description:
+“Custom business theme songs, jingles, intros, and audio branding for campaigns, reels, events, and brand storytelling.”
+
+Design requirements:
+- Match the new Aivara Solutions brand direction and colors.
+- Use the Aivara gradient palette: magenta, purple, blue, teal, green, orange, and yellow.
+- Replace old screenshots/images where possible with clean branded mockups, dashboard previews, website previews, or abstract system visuals.
+- Make each card feel premium and modern.
+- Use dark cards with subtle gradient borders/glow if that matches the current site.
+- Add hover effects.
+- Make all cards responsive on desktop, tablet, and mobile.
+- Avoid clutter.
+- Keep the card descriptions short and readable.
+- Do not claim official partnerships with any third-party tools.
+- Do not overstate that in-development portals are fully launched. Use badges like “Internal Build,” “In Development,” or “System Build” where appropriate.
+- If images are missing for any project, create polished placeholder cards using Aivara gradients, icons, and abstract dashboard visuals instead of random stock photos.
+
+Add a CTA under the portfolio cards:
+
+Headline:
+“Want a system like this built for your business?”
+
+Button:
+“Start My Build”
+
+Button should link or scroll to the contact/strategy call section.
+
+After updating, summarize which portfolio cards were replaced, which new cards were added, and where the images/assets are being pulled from.

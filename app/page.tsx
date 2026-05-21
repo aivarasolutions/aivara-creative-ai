@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
@@ -8,7 +7,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
-import { PortfolioCard } from "@/components/ui/portfolio-card";
 import { ToolPill } from "@/components/ui/ToolPill";
 import { motion } from "framer-motion";
 import {
@@ -27,12 +25,12 @@ import {
   Wrench,
   User,
   Briefcase,
+  Waves,
+  Music,
+  Compass,
 } from "lucide-react";
-import portfolioData from "@/public/data/portfolio.json";
 
 export default function HomePage() {
-  const [portfolioFilter, setPortfolioFilter] = useState("All");
-
   const services = [
     {
       icon: <Bot className="h-7 w-7" />,
@@ -197,21 +195,6 @@ export default function HomePage() {
       ],
     },
   ];
-
-  // Select 6 items for homepage portfolio section
-  const featuredPortfolio = [
-    portfolioData[0], // AI Customer Support Bot
-    portfolioData[1], // Marketing Automation Platform (Apollo)
-    portfolioData[6], // Route Optimization Dashboard
-    portfolioData[2], // SaaS Onboarding Automation
-    portfolioData[9], // Business Theme Song
-    portfolioData[4], // Startup Brand Identity
-  ];
-
-  const filteredPortfolio =
-    portfolioFilter === "All"
-      ? featuredPortfolio
-      : featuredPortfolio.filter((item) => item.category === portfolioFilter);
 
   return (
     <div className="bg-black text-white min-h-screen w-full">
@@ -424,92 +407,178 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Portfolio */}
+      {/* Systems, Brands & Builds Powered by Aivara */}
       <Section className="bg-gradient-to-r from-pink-600/10 via-teal-500/10 to-yellow-400/10">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 gradient-text">
-          Portfolio
-        </h2>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 gradient-text">
+              Systems, Brands & Builds Powered by Aivara
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-3">
+              From client portals and AI automations to booking systems, lead funnels,
+              dashboards, and creative campaigns — these are the types of systems we build
+              to help businesses operate and grow smarter.
+            </p>
+            <p className="text-sm text-gray-500 italic max-w-3xl mx-auto">
+              Some projects shown are internal Aivara-built systems, owned brands, or
+              client-facing builds currently in development.
+            </p>
+          </div>
 
-        {/* Filter Bar */}
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
-          {["All", "AI", "Web", "Logistics", "Music"].map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setPortfolioFilter(filter)}
-              className={`px-6 py-2 rounded-full transition ${
-                portfolioFilter === filter
-                  ? "bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 text-black font-semibold"
-                  : "bg-white/10 text-gray-300 hover:bg-white/20"
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {filteredPortfolio.map((item) => {
-            const hasEmbed = !!(item.media as any)?.embedUrl;
-
-            if (hasEmbed) {
-              return (
-                <div
-                  key={item.id}
-                  className="bg-black/70 border border-white/10 rounded-lg overflow-hidden hover:border-white/20 transition-all"
-                >
-                  <div className="aspect-video bg-black overflow-hidden">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      scrolling="no"
-                      frameBorder="no"
-                      allow="autoplay"
-                      src={(item.media as any).embedUrl}
-                      className="w-full h-full"
-                    ></iframe>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                title: "Aivara Client Portal",
+                category: "Portal / AI Automation",
+                badge: "Internal Build",
+                description:
+                  "Client dashboard for project requests, service tracking, budgets, approvals, file uploads, and automated email notifications.",
+                icon: <LayoutDashboard className="h-10 w-10" />,
+                gradient: "from-pink-500 via-purple-500 to-blue-500",
+                image: null,
+              },
+              {
+                title: "FreightSync TMS Owner Portal",
+                category: "Logistics / Dashboard",
+                badge: "Logistics System",
+                description:
+                  "Transportation dashboard for vehicle owners to track loads, revenue, expenses, weekly settlements, reporting, and future GPS integrations.",
+                icon: <Truck className="h-10 w-10" />,
+                gradient: "from-blue-500 via-teal-500 to-green-500",
+                image: "/images/portfolio/log-freightsync-lastmile.png",
+              },
+              {
+                title: "IPM Owner & Property Portal",
+                category: "Property Management / Portal",
+                badge: "Property Management",
+                description:
+                  "Owner-facing property management portal for reservations, expenses, occupancy, payouts, reports, and property performance tracking.",
+                icon: <Building2 className="h-10 w-10" />,
+                gradient: "from-teal-500 via-green-500 to-yellow-400",
+                image: "/images/portfolio/ai-ipm-apollo.png",
+              },
+              {
+                title: "Wave Sandy Booking & Campaign System",
+                category: "Travel / Rentals / Marketing",
+                badge: "Booking + Marketing",
+                description:
+                  "Event and rental marketing system with booking pages, campaign landing pages, analytics tracking, Meta Pixel, and conversion-focused content.",
+                icon: <Waves className="h-10 w-10" />,
+                gradient: "from-cyan-400 via-blue-500 to-purple-500",
+                image: null,
+              },
+              {
+                title: "Google Ads Lead Generation System",
+                category: "Marketing / Lead Gen",
+                badge: "Lead Generation",
+                description:
+                  "Full lead generation setup with landing pages, conversion tracking, Google Tag Manager, GA4 events, automated follow-up, and reporting.",
+                icon: <Target className="h-10 w-10" />,
+                gradient: "from-yellow-400 via-orange-500 to-pink-500",
+                image: null,
+              },
+              {
+                title: "RichAF.Global Guidebook Funnel",
+                category: "Travel / Digital Product",
+                badge: "Travel Tech",
+                description:
+                  "Digital travel guide system with branded landing pages, paid guidebook funnel, email capture, content strategy, and destination-based monetization.",
+                icon: <Plane className="h-10 w-10" />,
+                gradient: "from-purple-500 via-pink-500 to-orange-400",
+                image: "/images/portfolio/web-richaf-store.png",
+              },
+              {
+                title: "Hidden Jade Experiences Brand Assets",
+                category: "Creative / Tourism",
+                badge: "Creative Production",
+                description:
+                  "Tourism-focused creative buildout including brochure design, service presentation, visual branding, and guest-facing marketing materials.",
+                icon: <Compass className="h-10 w-10" />,
+                gradient: "from-green-500 via-teal-500 to-cyan-500",
+                image: null,
+              },
+              {
+                title: "AI Customer Support Bot",
+                category: "AI / Automation",
+                badge: "AI Automation",
+                description:
+                  "24/7 AI assistant designed to answer FAQs, capture leads, route requests, and support customers across travel, rentals, and service businesses.",
+                icon: <Bot className="h-10 w-10" />,
+                gradient: "from-pink-500 via-purple-500 to-teal-500",
+                image: "/images/portfolio/ai-richaf-bot.png",
+              },
+              {
+                title: "Brand Sound Identity",
+                category: "Creative / Music",
+                badge: "Creative Media",
+                description:
+                  "Custom business theme songs, jingles, intros, and audio branding for campaigns, reels, events, and brand storytelling.",
+                icon: <Music className="h-10 w-10" />,
+                gradient: "from-orange-500 via-pink-500 to-purple-500",
+                image: null,
+              },
+            ].map((item, index) => (
+              <div key={index} className="group relative h-full">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-pink-600/40 via-teal-500/40 to-yellow-400/40 rounded-2xl blur opacity-0 group-hover:opacity-70 transition duration-500"></div>
+                <Card className="relative h-full bg-black/70 border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-white/20 group-hover:-translate-y-1">
+                  <div className={`relative aspect-video overflow-hidden bg-gradient-to-br ${item.gradient}`}>
+                    {item.image ? (
+                      <>
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                        />
+                        <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-50 mix-blend-overlay`}></div>
+                      </>
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="absolute inset-0 opacity-20" style={{
+                          backgroundImage: "radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.3) 0%, transparent 50%)",
+                        }}></div>
+                        <div className="relative text-white/90 drop-shadow-lg">
+                          {item.icon}
+                        </div>
+                      </div>
+                    )}
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur border border-white/20 text-[10px] uppercase tracking-wider font-semibold text-white">
+                      {item.badge}
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <div className="text-xs text-teal-400 mb-2">{item.category}</div>
-                    <h3 className="text-xl font-semibold mb-2 text-gray-200">{item.title}</h3>
-                    <p className="text-sm text-gray-400 mb-4">{item.summary}</p>
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-teal-400 hover:text-teal-300 text-sm"
-                    >
-                      Listen on SoundCloud →
-                    </a>
-                  </div>
-                </div>
-              );
-            }
+                  <CardContent className="p-6">
+                    <div className="text-xs text-teal-400 mb-2 uppercase tracking-wider font-semibold">
+                      {item.category}
+                    </div>
+                    <h3 className="text-lg font-bold mb-2 text-white leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
 
-            return (
-              <a
-                key={item.id}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <PortfolioCard
-                  title={item.title}
-                  category={item.category}
-                  image={item.image}
-                  description={item.summary}
-                />
-              </a>
-            );
-          })}
-        </div>
-
-        <div className="text-center">
-          <Link href="/portfolio">
-            <Button variant="outline" className="px-8 py-4">
-              View All Work
-            </Button>
-          </Link>
+          {/* CTA */}
+          <div className="text-center max-w-2xl mx-auto pt-8 border-t border-white/10">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">
+              Want a system like this built for your business?
+            </h3>
+            <Link href="/contact">
+              <Button className="bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 text-black font-bold px-10 py-6 text-lg hover:opacity-90 transition">
+                Start My Build
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <div className="mt-8">
+              <Link href="/portfolio" className="text-sm text-gray-400 hover:text-teal-300 transition inline-flex items-center gap-1">
+                View all work
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </Section>
 
