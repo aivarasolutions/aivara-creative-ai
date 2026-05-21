@@ -491,7 +491,7 @@ export default function HomePage() {
                 icon: <Plane className="h-10 w-10" />,
                 gradient: "from-purple-500 via-pink-500 to-orange-400",
                 image: "/images/portfolio/site-richaf.png",
-                url: "https://richaf.global",
+                url: "https://guides.richaf.global",
               },
               {
                 title: "Hidden Jade Experiences Brand Assets",
