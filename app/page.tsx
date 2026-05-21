@@ -469,7 +469,7 @@ export default function HomePage() {
                 icon: <Waves className="h-10 w-10" />,
                 gradient: "from-cyan-400 via-blue-500 to-purple-500",
                 image: "/images/portfolio/site-wavesandy.png",
-                url: "https://wavesandy.com",
+                url: "https://booking.wavesandy.com",
               },
               {
                 title: "Google Ads Lead Generation System",
