@@ -840,6 +840,9 @@ video {
 .gap-8 {
   gap: 2rem;
 }
+.gap-2\.5 {
+  gap: 0.625rem;
+}
 .gap-x-8 {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
@@ -879,6 +882,9 @@ video {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 .rounded-2xl {
   border-radius: 1rem;
@@ -1535,6 +1541,11 @@ body {
 }
 .hover\:opacity-90:hover {
   opacity: 0.9;
+}
+.hover\:shadow-\[0_0_12px_rgba\(20\2c 184\2c 166\2c 0\.25\)\]:hover {
+  --tw-shadow: 0 0 12px rgba(20,184,166,0.25);
+  --tw-shadow-colored: 0 0 12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .focus\:border-teal-500\/50:focus {
   border-color: rgb(20 184 166 / 0.5);

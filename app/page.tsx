@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
 import { PortfolioCard } from "@/components/ui/portfolio-card";
+import { ToolPill } from "@/components/ui/ToolPill";
 import { motion } from "framer-motion";
 import {
   Bot,
@@ -135,26 +136,55 @@ export default function HomePage() {
     { icon: <Briefcase className="h-5 w-5" />, label: "Consultants & Agencies" },
   ];
 
-  const toolCategories = [
+  // Brand logos: monochrome white SVGs.
+  // CDN logos via Simple Icons; trademark-restricted brands self-hosted in /public/images/logos/.
+  // logo=null means no logo available — pill renders text-only as fallback.
+  const si = (slug: string) => `https://cdn.simpleicons.org/${slug}/ffffff`;
+  const toolCategories: {
+    title: string;
+    tools: { name: string; logo: string | null }[];
+  }[] = [
     {
       title: "AI Strategy & Automation",
-      tools: ["ChatGPT", "Manus", "Runway"],
+      tools: [
+        { name: "ChatGPT", logo: "/images/logos/chatgpt.svg" },
+        { name: "Manus", logo: "/images/logos/manus.svg" },
+        { name: "Runway", logo: "/images/logos/runway.svg" },
+      ],
     },
     {
       title: "App & Portal Development",
-      tools: ["Replit", "Supabase", "Vercel", "GitHub"],
+      tools: [
+        { name: "Replit", logo: si("replit") },
+        { name: "Supabase", logo: si("supabase") },
+        { name: "Vercel", logo: si("vercel") },
+        { name: "GitHub", logo: si("github") },
+      ],
     },
     {
       title: "Email & Client Communication",
-      tools: ["Resend", "Mailchimp", "Google Workspace", "Slack"],
+      tools: [
+        { name: "Resend", logo: si("resend") },
+        { name: "Mailchimp", logo: si("mailchimp") },
+        { name: "Google Workspace", logo: si("google") },
+        { name: "Slack", logo: "/images/logos/slack.svg" },
+      ],
     },
     {
       title: "Creative Production",
-      tools: ["Canva", "CapCut", "Runway"],
+      tools: [
+        { name: "Canva", logo: "/images/logos/canva.svg" },
+        { name: "CapCut", logo: "/images/logos/capcut.svg" },
+        { name: "Runway", logo: "/images/logos/runway.svg" },
+      ],
     },
     {
       title: "Websites, Domains & Infrastructure",
-      tools: ["Squarespace", "GoDaddy", "Vercel"],
+      tools: [
+        { name: "Squarespace", logo: si("squarespace") },
+        { name: "GoDaddy", logo: si("godaddy") },
+        { name: "Vercel", logo: si("vercel") },
+      ],
     },
   ];
 
@@ -477,14 +507,9 @@ export default function HomePage() {
                 <Card className="relative h-full bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 rounded-2xl transition-all duration-500 group-hover:border-white/20 group-hover:-translate-y-1">
                   <CardContent className="p-7 flex flex-col h-full">
                     <h3 className="text-xl font-bold mb-5 text-white">{cat.title}</h3>
-                    <div className="flex flex-wrap gap-2 mt-auto">
+                    <div className="flex flex-wrap gap-2.5 mt-auto">
                       {cat.tools.map((tool, i) => (
-                        <span
-                          key={i}
-                          className="inline-flex items-center px-3.5 py-1.5 rounded-full text-sm font-medium text-gray-200 bg-black/60 border border-white/10 hover:border-teal-500/50 hover:bg-black/80 hover:text-white transition-all duration-300 cursor-default"
-                        >
-                          {tool}
-                        </span>
+                        <ToolPill key={`${tool.name}-${i}`} name={tool.name} logo={tool.logo} />
                       ))}
                     </div>
                   </CardContent>
@@ -493,9 +518,10 @@ export default function HomePage() {
             ))}
           </div>
 
-          <p className="text-xs text-gray-500 italic text-center mt-10 max-w-3xl mx-auto">
-            Logos and product names are trademarks of their respective owners. Aivara Solutions
-            uses these tools as part of its technology stack.
+          <p className="text-xs text-gray-500 italic text-center mt-10 max-w-3xl mx-auto leading-relaxed">
+            Logos shown represent tools and platforms we use in our workflow. Aivara Solutions
+            is not claiming official partnership or endorsement unless stated. All logos and
+            product names are trademarks of their respective owners.
           </p>
         </div>
       </Section>
