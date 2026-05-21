@@ -436,6 +436,7 @@ export default function HomePage() {
                 icon: <LayoutDashboard className="h-10 w-10" />,
                 gradient: "from-pink-500 via-purple-500 to-blue-500",
                 image: null,
+                url: "/contact",
               },
               {
                 title: "FreightSync TMS Owner Portal",
@@ -446,6 +447,7 @@ export default function HomePage() {
                 icon: <Truck className="h-10 w-10" />,
                 gradient: "from-blue-500 via-teal-500 to-green-500",
                 image: "/images/portfolio/site-freightsync.png",
+                url: "https://freightsynctms.com",
               },
               {
                 title: "IPM Owner & Property Portal",
@@ -456,6 +458,7 @@ export default function HomePage() {
                 icon: <Building2 className="h-10 w-10" />,
                 gradient: "from-teal-500 via-green-500 to-yellow-400",
                 image: "/images/portfolio/ai-ipm-apollo.png",
+                url: "https://ipm.services",
               },
               {
                 title: "Wave Sandy Booking & Campaign System",
@@ -466,6 +469,7 @@ export default function HomePage() {
                 icon: <Waves className="h-10 w-10" />,
                 gradient: "from-cyan-400 via-blue-500 to-purple-500",
                 image: "/images/portfolio/site-wavesandy.png",
+                url: "https://wavesandy.com",
               },
               {
                 title: "Google Ads Lead Generation System",
@@ -476,6 +480,7 @@ export default function HomePage() {
                 icon: <Target className="h-10 w-10" />,
                 gradient: "from-yellow-400 via-orange-500 to-pink-500",
                 image: "/images/portfolio/site-aivara.jpg",
+                url: "/contact",
               },
               {
                 title: "RichAF.Global Guidebook Funnel",
@@ -486,6 +491,7 @@ export default function HomePage() {
                 icon: <Plane className="h-10 w-10" />,
                 gradient: "from-purple-500 via-pink-500 to-orange-400",
                 image: "/images/portfolio/site-richaf.png",
+                url: "https://richaf.global",
               },
               {
                 title: "Hidden Jade Experiences Brand Assets",
@@ -496,6 +502,7 @@ export default function HomePage() {
                 icon: <Compass className="h-10 w-10" />,
                 gradient: "from-green-500 via-teal-500 to-cyan-500",
                 image: "/images/portfolio/site-hiddenjade.png",
+                url: "https://hiddenjadeexperiences.com",
               },
               {
                 title: "AI Customer Support Bot",
@@ -506,6 +513,7 @@ export default function HomePage() {
                 icon: <Bot className="h-10 w-10" />,
                 gradient: "from-pink-500 via-purple-500 to-teal-500",
                 image: "/images/portfolio/ai-richaf-bot.png",
+                url: "https://richaf.global",
               },
               {
                 title: "Brand Sound Identity",
@@ -516,11 +524,19 @@ export default function HomePage() {
                 icon: <Music className="h-10 w-10" />,
                 gradient: "from-orange-500 via-pink-500 to-purple-500",
                 image: "/images/portfolio/site-aivara-music.png",
+                url: "/contact",
               },
-            ].map((item, index) => (
-              <div key={index} className="group relative h-full">
+            ].map((item, index) => {
+              const isExternal = item.url.startsWith("http");
+              return (
+              <a
+                key={index}
+                href={item.url}
+                {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="group relative h-full block"
+              >
                 <div className="absolute -inset-0.5 bg-gradient-to-br from-pink-600/40 via-teal-500/40 to-yellow-400/40 rounded-2xl blur opacity-0 group-hover:opacity-70 transition duration-500"></div>
-                <Card className="relative h-full bg-black/70 border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-white/20 group-hover:-translate-y-1">
+                <Card className="relative h-full bg-black/70 border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-white/20 group-hover:-translate-y-1 cursor-pointer">
                   <div className={`relative aspect-video overflow-hidden bg-gradient-to-br ${item.gradient}`}>
                     {item.image ? (
                       <img
@@ -554,8 +570,9 @@ export default function HomePage() {
                     </p>
                   </CardContent>
                 </Card>
-              </div>
-            ))}
+              </a>
+              );
+            })}
           </div>
 
           {/* CTA */}
