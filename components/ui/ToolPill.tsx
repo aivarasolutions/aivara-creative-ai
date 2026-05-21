@@ -31,7 +31,6 @@ export function ToolPill({ name, logo }: ToolPillProps) {
             height: '18px',
             objectFit: 'contain',
             flexShrink: 0,
-            opacity: 0.92,
           }}
         />
       )}

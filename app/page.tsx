@@ -139,7 +139,7 @@ export default function HomePage() {
   // Brand logos: monochrome white SVGs.
   // CDN logos via Simple Icons; trademark-restricted brands self-hosted in /public/images/logos/.
   // logo=null means no logo available — pill renders text-only as fallback.
-  const si = (slug: string) => `https://cdn.simpleicons.org/${slug}/ffffff`;
+  const si = (slug: string) => `https://cdn.simpleicons.org/${slug}`;
   const toolCategories: {
     title: string;
     tools: { name: string; logo: string | null }[];
