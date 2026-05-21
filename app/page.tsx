@@ -158,7 +158,7 @@ export default function HomePage() {
         { name: "Replit", logo: si("replit") },
         { name: "Supabase", logo: si("supabase") },
         { name: "Vercel", logo: siWhite("vercel") },
-        { name: "GitHub", logo: si("github") },
+        { name: "GitHub", logo: siWhite("github") },
       ],
     },
     {
