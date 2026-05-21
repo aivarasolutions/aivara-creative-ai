@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -265,6 +266,16 @@ export default function HomePage() {
       <Section id="services" className="bg-black">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/images/aivara-logo.png"
+                alt="Aivara Solutions"
+                width={240}
+                height={80}
+                className="h-16 md:h-20 w-auto"
+                priority={false}
+              />
+            </div>
             <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4">What We Build</h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Six core systems designed to help your business operate smarter, scale faster,
@@ -273,12 +284,22 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
+            {services.map((service, index) => {
+              const brandColors = [
+                "text-pink-400",
+                "text-teal-300",
+                "text-yellow-400",
+                "text-pink-400",
+                "text-teal-300",
+                "text-yellow-400",
+              ];
+              const iconColor = brandColors[index % brandColors.length];
+              return (
               <div key={index} className="group relative h-full">
                 <div className="absolute -inset-0.5 bg-gradient-to-br from-pink-600/30 via-teal-500/30 to-yellow-400/30 rounded-2xl blur opacity-0 group-hover:opacity-60 transition duration-500"></div>
                 <Card className="relative h-full bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 rounded-2xl transition-all duration-500 group-hover:border-white/20 group-hover:-translate-y-1">
                   <CardContent className="p-7 flex flex-col h-full">
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-pink-600/20 via-teal-500/20 to-yellow-400/20 border border-white/10 text-teal-300 mb-5">
+                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-pink-600/20 via-teal-500/20 to-yellow-400/20 border border-white/10 ${iconColor} mb-5`}>
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
@@ -295,7 +316,8 @@ export default function HomePage() {
                   </CardContent>
                 </Card>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </Section>
