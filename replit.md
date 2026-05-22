@@ -119,12 +119,29 @@ public/
 - Mailchimp-only integration for all form submissions (no separate email service)
 - Contact form messages stored as custom merge fields in Mailchimp
 
-## Environment Variables (Vercel)
+## Environment Variables (Vercel / Replit Secrets)
+
+### Mailchimp + Resend (server-side)
 ```
 MAILCHIMP_API_KEY=your_mailchimp_api_key
 MAILCHIMP_AUDIENCE_ID=your_mailchimp_audience_id
-MAILCHIMP_API_SERVER=us20
+MAILCHIMP_API_SERVER=us20            # or MAILCHIMP_SERVER_PREFIX
+RESEND_API_KEY=your_resend_api_key
 ```
+
+### Analytics (NEXT_PUBLIC_* — Next.js convention, replaces the VITE_* names in the brief)
+```
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+NEXT_PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_ADS_ID=AW-XXXXXXXXX
+NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL_LEAD=xxxxxxxxxxxxxxxxxx
+NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL_BOOKING=xxxxxxxxxxxxxxxxxx
+NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL_CALL=xxxxxxxxxxxxxxxxxx
+NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL_EMAIL=xxxxxxxxxxxxxxxxxx
+NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL_NEWSLETTER=xxxxxxxxxxxxxxxxxx
+```
+All analytics vars are optional — the site fails safe when any are missing
+(no broken scripts, no console errors, helpers no-op cleanly).
 
 ## Mailchimp Setup Notes
 - Newsletter signups go directly to Mailchimp audience

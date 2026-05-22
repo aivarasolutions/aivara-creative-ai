@@ -1,0 +1,399 @@
+Set up full GA4, Google Tag Manager, and Google Ads conversion tracking support across the Aivara Solutions website.
+
+This is very important because we are preparing to launch Google Ads and need accurate conversion tracking for all website leads, form submissions, CTA clicks, phone clicks, email clicks, and service page engagement.
+
+IMPORTANT:
+- Do not hardcode fake tracking IDs.
+- Use environment variables/placeholders so I can add the real GTM, GA4, and Google Ads IDs later.
+- Do not expose private keys or sensitive data.
+- Make sure tracking works across the homepage, service sections, landing pages, popup forms, footer signup, and contact forms.
+- Make sure this setup is clean, reusable, and easy to test.
+
+--------------------------------------------------
+1. ADD ENVIRONMENT VARIABLES / CONFIG PLACEHOLDERS
+--------------------------------------------------
+
+Create or update the environment/config setup to support these values:
+
+VITE_GTM_ID=
+VITE_GA4_MEASUREMENT_ID=
+VITE_GOOGLE_ADS_ID=
+VITE_GOOGLE_ADS_CONVERSION_LABEL_LEAD=
+VITE_GOOGLE_ADS_CONVERSION_LABEL_BOOKING=
+VITE_GOOGLE_ADS_CONVERSION_LABEL_CALL=
+VITE_GOOGLE_ADS_CONVERSION_LABEL_EMAIL=
+VITE_GOOGLE_ADS_CONVERSION_LABEL_NEWSLETTER=
+
+If the project uses a different framework/env naming convention, follow the correct convention, but keep the names clear.
+
+Do not hardcode the real values in the code.
+
+--------------------------------------------------
+2. INSTALL GOOGLE TAG MANAGER SITEWIDE
+--------------------------------------------------
+
+Add Google Tag Manager across the entire website.
+
+Requirements:
+- GTM script should load in the site head/layout.
+- GTM noscript iframe should be added immediately after the opening body tag if the framework supports it.
+- GTM should only load if VITE_GTM_ID exists.
+- Avoid duplicate GTM scripts.
+- Make sure GTM loads on every page and route.
+- Make sure it works for single-page-app route changes if this is a React/Vite app.
+
+Add a clean helper or component for GTM if needed.
+
+--------------------------------------------------
+3. ADD GA4 SUPPORT
+--------------------------------------------------
+
+Add GA4 tracking support.
+
+Requirements:
+- GA4 measurement ID should come from VITE_GA4_MEASUREMENT_ID.
+- If GA4 is handled through GTM, do not duplicate tracking unnecessarily.
+- If direct GA4 support is added, make sure it only loads once.
+- Track page views on initial load.
+- Track route changes if the site is a single-page app.
+
+Recommended event names:
+- page_view
+- view_service_page
+- cta_click
+- generate_lead
+- book_strategy_call
+- click_call_button
+- click_email_button
+- newsletter_popup_view
+- newsletter_subscribe_success
+
+--------------------------------------------------
+4. CREATE TRACKING HELPER FUNCTIONS
+--------------------------------------------------
+
+Create a reusable tracking utility file, for example:
+
+src/lib/analytics.js
+or
+src/utils/analytics.js
+
+Add helper functions like:
+
+trackEvent(eventName, parameters)
+trackPageView(path, title)
+trackCTA(buttonText, location, destination)
+trackLead(service, source, formType)
+trackBookingClick(source)
+trackPhoneClick(source)
+trackEmailClick(source)
+trackNewsletterSignup(source, interest)
+
+Each helper should:
+- Push events to window.dataLayer for GTM.
+- Send GA4 events if direct gtag is available.
+- Fail safely if tracking scripts are not loaded.
+- Never break the website if analytics is missing.
+
+Use clean event parameters like:
+
+{
+  page_path,
+  page_title,
+  source,
+  service,
+  button_text,
+  form_type,
+  interest,
+  destination,
+  value
+}
+
+--------------------------------------------------
+5. TRACK ALL IMPORTANT CONVERSIONS
+--------------------------------------------------
+
+Track these website actions:
+
+A. Contact form submission
+Event:
+generate_lead
+
+Parameters:
+source: contact_form
+form_type: contact
+service: selected service if available
+page_path: current page
+
+B. Landing page lead form submission
+Event:
+generate_lead
+
+Parameters:
+source: landing_page
+form_type: service_lead
+service: AI Automation / Client Portals / Google Ads Lead System
+page_path: current page
+
+C. Newsletter popup subscription
+Event:
+generate_lead
+Also event:
+newsletter_subscribe_success
+
+Parameters:
+source: website_popup
+form_type: newsletter
+interest: selected interest
+page_path: current page
+
+D. Footer newsletter subscription
+Event:
+newsletter_subscribe_success
+
+Parameters:
+source: footer
+form_type: newsletter
+page_path: current page
+
+E. Book a Free Strategy Call button click
+Event:
+book_strategy_call
+Also event:
+cta_click
+
+Parameters:
+source: button location
+button_text: Book a Free Strategy Call
+page_path: current page
+
+F. Get a Quote button click
+Event:
+cta_click
+
+Parameters:
+button_text: Get a Quote
+source: button location
+page_path: current page
+
+G. Phone number click
+Event:
+click_call_button
+
+Parameters:
+phone_number: 310-400-0032
+page_path: current page
+
+H. Email address click
+Event:
+click_email_button
+
+Parameters:
+email: kevin@aivarasolutions.com
+page_path: current page
+
+I. Service page views
+Event:
+view_service_page
+
+Parameters:
+service: service name
+page_path: current page
+
+--------------------------------------------------
+6. GOOGLE ADS CONVERSION SUPPORT
+--------------------------------------------------
+
+Prepare Google Ads conversion event support.
+
+Create a function like:
+
+trackGoogleAdsConversion(conversionType, params)
+
+Conversion types:
+- lead
+- booking
+- call
+- email
+- newsletter
+
+Use these environment variables:
+VITE_GOOGLE_ADS_ID
+VITE_GOOGLE_ADS_CONVERSION_LABEL_LEAD
+VITE_GOOGLE_ADS_CONVERSION_LABEL_BOOKING
+VITE_GOOGLE_ADS_CONVERSION_LABEL_CALL
+VITE_GOOGLE_ADS_CONVERSION_LABEL_EMAIL
+VITE_GOOGLE_ADS_CONVERSION_LABEL_NEWSLETTER
+
+Map conversions like this:
+
+Lead form submit:
+conversionType: lead
+value: 250
+
+Book Strategy Call click:
+conversionType: booking
+value: 500
+
+Phone click:
+conversionType: call
+value: 150
+
+Email click:
+conversionType: email
+value: 50
+
+Newsletter signup:
+conversionType: newsletter
+value: 25
+
+If Google Ads conversion tracking is handled only through GTM, still push clean dataLayer events so GTM can fire the correct Google Ads conversion tags.
+
+DataLayer event examples:
+
+dataLayer.push({
+  event: "generate_lead",
+  source: "contact_form",
+  service: "AI Automation",
+  value: 250,
+  page_path: window.location.pathname
+})
+
+dataLayer.push({
+  event: "book_strategy_call",
+  source: "hero_cta",
+  value: 500,
+  page_path: window.location.pathname
+})
+
+dataLayer.push({
+  event: "click_call_button",
+  source: "footer",
+  value: 150,
+  page_path: window.location.pathname
+})
+
+--------------------------------------------------
+7. CONNECT TRACKING TO BUTTONS AND FORMS
+--------------------------------------------------
+
+Find all major CTA buttons across the site and connect them to tracking:
+
+Buttons likely include:
+- Book a Free Strategy Call
+- Explore Our Services
+- Get a Quote
+- Start With AI Automation
+- Build My Portal
+- Launch My Lead System
+- Start My Build
+- Build My Business Stack
+- Learn More
+- Join
+- Join the Aivara List
+
+Make sure every major CTA fires:
+cta_click
+
+For key conversion CTAs:
+- Book a Free Strategy Call should fire book_strategy_call
+- Forms should fire generate_lead only after successful form submission
+- Newsletter signup should fire newsletter_subscribe_success after successful subscription
+
+Do not fire generate_lead on failed form attempts.
+
+--------------------------------------------------
+8. LANDING PAGE TRACKING
+--------------------------------------------------
+
+If these landing pages exist or are being created, add tracking:
+
+/ai-automation-small-business
+/custom-client-portals
+/google-ads-lead-system
+
+On page load, fire:
+
+view_service_page
+
+With service parameter:
+
+AI Automation Systems
+Client Portals & Dashboards
+Google Ads Lead Generation Systems
+
+Make sure the lead form on each landing page fires generate_lead after successful submission.
+
+--------------------------------------------------
+9. FORM SUCCESS BEHAVIOR
+--------------------------------------------------
+
+For every lead form:
+- Validate fields.
+- Submit form.
+- On success only:
+  - show success message
+  - fire generate_lead
+  - fire Google Ads lead conversion support
+  - push dataLayer event
+- On error:
+  - show user-friendly error message
+  - fire optional form_error event, not a conversion
+
+--------------------------------------------------
+10. TESTING / DEBUG MODE
+--------------------------------------------------
+
+Add a simple analytics debug mode.
+
+If the URL has:
+?debugAnalytics=true
+
+Then log tracking events to the browser console for testing.
+
+Example console output:
+Aivara Analytics Event: generate_lead { source: "contact_form", service: "AI Automation" }
+
+This should help test before launching Google Ads.
+
+Do not show debug logs in normal mode.
+
+--------------------------------------------------
+11. SEO + STRUCTURED DATA SUPPORT
+--------------------------------------------------
+
+Make sure analytics setup does not harm SEO or page speed.
+
+Also confirm the site has:
+- Organization schema for Aivara Solutions
+- Service schema for major service pages
+- FAQ schema if FAQ sections exist
+- Proper page titles and meta descriptions
+- Open Graph image support if already available
+
+Do not confuse analytics tags with SEO ranking. Analytics is for tracking and conversions; SEO still needs metadata, page structure, speed, and content.
+
+--------------------------------------------------
+12. FINAL SUMMARY
+--------------------------------------------------
+
+After implementation, provide a clear summary showing:
+
+1. Files changed
+2. Where GTM was installed
+3. Where GA4 support was added
+4. Where analytics helper functions live
+5. Which events are being tracked
+6. Which buttons/forms were connected
+7. Where I should paste the real values for:
+   - VITE_GTM_ID
+   - VITE_GA4_MEASUREMENT_ID
+   - VITE_GOOGLE_ADS_ID
+   - VITE_GOOGLE_ADS_CONVERSION_LABEL_LEAD
+   - VITE_GOOGLE_ADS_CONVERSION_LABEL_BOOKING
+   - VITE_GOOGLE_ADS_CONVERSION_LABEL_CALL
+   - VITE_GOOGLE_ADS_CONVERSION_LABEL_EMAIL
+   - VITE_GOOGLE_ADS_CONVERSION_LABEL_NEWSLETTER
+8. Confirm no fake tracking IDs were hardcoded
+9. Confirm tracking will not break the website if IDs are missing
+10. Confirm generate_lead only fires after successful form submission

@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
 import { ToolPill } from "@/components/ui/ToolPill";
 import { motion } from "framer-motion";
+import { trackCTA, trackBookingClick } from "@/lib/analytics";
 import {
   Bot,
   LayoutDashboard,
@@ -225,10 +226,10 @@ export default function HomePage() {
           transition={{ duration: 1, delay: 0.5 }}
           className="mt-8 flex gap-4 flex-wrap justify-center"
         >
-          <Link href="/contact">
+          <Link href="/contact" onClick={() => trackBookingClick("hero_cta")}>
             <Button className="px-8 py-6 text-lg">Book a Free Strategy Call</Button>
           </Link>
-          <Link href="#services">
+          <Link href="#services" onClick={() => trackCTA("Explore Our Services", "hero_cta", "#services")}>
             <Button variant="outline" className="px-8 py-6 text-lg">
               Explore Our Services
             </Button>
@@ -601,7 +602,7 @@ export default function HomePage() {
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">
               Want a system like this built for your business?
             </h3>
-            <Link href="/contact">
+            <Link href="/contact" onClick={() => trackCTA("Start My Build", "portfolio_cta", "/contact")}>
               <Button className="bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 text-black font-bold px-10 py-6 text-lg hover:opacity-90 transition">
                 Start My Build
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -672,12 +673,12 @@ export default function HomePage() {
             the right system and tools for your business.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/contact" onClick={() => trackBookingClick("footer_cta")}>
               <Button className="px-8 py-6 text-lg bg-black text-white hover:bg-black/80 shadow-lg">
                 Book a Free Strategy Call
               </Button>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact" onClick={() => trackCTA("Get a Quote", "footer_cta", "/contact")}>
               <Button
                 variant="outline"
                 className="px-8 py-6 text-lg bg-white text-black border-2 border-black hover:bg-black hover:text-white font-semibold shadow-lg"

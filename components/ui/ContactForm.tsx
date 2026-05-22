@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
+import { trackLead, trackFormError } from '@/lib/analytics';
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -31,6 +32,11 @@ export function ContactForm() {
       if (res.ok) {
         setStatus('success');
         setMessage(data.message);
+        trackLead({
+          service: formData.service,
+          source: 'contact_form',
+          formType: 'contact',
+        });
         setFormData({
           name: '',
           email: '',
@@ -41,6 +47,7 @@ export function ContactForm() {
       } else {
         setStatus('error');
         setMessage(data.error || 'Something went wrong');
+        trackFormError('contact_form', 'contact', data.error || 'unknown');
       }
     } catch (error) {
       setStatus('error');

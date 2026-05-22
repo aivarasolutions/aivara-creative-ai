@@ -1,6 +1,9 @@
+'use client';
+
 import Link from "next/link";
 import { Mail, Phone, Instagram, Facebook, Linkedin } from "lucide-react";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
+import { trackPhoneClick, trackEmailClick } from "@/lib/analytics";
 
 export function Footer() {
   return (
@@ -41,11 +44,19 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold mb-3 text-gray-200">Contact Us</h4>
           <div className="space-y-3">
-            <a href="mailto:Kevin@AivaraSolutions.com" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition">
+            <a
+              href="mailto:Kevin@AivaraSolutions.com"
+              onClick={() => trackEmailClick('footer', 'kevin@aivarasolutions.com')}
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition"
+            >
               <Mail className="h-4 w-4" />
               Kevin@AivaraSolutions.com
             </a>
-            <a href="tel:310-400-0032" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition">
+            <a
+              href="tel:310-400-0032"
+              onClick={() => trackPhoneClick('footer')}
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition"
+            >
               <Phone className="h-4 w-4" />
               310-400-0032
             </a>

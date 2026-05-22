@@ -1,4 +1,5 @@
 import { Header } from "@/components/layout/Header";
+import { ServicePageView } from "@/components/ServicePageView";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
@@ -57,6 +58,7 @@ export default function MusicPage() {
   return (
     <div className="bg-black text-white min-h-screen">
       <Header />
+      <ServicePageView service="Aivara Music" />
       
       <Section className="pt-32">
         <div className="max-w-4xl mx-auto">

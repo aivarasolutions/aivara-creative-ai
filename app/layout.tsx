@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { NewsletterPopup } from "@/components/ui/NewsletterPopup";
+import { AnalyticsScripts, GTMNoScript } from "@/components/Analytics";
 
 const getSiteUrl = () => {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
@@ -55,10 +56,45 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Aivara Solutions",
+  url: siteUrl,
+  logo: logoUrl,
+  email: "kevin@aivarasolutions.com",
+  telephone: "+1-310-400-0032",
+  description:
+    "Aivara Solutions builds websites, portals, automations, AI workflows, lead generation systems, and creative content for modern businesses.",
+  sameAs: [
+    "https://instagram.com/aivarasolutions",
+    "https://www.facebook.com/share/1RtPaToeGh/",
+    "https://www.linkedin.com/company/aivara-solutions-llc/",
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+1-310-400-0032",
+      contactType: "customer service",
+      email: "kevin@aivarasolutions.com",
+      areaServed: "US",
+      availableLanguage: ["English"],
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <AnalyticsScripts />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body>
+        <GTMNoScript />
         {children}
         <NewsletterPopup />
       </body>

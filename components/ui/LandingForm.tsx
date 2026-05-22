@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
+import { trackLead, trackFormError } from '@/lib/analytics';
 
 interface LandingFormProps {
   offer: string;
@@ -51,10 +52,17 @@ export function LandingForm({
       if (res.ok) {
         setStatus('success');
         setMessage(data.message || 'Thanks! We’ll be in touch within 24 hours.');
+        trackLead({
+          service,
+          source: 'landing_page',
+          formType: 'service_lead',
+          extra: { offer },
+        });
         setFormData({ name: '', email: '', phone: '', business: '', message: '' });
       } else {
         setStatus('error');
         setMessage(data.error || 'Something went wrong. Please try again.');
+        trackFormError('landing_page', 'service_lead', data.error || 'unknown');
       }
     } catch (error) {
       setStatus('error');

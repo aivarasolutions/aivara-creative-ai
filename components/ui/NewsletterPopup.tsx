@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, FormEvent } from 'react';
 import { X } from 'lucide-react';
+import { trackEvent, trackNewsletterSignup } from '@/lib/analytics';
 
 const STORAGE_KEY = 'aivara_popup_state_v1';
 const DISMISS_DAYS = 7;
@@ -39,22 +40,7 @@ function shouldSuppress(state: PopupState): boolean {
   return false;
 }
 
-function track(event: string, params: Record<string, unknown> = {}) {
-  if (typeof window === 'undefined') return;
-  const w = window as unknown as {
-    gtag?: (...args: unknown[]) => void;
-    dataLayer?: unknown[];
-  };
-  try {
-    if (typeof w.gtag === 'function') {
-      w.gtag('event', event, params);
-    } else if (Array.isArray(w.dataLayer)) {
-      w.dataLayer.push({ event, ...params });
-    }
-  } catch {
-    /* ignore */
-  }
-}
+const track = trackEvent;
 
 const INTEREST_OPTIONS = [
   'AI Automation',
@@ -187,16 +173,7 @@ export function NewsletterPopup() {
             "You're in! Check your inbox for a welcome message from Aivara Solutions."
         );
         writeState({ subscribed: true });
-        track('newsletter_subscribe_success', {
-          source: 'website_popup',
-          interest,
-          page_path: typeof window !== 'undefined' ? window.location.pathname : '',
-        });
-        track('generate_lead', {
-          source: 'website_popup',
-          interest,
-          page_path: typeof window !== 'undefined' ? window.location.pathname : '',
-        });
+        trackNewsletterSignup('website_popup', interest);
       } else {
         setStatus('error');
         setMessage(

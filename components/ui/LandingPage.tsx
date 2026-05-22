@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { FAQ } from '@/components/ui/faq';
 import { Card, CardContent } from '@/components/ui/card';
 import { LandingForm } from '@/components/ui/LandingForm';
+import { ServicePageView } from '@/components/ServicePageView';
 import { Check, Sparkles, ArrowRight, Clock, Shield, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -33,6 +34,7 @@ export function LandingPage(props: LandingPageProps) {
   return (
     <div className="bg-black text-white min-h-screen">
       <Header />
+      <ServicePageView service={props.service} />
 
       {/* Hero with form */}
       <section className="relative pt-28 pb-16 px-6 overflow-hidden">

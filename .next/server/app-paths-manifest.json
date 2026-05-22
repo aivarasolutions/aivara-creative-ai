@@ -1,4 +1,6 @@
 {
-  "/api/subscribe/route": "app/api/subscribe/route.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/ai-automation-small-business/page": "app/ai-automation-small-business/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/services/ai-education/page": "app/services/ai-education/page.js"
 }

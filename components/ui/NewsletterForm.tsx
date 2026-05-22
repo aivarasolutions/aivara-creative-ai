@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
+import { trackEvent, trackNewsletterSignup } from '@/lib/analytics';
 
 export function NewsletterForm() {
   const [email, setEmail] = useState('');
@@ -12,6 +13,7 @@ export function NewsletterForm() {
     e.preventDefault();
     setStatus('loading');
     setMessage('');
+    trackEvent('newsletter_subscribe_attempt', { source: 'footer', form_type: 'newsletter' });
 
     try {
       const res = await fetch('/api/subscribe', {
@@ -30,9 +32,15 @@ export function NewsletterForm() {
         setStatus('success');
         setMessage('Thank you! Check your inbox for a welcome email.');
         setEmail('');
+        trackNewsletterSignup('footer');
       } else {
         setStatus('error');
         setMessage(data.error || 'Something went wrong. Please try again.');
+        trackEvent('newsletter_subscribe_error', {
+          source: 'footer',
+          form_type: 'newsletter',
+          reason: data.error || 'unknown',
+        });
       }
     } catch (error) {
       setStatus('error');
