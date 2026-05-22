@@ -220,7 +220,7 @@ Lead also saved to Mailchimp.
 Aivara Solutions · aivarasolutions.com`;
 
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: FROM_EMAIL,
       to: NOTIFICATION_EMAIL,
       replyTo: data.email,
@@ -228,8 +228,11 @@ Aivara Solutions · aivarasolutions.com`;
       html,
       text,
     });
+    if ((result as { error?: unknown }).error) {
+      console.error('[Resend] contact notification API error:', (result as { error: unknown }).error);
+    }
   } catch (error) {
-    console.error('Resend notification email failed:', error);
+    console.error('[Resend] contact notification failed:', error);
   }
 }
 
@@ -341,7 +344,7 @@ ${SITE_URL}
 Aivara Solutions — AI-powered systems for modern businesses.`;
 
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: FROM_EMAIL,
       to: data.email,
       replyTo: 'kevin@aivarasolutions.com',
@@ -349,8 +352,16 @@ Aivara Solutions — AI-powered systems for modern businesses.`;
       html,
       text,
     });
+    if ((result as { error?: unknown }).error) {
+      console.error('[Resend] welcome email API error:', (result as { error: unknown }).error);
+      throw new Error(
+        `Resend rejected welcome email: ${JSON.stringify((result as { error: unknown }).error)}`
+      );
+    }
+    console.log('[Resend] welcome email sent to', data.email, 'id:', (result as { data?: { id?: string } }).data?.id);
   } catch (error) {
-    console.error('Resend welcome email failed:', error);
+    console.error('[Resend] welcome email failed:', error);
+    throw error;
   }
 }
 
@@ -404,7 +415,7 @@ Subscriber added to Mailchimp audience.
 Aivara Solutions · aivarasolutions.com`;
 
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: FROM_EMAIL,
       to: NOTIFICATION_EMAIL,
       replyTo: email,
@@ -412,7 +423,10 @@ Aivara Solutions · aivarasolutions.com`;
       html,
       text,
     });
+    if ((result as { error?: unknown }).error) {
+      console.error('[Resend] newsletter notification API error:', (result as { error: unknown }).error);
+    }
   } catch (error) {
-    console.error('Resend newsletter notification failed:', error);
+    console.error('[Resend] newsletter notification failed:', error);
   }
 }

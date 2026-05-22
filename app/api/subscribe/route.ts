@@ -23,11 +23,6 @@ export async function POST(req: Request) {
       );
     }
 
-    // Fire-and-forget admin notification + welcome email
-    sendNewsletterNotification(email).catch((err) =>
-      console.error('Newsletter notification error:', err)
-    );
-
     const API_KEY = process.env.MAILCHIMP_API_KEY;
     const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
     const DATACENTER =
@@ -96,16 +91,32 @@ export async function POST(req: Request) {
       console.warn('Mailchimp env vars not fully configured — skipping list signup');
     }
 
-    // Send branded welcome email regardless of mailchimp outcome
-    // (don't block the response — keep UX snappy)
-    sendWelcomeEmail({ firstName, email, interest }).catch((err) =>
-      console.error('Welcome email error:', err)
-    );
+    // Await the branded welcome email so the serverless invocation isn't
+    // killed before Resend finishes. Failure here should not break the
+    // subscribe flow — the visitor still got added to Mailchimp.
+    let welcomeOk = true;
+    let welcomeError: string | undefined;
+    try {
+      await sendWelcomeEmail({ firstName, email, interest });
+    } catch (err) {
+      welcomeOk = false;
+      welcomeError = err instanceof Error ? err.message : String(err);
+      console.error('[subscribe] welcome email failed:', welcomeError);
+    }
+
+    // Admin notification — awaited too so it actually sends in serverless.
+    try {
+      await sendNewsletterNotification(email);
+    } catch (err) {
+      console.error('[subscribe] admin notification failed:', err);
+    }
 
     return NextResponse.json(
       {
         message: "You're in! Check your inbox for a welcome message from Aivara Solutions.",
         mailchimp: mailchimpOk,
+        welcome: welcomeOk,
+        ...(welcomeError ? { welcomeError } : {}),
       },
       { status: 200 }
     );
