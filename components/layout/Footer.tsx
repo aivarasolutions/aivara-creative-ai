@@ -11,8 +11,8 @@ export function Footer() {
             <img src="/images/aivara-logo.png" alt="Aivara Solutions" className="h-16 w-auto" />
             <span className="font-semibold text-lg">Aivara Solutions</span>
           </div>
-          <p className="text-sm text-gray-400">
-            Technology + Creativity for the Modern Business. AI & Education, Web & Marketing, Logistics, and Aivara Music.
+          <p className="text-sm text-gray-400 leading-relaxed">
+            Aivara Solutions builds websites, portals, automations, AI workflows, lead generation systems, and creative content for modern businesses.
           </p>
         </div>
 
@@ -29,10 +29,12 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold mb-3 text-gray-200">Services</h4>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><Link href="/services/ai-education" className="hover:text-white">AI & Education</Link></li>
-            <li><Link href="/services/web-marketing" className="hover:text-white">Web & Marketing</Link></li>
-            <li><Link href="/services/logistics" className="hover:text-white">Logistics</Link></li>
-            <li><Link href="/services/music" className="hover:text-white">Aivara Music</Link></li>
+            <li><Link href="/services" className="hover:text-white">AI Automation</Link></li>
+            <li><Link href="/services" className="hover:text-white">Portals &amp; Dashboards</Link></li>
+            <li><Link href="/services" className="hover:text-white">Lead Generation</Link></li>
+            <li><Link href="/services" className="hover:text-white">AI Training</Link></li>
+            <li><Link href="/services" className="hover:text-white">Creative Media</Link></li>
+            <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
           </ul>
         </div>
 

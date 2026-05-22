@@ -432,7 +432,8 @@ export default function HomePage() {
                 category: "Portal / AI Automation",
                 badge: "Internal Build",
                 description:
-                  "Client dashboard for project requests, service tracking, budgets, approvals, file uploads, and automated email notifications.",
+                  "Manage requests, budgets, files, approvals, and updates from one client-facing system.",
+                chips: ["Portal", "Automation", "Client System"],
                 icon: <LayoutDashboard className="h-10 w-10" />,
                 gradient: "from-pink-500 via-purple-500 to-blue-500",
                 image: "/images/portfolio/site-aivara-portal.png",
@@ -443,7 +444,8 @@ export default function HomePage() {
                 category: "Logistics / Dashboard",
                 badge: "Logistics System",
                 description:
-                  "Transportation dashboard for vehicle owners to track loads, revenue, expenses, weekly settlements, reporting, and future GPS integrations.",
+                  "Track loads, revenue, expenses, and settlements from one owner-facing dashboard.",
+                chips: ["Logistics", "Dashboard", "Reporting"],
                 icon: <Truck className="h-10 w-10" />,
                 gradient: "from-blue-500 via-teal-500 to-green-500",
                 image: "/images/portfolio/site-freightsync.png",
@@ -454,7 +456,8 @@ export default function HomePage() {
                 category: "Property Management / Portal",
                 badge: "Property Management",
                 description:
-                  "Owner-facing property management portal for reservations, expenses, occupancy, payouts, reports, and property performance tracking.",
+                  "Monitor reservations, expenses, payouts, and property performance in one place.",
+                chips: ["Property Management", "Portal", "Reporting"],
                 icon: <Building2 className="h-10 w-10" />,
                 gradient: "from-teal-500 via-green-500 to-yellow-400",
                 image: "/images/portfolio/ai-ipm-apollo.png",
@@ -465,7 +468,8 @@ export default function HomePage() {
                 category: "Travel / Rentals / Marketing",
                 badge: "Booking + Marketing",
                 description:
-                  "Event and rental marketing system with booking pages, campaign landing pages, analytics tracking, Meta Pixel, and conversion-focused content.",
+                  "Drive bookings with campaign pages, analytics, and conversion-focused rental marketing.",
+                chips: ["Booking", "Marketing", "Analytics"],
                 icon: <Waves className="h-10 w-10" />,
                 gradient: "from-cyan-400 via-blue-500 to-purple-500",
                 image: "/images/portfolio/site-wavesandy.png",
@@ -476,7 +480,8 @@ export default function HomePage() {
                 category: "Marketing / Lead Gen",
                 badge: "Lead Generation",
                 description:
-                  "Full lead generation setup with landing pages, conversion tracking, Google Tag Manager, GA4 events, automated follow-up, and reporting.",
+                  "Capture and track leads with landing pages, analytics, follow-up, and reporting.",
+                chips: ["Lead Generation", "Tracking", "Automation"],
                 icon: <Target className="h-10 w-10" />,
                 gradient: "from-yellow-400 via-orange-500 to-pink-500",
                 image: "/images/portfolio/site-aivara.jpg",
@@ -487,7 +492,8 @@ export default function HomePage() {
                 category: "Travel / Digital Product",
                 badge: "Travel Tech",
                 description:
-                  "Digital travel guide system with branded landing pages, paid guidebook funnel, email capture, content strategy, and destination-based monetization.",
+                  "Turn destination content into a branded funnel for guidebook sales and audience growth.",
+                chips: ["Travel Tech", "Funnel", "Digital Product"],
                 icon: <Plane className="h-10 w-10" />,
                 gradient: "from-purple-500 via-pink-500 to-orange-400",
                 image: "/images/portfolio/site-richaf.png",
@@ -498,7 +504,8 @@ export default function HomePage() {
                 category: "Creative / Tourism",
                 badge: "Creative Production",
                 description:
-                  "Tourism-focused creative buildout including brochure design, service presentation, visual branding, and guest-facing marketing materials.",
+                  "Present experiences with polished brand visuals, brochures, and guest-facing marketing.",
+                chips: ["Creative", "Tourism", "Branding"],
                 icon: <Compass className="h-10 w-10" />,
                 gradient: "from-green-500 via-teal-500 to-cyan-500",
                 image: "/images/portfolio/site-hiddenjade.png",
@@ -509,7 +516,8 @@ export default function HomePage() {
                 category: "AI / Automation",
                 badge: "AI Automation",
                 description:
-                  "24/7 AI assistant designed to answer FAQs, capture leads, route requests, and support customers across travel, rentals, and service businesses.",
+                  "Answer FAQs, capture leads, and route customer requests automatically.",
+                chips: ["AI", "Support", "Lead Capture"],
                 icon: <Bot className="h-10 w-10" />,
                 gradient: "from-pink-500 via-purple-500 to-teal-500",
                 image: "/images/portfolio/ai-richaf-bot.png",
@@ -520,7 +528,8 @@ export default function HomePage() {
                 category: "Creative / Music",
                 badge: "Creative Media",
                 description:
-                  "Custom business theme songs, jingles, intros, and audio branding for campaigns, reels, events, and brand storytelling.",
+                  "Strengthen campaigns and content with custom audio branding and theme music.",
+                chips: ["Creative Media", "Audio", "Branding"],
                 icon: <Music className="h-10 w-10" />,
                 gradient: "from-orange-500 via-pink-500 to-purple-500",
                 image: "/images/portfolio/site-aivara-music.png",
@@ -559,15 +568,27 @@ export default function HomePage() {
                     </div>
                   </div>
                   <CardContent className="p-6">
-                    <div className="text-xs text-teal-400 mb-2 uppercase tracking-wider font-semibold">
+                    <div className="text-[11px] text-teal-400 mb-2 uppercase tracking-wider font-semibold">
                       {item.category}
                     </div>
                     <h3 className="text-lg font-bold mb-2 text-white leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       {item.description}
                     </p>
+                    {item.chips && (
+                      <div className="flex flex-wrap gap-1.5 mt-auto">
+                        {item.chips.map((chip, ci) => (
+                          <span
+                            key={ci}
+                            className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider font-semibold bg-white/5 border border-white/10 text-gray-300"
+                          >
+                            {chip}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               </a>
@@ -652,14 +673,14 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/contact">
-              <Button className="px-8 py-6 text-lg bg-black text-white hover:bg-black/80">
+              <Button className="px-8 py-6 text-lg bg-black text-white hover:bg-black/80 shadow-lg">
                 Book a Free Strategy Call
               </Button>
             </Link>
             <Link href="/contact">
               <Button
                 variant="outline"
-                className="px-8 py-6 text-lg border-black text-black hover:bg-black hover:text-white"
+                className="px-8 py-6 text-lg bg-white text-black border-2 border-black hover:bg-black hover:text-white font-semibold shadow-lg"
               >
                 Get a Quote
               </Button>

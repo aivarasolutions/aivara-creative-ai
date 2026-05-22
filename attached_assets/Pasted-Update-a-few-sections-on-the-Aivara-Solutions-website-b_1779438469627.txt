@@ -1,0 +1,189 @@
+Update a few sections on the Aivara Solutions website based on the current homepage screenshots and recent brand/service updates.
+
+IMPORTANT:
+- Do NOT change any pictures/images on the portfolio or service cards.
+- Keep all existing card images exactly as they are.
+- Only update the text/copy, footer wording, and button styling requested below.
+- Keep the current Aivara Solutions dark theme and gradient brand style.
+- Keep everything responsive on desktop and mobile.
+
+GOALS:
+1. Update the footer wording so it matches the new service categories shown in the header.
+2. Improve the “Get a Quote” button styling in the bottom CTA section so the text is easier to read.
+3. Update the wording style for all cards so they are cleaner, more benefit-driven, and more consistent.
+
+--------------------------------------------------
+1. FOOTER UPDATE
+--------------------------------------------------
+
+The footer currently still uses the old service wording:
+- AI & Education
+- Web & Marketing
+- Logistics
+- Aivara Music
+
+Update the footer “Services” column so it matches the new categories used in the header/navigation.
+
+New footer service links should be:
+
+- AI Automation
+- Portals & Dashboards
+- Lead Generation
+- AI Training
+- Creative Media
+
+If there is room, optionally add:
+- Contact
+
+Also update the footer brand description on the left side.
+Current wording is too outdated and still references the old categories.
+
+Replace it with this new wording:
+
+“Aivara Solutions builds websites, portals, automations, AI workflows, lead generation systems, and creative content for modern businesses.”
+
+If needed, make it 2–3 clean lines and keep it visually balanced.
+
+Also make sure the footer Explore links still make sense:
+- Home
+- Services
+- Portfolio
+- Contact
+
+--------------------------------------------------
+2. BOTTOM CTA BUTTON COLOR FIX
+--------------------------------------------------
+
+In the bottom CTA section (“Ready to Build a Smarter Business System?”), update the secondary button:
+“Get a Quote”
+
+Right now the color contrast is too weak and the text is harder to read.
+
+Keep the button premium and on-brand, but improve readability.
+
+Requirements:
+- Make the text easy to read at a glance.
+- Keep the button visually consistent with the Aivara color system.
+- Use either:
+  a) a darker solid or semi-solid background with white/light text
+  OR
+  b) a high-contrast gradient with dark text if readability is clearly better
+- Ensure the button border and hover state still look polished.
+- Keep the primary CTA “Book a Free Strategy Call” strong and prominent.
+- Make sure both buttons feel like a matching pair.
+
+Do not remove the Aivara brand feel — just improve readability and accessibility.
+
+--------------------------------------------------
+3. UPDATE CARD WORDING STYLE
+--------------------------------------------------
+
+Update the wording style for the cards across the homepage so they are cleaner and more benefit-driven.
+
+IMPORTANT:
+- Do NOT change the images on the cards.
+- Do NOT replace the pictures.
+- Only improve the card text structure and wording style.
+
+Use this better card style format:
+
+TITLE
+One short sentence focused on the benefit/result.
+Then add 2–3 small chips/tags if the design supports it.
+
+General rules:
+- Keep descriptions shorter than they are now.
+- Focus on what the system helps the client do.
+- Make the copy feel clear, premium, and business-focused.
+- Avoid long paragraph-style descriptions.
+- Keep category labels/badges polished and consistent.
+
+Use these updated card titles/descriptions for the portfolio/work section:
+
+1. Aivara Client Portal
+Category: Portal / AI Automation
+Benefit sentence:
+“Manage requests, budgets, files, approvals, and updates from one client-facing system.”
+Optional chips:
+Portal / Automation / Client System
+
+2. FreightSync TMS Owner Portal
+Category: Logistics / Dashboard
+Benefit sentence:
+“Track loads, revenue, expenses, and settlements from one owner-facing dashboard.”
+Optional chips:
+Logistics / Dashboard / Reporting
+
+3. IPM Owner & Property Portal
+Category: Property Management / Portal
+Benefit sentence:
+“Monitor reservations, expenses, payouts, and property performance in one place.”
+Optional chips:
+Property Management / Portal / Reporting
+
+4. Wave Sandy Booking & Campaign System
+Category: Travel / Rentals / Marketing
+Benefit sentence:
+“Drive bookings with campaign pages, analytics, and conversion-focused rental marketing.”
+Optional chips:
+Booking / Marketing / Analytics
+
+5. Google Ads Lead Generation System
+Category: Marketing / Lead Gen
+Benefit sentence:
+“Capture and track leads with landing pages, analytics, follow-up, and reporting.”
+Optional chips:
+Lead Generation / Tracking / Automation
+
+6. RichAF.Global Guidebook Funnel
+Category: Travel / Digital Product
+Benefit sentence:
+“Turn destination content into a branded funnel for guidebook sales and audience growth.”
+Optional chips:
+Travel Tech / Funnel / Digital Product
+
+Optional additional cards if they exist in a fuller portfolio section:
+
+7. Hidden Jade Experiences Brand Assets
+Category: Creative / Tourism
+Benefit sentence:
+“Present experiences with polished brand visuals, brochures, and guest-facing marketing.”
+Optional chips:
+Creative / Tourism / Branding
+
+8. AI Customer Support Bot
+Category: AI / Automation
+Benefit sentence:
+“Answer FAQs, capture leads, and route customer requests automatically.”
+Optional chips:
+AI / Support / Lead Capture
+
+9. Brand Sound Identity
+Category: Creative / Music
+Benefit sentence:
+“Strengthen campaigns and content with custom audio branding and theme music.”
+Optional chips:
+Creative Media / Audio / Branding
+
+--------------------------------------------------
+4. CONSISTENCY CLEANUP
+--------------------------------------------------
+
+Make the card layout text styling more consistent across the site:
+- Category label style should be uniform
+- Card title font sizing should be uniform
+- Description length should be visually balanced
+- Chips/tags should have a consistent style if implemented
+- Keep hover effects subtle and premium
+
+Do not change the existing card images.
+
+--------------------------------------------------
+5. FINAL CHECK
+--------------------------------------------------
+
+After making the updates:
+- summarize exactly what text was changed
+- confirm the footer now matches the new header categories
+- confirm the bottom “Get a Quote” button contrast/readability was improved
+- confirm no card images were changed
