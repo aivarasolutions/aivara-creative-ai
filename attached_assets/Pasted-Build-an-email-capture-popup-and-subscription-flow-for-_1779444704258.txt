@@ -1,0 +1,243 @@
+Build an email capture popup and subscription flow for the Aivara Solutions website.
+
+Goal:
+When a visitor comes to the website, show a professional branded popup asking them to subscribe for business automation, AI, marketing, and portal-building updates. When they submit their email, add them to our Mailchimp audience/list, then send them a branded welcome email using Resend from:
+
+notifications@aivarasolutions.com
+
+IMPORTANT:
+- Do not hardcode API keys in the frontend.
+- Mailchimp and Resend API calls must happen server-side only.
+- Use environment variables for all private keys.
+- Keep the popup, form, and welcome email fully branded with Aivara Solutions colors and logo.
+- Use the existing Aivara Solutions logo already in the project assets.
+- Match the current Aivara brand colors: magenta, purple, blue, teal, green, orange, and yellow gradients.
+- Make the popup responsive on desktop and mobile.
+- Make sure the popup does not annoy visitors by showing every page load.
+
+--------------------------------------------------
+1. POPUP DESIGN
+--------------------------------------------------
+
+Create a branded email subscription popup.
+
+Popup headline:
+“Build Smarter. Automate Faster.”
+
+Popup subheadline:
+“Join the Aivara Solutions list for AI tools, automation tips, business systems, marketing strategies, and launch updates.”
+
+Form fields:
+- First Name
+- Email Address
+- Business Type / Interest dropdown
+
+Dropdown options:
+- AI Automation
+- Client Portals & Dashboards
+- Lead Generation
+- AI Training
+- Creative Media
+- Website + Automation
+- Not Sure Yet
+
+CTA button:
+“Join the Aivara List”
+
+Small privacy text:
+“No spam. Just practical tools, ideas, and updates to help your business operate smarter.”
+
+Success message:
+“You’re in! Check your inbox for a welcome message from Aivara Solutions.”
+
+Error message:
+“Something went wrong. Please try again or contact us directly.”
+
+Popup behavior:
+- Show popup after 8 seconds on the homepage.
+- Also trigger popup on exit intent for desktop.
+- On mobile, show after the visitor scrolls 40%.
+- Do not show the popup again for 7 days after the visitor closes it.
+- Do not show the popup again if the visitor successfully subscribes.
+- Store popup dismissed/subscribed state in localStorage.
+- Include a clear close X button.
+- Add a subtle “Maybe later” text link.
+
+Design requirements:
+- Dark premium modal with gradient border/glow.
+- Use Aivara gradient accents.
+- Include the Aivara Solutions logo at the top.
+- Keep it clean and readable.
+- Button should use the Aivara gradient but have strong readable contrast.
+- Modal should be accessible with keyboard close/escape support.
+- Form should validate email format before submission.
+
+--------------------------------------------------
+2. MAILCHIMP INTEGRATION
+--------------------------------------------------
+
+Connect the popup form to Mailchimp.
+
+Create a secure server-side endpoint, API route, or backend function:
+
+POST /api/subscribe
+
+The endpoint should:
+1. Accept firstName, email, and interest.
+2. Validate the email.
+3. Add or update the subscriber in Mailchimp.
+4. Add tags or merge fields based on interest.
+5. Return success or error response to the frontend.
+6. If Mailchimp succeeds, trigger the Resend welcome email.
+
+Use these environment variables:
+
+MAILCHIMP_API_KEY=
+MAILCHIMP_SERVER_PREFIX=
+MAILCHIMP_AUDIENCE_ID=
+
+Optional merge fields:
+FNAME = first name
+INTEREST = selected business type / interest
+SOURCE = Website Popup
+COMPANY = Aivara Solutions Website
+
+Mailchimp tags to add:
+- Website Popup
+- Aivara Lead
+- The selected interest value, for example “AI Automation” or “Client Portals”
+
+If the email already exists in Mailchimp:
+- Update the contact instead of failing.
+- Keep the flow user-friendly.
+- Return a success message like they are subscribed.
+
+--------------------------------------------------
+3. RESEND WELCOME EMAIL
+--------------------------------------------------
+
+After the Mailchimp subscription succeeds, send a welcome email through Resend.
+
+From:
+Aivara Solutions <notifications@aivarasolutions.com>
+
+Reply-To:
+kevin@aivarasolutions.com
+
+Subject:
+“Welcome to Aivara Solutions — Build, Automate & Scale Smarter”
+
+Use this environment variable:
+
+RESEND_API_KEY=
+
+The welcome email should be a branded HTML email.
+
+Email requirements:
+- Include Aivara Solutions logo at the top.
+- Use a dark premium design with Aivara gradient accents.
+- Use colors from the Aivara logo.
+- Make the email mobile-friendly.
+- Include a clear intro.
+- Briefly explain what Aivara Solutions does.
+- Feature our main services.
+- Include a CTA button to book a free strategy call.
+- Include a CTA button or link to visit the website.
+- Include footer with contact info and disclaimer.
+
+Email copy:
+
+Headline:
+“Welcome to Aivara Solutions”
+
+Subheadline:
+“Thanks for joining our list. We help businesses build smarter systems with AI, automation, websites, portals, marketing, and creative content.”
+
+Body:
+“Hi {{firstName}},
+
+Thanks for joining the Aivara Solutions list. We’ll send practical ideas, tools, and updates to help you automate your business, improve your client experience, and build systems that scale.
+
+Aivara Solutions helps businesses with:”
+
+Service bullets:
+- AI Automation Systems
+- Client Portals & Business Dashboards
+- Lead Generation & Marketing Automation
+- AI Training & Business Onboarding
+- Websites + Automation Buildouts
+- Creative Content & Brand Media
+
+CTA button:
+“Book a Free Strategy Call”
+
+Secondary link:
+“Explore Aivara Solutions”
+
+Footer:
+“Aivara Solutions — AI-powered systems for modern businesses.”
+
+Add contact:
+kevin@aivarasolutions.com
+310-400-0032
+aivarasolutions.com
+
+Do not include fake legal claims or fake partner badges.
+
+--------------------------------------------------
+4. TRACKING EVENTS
+--------------------------------------------------
+
+Add tracking events for analytics.
+
+If the site already has GA4/GTM helper functions, use them. If not, create simple placeholder tracking functions.
+
+Track these events:
+- newsletter_popup_view
+- newsletter_popup_close
+- newsletter_subscribe_attempt
+- newsletter_subscribe_success
+- newsletter_subscribe_error
+
+On successful subscription, fire:
+generate_lead
+
+Event parameters:
+- source: website_popup
+- interest: selected interest
+- page_path: current page path
+
+--------------------------------------------------
+5. FOOTER FORM CONNECTION
+--------------------------------------------------
+
+If the footer currently has a “Get Updates” email field, connect it to the same /api/subscribe endpoint.
+
+Footer form can use:
+- Email only
+- Interest default: “Website Footer”
+- First name optional or blank
+
+When footer signup succeeds:
+Show:
+“Thank you! Check your inbox for a welcome email.”
+
+Do not create two separate subscription systems. The popup and footer form should use the same backend endpoint.
+
+--------------------------------------------------
+6. ADMIN / DEBUG NOTES
+--------------------------------------------------
+
+After implementation, show me:
+- Which files were added or changed
+- Where the popup component is located
+- Where the /api/subscribe endpoint is located
+- Where to add these environment variables:
+  - MAILCHIMP_API_KEY
+  - MAILCHIMP_SERVER_PREFIX
+  - MAILCHIMP_AUDIENCE_ID
+  - RESEND_API_KEY
+- Confirm that no API keys are exposed in the frontend
+- Confirm that Mailchimp is updated before Resend sends the welcome email
+- Confirm that the footer form and popup form use the same subscription endpoint
+- Confirm that the popup does not keep showing after the user closes or subscribes

@@ -233,6 +233,127 @@ Aivara Solutions · aivarasolutions.com`;
   }
 }
 
+interface WelcomeEmailData {
+  firstName?: string;
+  email: string;
+  interest?: string;
+}
+
+export async function sendWelcomeEmail(data: WelcomeEmailData): Promise<void> {
+  const resend = getResend();
+  if (!resend) {
+    console.warn('RESEND_API_KEY not set — skipping welcome email');
+    return;
+  }
+
+  const first = (data.firstName || '').trim() || 'there';
+  const services = [
+    'AI Automation Systems',
+    'Client Portals & Business Dashboards',
+    'Lead Generation & Marketing Automation',
+    'AI Training & Business Onboarding',
+    'Websites + Automation Buildouts',
+    'Creative Content & Brand Media',
+  ];
+
+  const serviceList = services
+    .map(
+      (s) => `
+      <tr>
+        <td style="padding:8px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:14px; color:#1a1a1a; line-height:1.55;">
+          <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:linear-gradient(135deg, #db2777 0%, #14b8a6 100%); margin-right:12px; vertical-align:middle;"></span>
+          <strong style="font-weight:600;">${escape(s)}</strong>
+        </td>
+      </tr>`
+    )
+    .join('');
+
+  const bodyHtml = `
+    <p style="margin:0 0 18px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:15px; color:#1a1a1a; line-height:1.65;">
+      Hi ${escape(first)},
+    </p>
+
+    <p style="margin:0 0 18px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:15px; color:#4b5563; line-height:1.7;">
+      Thanks for joining the Aivara Solutions list. We'll send practical ideas, tools, and updates to help you automate your business, improve your client experience, and build systems that scale.
+    </p>
+
+    <p style="margin:0 0 14px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:13px; font-weight:700; color:#6b7280; text-transform:uppercase; letter-spacing:1.5px;">
+      What we help businesses with
+    </p>
+
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom:28px;">
+      ${serviceList}
+    </table>
+
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin:8px 0 18px 0;">
+      <tr>
+        <td style="border-radius:10px; background:linear-gradient(135deg, #db2777 0%, #14b8a6 50%, #facc15 100%);">
+          <a href="${SITE_URL}/contact"
+             style="display:inline-block; padding:14px 32px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:15px; font-weight:700; color:#000000; text-decoration:none; border-radius:10px;">
+            Book a Free Strategy Call
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <p style="margin:0 0 28px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:14px; color:#4b5563;">
+      Or
+      <a href="${SITE_URL}" style="color:#0f766e; text-decoration:none; font-weight:600;">explore Aivara Solutions →</a>
+    </p>
+
+    <p style="margin:24px 0 6px 0; padding-top:20px; border-top:1px solid #ececec; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:13px; color:#6b7280; line-height:1.6;">
+      <strong style="color:#1a1a1a;">Kevin · Aivara Solutions</strong><br>
+      <a href="mailto:kevin@aivarasolutions.com" style="color:#0f766e; text-decoration:none;">kevin@aivarasolutions.com</a> · <a href="tel:+13104000032" style="color:#0f766e; text-decoration:none;">310-400-0032</a><br>
+      <a href="${SITE_URL}" style="color:#0f766e; text-decoration:none;">aivarasolutions.com</a>
+    </p>
+  `;
+
+  const html = brandedShell({
+    preheader: 'Welcome to Aivara Solutions — AI, automation, and systems built to scale.',
+    badge: 'WELCOME',
+    title: 'Welcome to Aivara Solutions',
+    intro:
+      "Thanks for joining our list. We help businesses build smarter systems with AI, automation, websites, portals, marketing, and creative content.",
+    bodyHtml,
+  });
+
+  const text = `Welcome to Aivara Solutions
+
+Hi ${first},
+
+Thanks for joining the Aivara Solutions list. We'll send practical ideas, tools, and updates to help you automate your business, improve your client experience, and build systems that scale.
+
+We help businesses with:
+  • AI Automation Systems
+  • Client Portals & Business Dashboards
+  • Lead Generation & Marketing Automation
+  • AI Training & Business Onboarding
+  • Websites + Automation Buildouts
+  • Creative Content & Brand Media
+
+Book a Free Strategy Call: ${SITE_URL}/contact
+Explore Aivara Solutions: ${SITE_URL}
+
+Kevin · Aivara Solutions
+kevin@aivarasolutions.com · 310-400-0032
+${SITE_URL}
+
+Aivara Solutions — AI-powered systems for modern businesses.`;
+
+  try {
+    await resend.emails.send({
+      from: FROM_EMAIL,
+      to: data.email,
+      replyTo: 'kevin@aivarasolutions.com',
+      subject: 'Welcome to Aivara Solutions — Build, Automate & Scale Smarter',
+      html,
+      text,
+    });
+  } catch (error) {
+    console.error('Resend welcome email failed:', error);
+  }
+}
+
 export async function sendNewsletterNotification(email: string): Promise<void> {
   const resend = getResend();
   if (!resend) {

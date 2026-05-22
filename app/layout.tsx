@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { NewsletterPopup } from "@/components/ui/NewsletterPopup";
 
 const getSiteUrl = () => {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
@@ -57,7 +58,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <NewsletterPopup />
+      </body>
     </html>
   );
 }

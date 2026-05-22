@@ -17,18 +17,22 @@ export function NewsletterForm() {
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          interest: 'Website Footer',
+          source: 'Website Footer',
+        }),
       });
 
       const data = await res.json();
 
       if (res.ok) {
         setStatus('success');
-        setMessage('Thanks for subscribing!');
+        setMessage('Thank you! Check your inbox for a welcome email.');
         setEmail('');
       } else {
         setStatus('error');
-        setMessage(data.error || 'Something went wrong');
+        setMessage(data.error || 'Something went wrong. Please try again.');
       }
     } catch (error) {
       setStatus('error');
