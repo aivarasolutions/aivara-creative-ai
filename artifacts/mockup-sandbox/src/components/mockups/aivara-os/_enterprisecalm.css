@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.enterprise-calm-wrapper {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0c;
+  color: #ededed;
+}
+
+.enterprise-calm-gradient-text {
+  background: linear-gradient(to right, #ffffff, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.enterprise-calm-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, rgba(10, 10, 12, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.enterprise-calm-glow-pink {
+  background: radial-gradient(circle, rgba(219, 39, 119, 0.05) 0%, rgba(10, 10, 12, 0) 70%);
+}
+
+.enterprise-calm-glow-yellow {
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.04) 0%, rgba(10, 10, 12, 0) 70%);
+}
+
+.enterprise-calm-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.enterprise-calm-glass {
+  background: rgba(10, 10, 12, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.enterprise-calm-strike {
+  position: relative;
+  display: inline-block;
+}
+
+.enterprise-calm-strike::after {
+  content: '';
+  position: absolute;
+  left: -5%;
+  top: 50%;
+  width: 110%;
+  height: 2px;
+  background: #db2777;
+  transform: rotate(-5deg);
+}
+
+@keyframes enterprise-calm-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.enterprise-calm-marquee {
+  display: flex;
+  width: 200%;
+  animation: enterprise-calm-scroll 20s linear infinite;
+}
+
+.enterprise-calm-marquee:hover {
+  animation-play-state: paused;
+}

@@ -1,0 +1,211 @@
+IMPORTANT:
+Before making ANY homepage changes, create a FULL CHECKPOINT / SNAPSHOT / BACKUP of the current AivaraSolutions.com homepage so we can instantly roll back if needed.
+
+DO NOT overwrite or permanently remove the existing design.
+DO NOT delete existing assets, components, animations, sections, or code.
+Create a recoverable saved version first.
+
+GOAL:
+Transform Aivara Solutions from an “AI services agency” feeling into an “AI-powered business operating system / SaaS platform” feeling similar to PMSuite.co — while keeping Aivara’s existing branding, identity, and infrastructure.
+
+IMPORTANT:
+We are NOT cloning PMSuite.
+We are upgrading Aivara’s positioning into a scalable white-label SaaS ecosystem.
+
+NEW POSITIONING:
+“Aivara OS”
+or
+“The AI-Powered Operating System for Modern Businesses”
+
+The homepage should feel:
+
+* enterprise SaaS
+* operational platform
+* scalable infrastructure
+* AI-powered ecosystem
+* premium
+* modular
+* modern
+* investor-ready
+
+VISUAL STYLE:
+
+* Dark modern UI
+* Large bold typography
+* Modular dashboard cards
+* Enterprise SaaS aesthetic
+* Smooth animations
+* Glassmorphism accents
+* Gradient highlights
+* Premium spacing
+* Mobile-first optimization
+* Strong CTA sections
+
+DO NOT:
+
+* remove our existing branding
+* remove our existing colors unless improving consistency
+* remove current functionality
+* break SEO
+* break responsiveness
+* remove analytics/tracking
+
+ADD THESE NEW SECTIONS:
+
+1. HERO SECTION
+   Headline:
+   “One AI Platform To Run Your Entire Business”
+
+Subheadline:
+CRM • Automations • Dashboards • Analytics • AI Assistants • White-Label Portals
+
+Buttons:
+
+* Book Demo
+* Explore Platform
+* Get Started
+
+Include:
+
+* animated SaaS dashboard preview
+* operational metrics
+* AI workflow visuals
+* dashboard widgets
+* business management UI
+
+2. “REPLACE YOUR STACK” SECTION
+   Visually compare Aivara against:
+
+* HubSpot
+* Slack
+* Monday
+* Notion
+* ClickUp
+* Zapier
+* QuickBooks
+* Hootsuite
+* Salesforce
+
+Headline:
+“Replace Multiple Tools With One AI-Powered Platform”
+
+3. AIVARA MODULES SECTION
+   Create modular SaaS-style cards for:
+
+* AI CRM
+* Operations Hub
+* Analytics & Reporting
+* White-Label Portals
+* Property Management Systems
+* Logistics & Dispatch
+* AI Marketing
+* Social Scheduler
+* Team Workspace
+* AI Assistants
+* Booking Systems
+* Automation Engine
+
+Each card should include:
+
+* icon
+* short description
+* hover animation
+* enterprise-style design
+
+4. LIVE DASHBOARD SHOWCASE
+   Add dashboard mockups inspired by our actual systems:
+
+* FreightSync portal
+* IPM owner portal
+* analytics dashboards
+* automation systems
+* Slack integrations
+* reporting interfaces
+
+Make these feel like:
+“Powered by Aivara OS”
+
+5. WHITE-LABEL SECTION
+   Headline:
+   “Launch Your Own Branded Platform”
+
+Include:
+
+* custom domains
+* branded dashboards
+* portals
+* client systems
+* automation infrastructure
+* analytics
+* mobile support
+* AI integrations
+
+6. INDUSTRIES SECTION
+   Add cards for:
+
+* Property Management
+* Transportation & Logistics
+* Hospitality
+* Travel & Tourism
+* Marketing Agencies
+* Content Creators
+* Service Businesses
+
+7. SOCIAL PROOF / PLATFORM FEEL
+   Add:
+
+* metrics
+* dashboards
+* automation counters
+* workflow visuals
+* AI agent integrations
+* modern SaaS UI components
+
+8. CTA SECTION
+   Strong enterprise CTA:
+   “Power Your Business With Aivara OS”
+
+Buttons:
+
+* Schedule Demo
+* Start Building
+* Become a White-Label Partner
+
+IMPORTANT DEVELOPMENT RULES:
+
+* Preserve current site structure where possible
+* Create reusable components
+* Maintain SEO optimization
+* Maintain responsiveness
+* Keep page loading optimized
+* Keep analytics intact
+* Keep mobile UX excellent
+* Create scalable SaaS architecture styling
+* Use modern enterprise SaaS design patterns
+
+FINAL GOAL:
+The site should feel like:
+
+* a real AI business operating system
+* a scalable white-label SaaS platform
+* an enterprise automation ecosystem
+* a premium operational infrastructure company
+
+NOT:
+
+* a generic AI agency
+* a freelancer portfolio
+* a simple marketing site
+
+It should visually compete with:
+
+* PMSuite
+* Monday.com
+* ClickUp
+* HubSpot
+* Notion
+* Retool
+* Airtable
+* Zoho
+
+while still maintaining Aivara’s unique identity.
