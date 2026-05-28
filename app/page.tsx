@@ -44,7 +44,17 @@ import {
   MonitorSmartphone,
   PieChart,
   Activity,
+  LayoutDashboard,
+  Truck,
+  Building2,
+  Waves,
+  Target,
+  Plane,
+  Compass,
+  Bot,
+  Music,
 } from "lucide-react";
+import { ToolPill } from "@/components/ui/ToolPill";
 import "./styles/aivara-os.css";
 
 /* ────────────────────────────────────────────────────────────────────
@@ -71,12 +81,14 @@ const HEADER = {
  * ──────────────────────────────────────────────────────────────────── */
 const HERO = {
   badge: "Now in private beta",
-  titleLead: "The AI-Powered Operating System for",
-  titleAccent: "Modern Businesses",
+  // Full gradient title (whole headline rendered with bold-gradient-text)
+  title: "AI-Powered Systems for Modern Businesses",
   subtitle:
-    "Replace your fragmented software stack with one intelligent, unified platform. Automate workflows, analyze data, and run your entire enterprise from a single dashboard.",
-  primaryCta: { label: "Book a Demo", href: "/contact" },
-  secondaryCta: { label: "Explore Platform", href: "#modules" },
+    "Aivara Solutions builds websites, portals, automations, AI workflows, marketing systems, and creative content engines for businesses ready to operate smarter.",
+  primaryCta: { label: "Book a Free Strategy Call", href: "/contact" },
+  secondaryCta: { label: "Explore Our Services", href: "/services" },
+  footnote:
+    "Built for service businesses, property managers, logistics teams, travel brands, creators, and growing companies.",
 };
 
 const TRUSTED_BY = [
@@ -225,6 +237,207 @@ const FINAL_CTA = {
 };
 
 /* ────────────────────────────────────────────────────────────────────
+ *  TOOLS — "The Tools We Use to Build, Automate & Scale Businesses"
+ * ──────────────────────────────────────────────────────────────────── */
+const TOOLS_HEADING = {
+  eyebrow: "Powered by Industry-Leading Tools",
+  title: "The Tools We Use to Build, Automate & Scale Businesses",
+  subtitle:
+    "Powered by industry-leading platforms for AI, development, automation, communication, creative production, and business infrastructure.",
+  disclaimer:
+    "Logos shown represent tools and platforms we use in our workflow. Aivara Solutions is not claiming official partnership or endorsement unless stated. All logos and product names are trademarks of their respective owners.",
+};
+
+const si = (slug: string) => `https://cdn.simpleicons.org/${slug}`;
+const siWhite = (slug: string) => `https://cdn.simpleicons.org/${slug}/ffffff`;
+
+const TOOL_CATEGORIES: {
+  title: string;
+  tools: { name: string; logo: string | null }[];
+}[] = [
+  {
+    title: "AI Strategy & Automation",
+    tools: [
+      { name: "ChatGPT", logo: "/images/logos/chatgpt.svg" },
+      { name: "Manus", logo: "/images/logos/manus.svg" },
+      { name: "Runway", logo: "/images/logos/runway.svg" },
+    ],
+  },
+  {
+    title: "App & Portal Development",
+    tools: [
+      { name: "Replit", logo: si("replit") },
+      { name: "Supabase", logo: si("supabase") },
+      { name: "Vercel", logo: siWhite("vercel") },
+      { name: "GitHub", logo: siWhite("github") },
+    ],
+  },
+  {
+    title: "Email & Client Communication",
+    tools: [
+      { name: "Resend", logo: siWhite("resend") },
+      { name: "Mailchimp", logo: si("mailchimp") },
+      { name: "Google Workspace", logo: si("google") },
+      { name: "Slack", logo: "/images/logos/slack.svg" },
+    ],
+  },
+  {
+    title: "Creative Production",
+    tools: [
+      { name: "Canva", logo: "/images/logos/canva.svg" },
+      { name: "CapCut", logo: "/images/logos/capcut.svg" },
+      { name: "Runway", logo: "/images/logos/runway.svg" },
+    ],
+  },
+  {
+    title: "Payments & Financial Operations",
+    tools: [
+      { name: "Stripe", logo: si("stripe") },
+      { name: "PayPal", logo: si("paypal") },
+      { name: "QuickBooks", logo: si("quickbooks") },
+      { name: "Square", logo: siWhite("square") },
+    ],
+  },
+  {
+    title: "Websites, Domains & Infrastructure",
+    tools: [
+      { name: "Squarespace", logo: siWhite("squarespace") },
+      { name: "GoDaddy", logo: si("godaddy") },
+      { name: "Vercel", logo: siWhite("vercel") },
+    ],
+  },
+];
+
+/* ────────────────────────────────────────────────────────────────────
+ *  PORTFOLIO — "Systems, Brands & Builds Powered by Aivara"
+ * ──────────────────────────────────────────────────────────────────── */
+const PORTFOLIO_HEADING = {
+  title: "Systems, Brands & Builds Powered by Aivara",
+  subtitle:
+    "From client portals and AI automations to booking systems, lead funnels, dashboards, and creative campaigns — these are the types of systems we build to help businesses operate and grow smarter.",
+  disclaimer:
+    "Some projects shown are internal Aivara-built systems, owned brands, or client-facing builds currently in development.",
+  ctaTitle: "Want a system like this built for your business?",
+  ctaLabel: "Start My Build",
+  ctaHref: "/contact",
+  viewAllLabel: "View all work",
+  viewAllHref: "/portfolio",
+};
+
+type PortfolioItem = {
+  title: string;
+  category: string;
+  badge: string;
+  description: string;
+  chips: string[];
+  gradient: string;
+  image: string;
+  url: string;
+};
+
+const PORTFOLIO_ITEMS: PortfolioItem[] = [
+  {
+    title: "Aivara Client Portal",
+    category: "Portal / AI Automation",
+    badge: "Internal Build",
+    description:
+      "Manage requests, budgets, files, approvals, and updates from one client-facing system.",
+    chips: ["Portal", "Automation", "Client System"],
+    gradient: "from-pink-500 via-purple-500 to-blue-500",
+    image: "/images/portfolio/site-aivara-portal.png",
+    url: "https://portal.aivarasolutions.com",
+  },
+  {
+    title: "FreightSync TMS Owner Portal",
+    category: "Logistics / Dashboard",
+    badge: "Logistics System",
+    description:
+      "Track loads, revenue, expenses, and settlements from one owner-facing dashboard.",
+    chips: ["Logistics", "Dashboard", "Reporting"],
+    gradient: "from-blue-500 via-teal-500 to-green-500",
+    image: "/images/portfolio/site-freightsync.png",
+    url: "https://freightsynctms.com",
+  },
+  {
+    title: "IPM Owner & Property Portal",
+    category: "Property Management / Portal",
+    badge: "Property Management",
+    description:
+      "Monitor reservations, expenses, payouts, and property performance in one place.",
+    chips: ["Property Management", "Portal", "Reporting"],
+    gradient: "from-teal-500 via-green-500 to-yellow-400",
+    image: "/images/portfolio/ai-ipm-apollo.png",
+    url: "https://ipm.services",
+  },
+  {
+    title: "Wave Sandy Booking & Campaign System",
+    category: "Travel / Rentals / Marketing",
+    badge: "Booking + Marketing",
+    description:
+      "Drive bookings with campaign pages, analytics, and conversion-focused rental marketing.",
+    chips: ["Booking", "Marketing", "Analytics"],
+    gradient: "from-cyan-400 via-blue-500 to-purple-500",
+    image: "/images/portfolio/site-wavesandy.png",
+    url: "https://book.wavesandy.com",
+  },
+  {
+    title: "Google Ads Lead Generation System",
+    category: "Marketing / Lead Gen",
+    badge: "Lead Generation",
+    description:
+      "Capture and track leads with landing pages, analytics, follow-up, and reporting.",
+    chips: ["Lead Generation", "Tracking", "Automation"],
+    gradient: "from-yellow-400 via-orange-500 to-pink-500",
+    image: "/images/portfolio/site-aivara.jpg",
+    url: "/contact",
+  },
+  {
+    title: "RichAF.Global Guidebook Funnel",
+    category: "Travel / Digital Product",
+    badge: "Travel Tech",
+    description:
+      "Turn destination content into a branded funnel for guidebook sales and audience growth.",
+    chips: ["Travel Tech", "Funnel", "Digital Product"],
+    gradient: "from-purple-500 via-pink-500 to-orange-400",
+    image: "/images/portfolio/site-richaf.png",
+    url: "https://guides.richaf.global",
+  },
+  {
+    title: "Hidden Jade Experiences Brand Assets",
+    category: "Creative / Tourism",
+    badge: "Creative Production",
+    description:
+      "Present experiences with polished brand visuals, brochures, and guest-facing marketing.",
+    chips: ["Creative", "Tourism", "Branding"],
+    gradient: "from-green-500 via-teal-500 to-cyan-500",
+    image: "/images/portfolio/site-hiddenjade.png",
+    url: "https://hiddenjadeexperiences.com",
+  },
+  {
+    title: "AI Customer Support Bot",
+    category: "AI / Automation",
+    badge: "AI Automation",
+    description:
+      "Answer FAQs, capture leads, and route customer requests automatically.",
+    chips: ["AI", "Support", "Lead Capture"],
+    gradient: "from-pink-500 via-purple-500 to-teal-500",
+    image: "/images/portfolio/ai-richaf-bot.png",
+    url: "https://richaf.global",
+  },
+  {
+    title: "Brand Sound Identity",
+    category: "Creative / Music",
+    badge: "Creative Media",
+    description:
+      "Strengthen campaigns and content with custom audio branding and theme music.",
+    chips: ["Creative Media", "Audio", "Branding"],
+    gradient: "from-orange-500 via-pink-500 to-purple-500",
+    image: "/images/portfolio/site-aivara-music.png",
+    url: "/contact",
+  },
+];
+
+/* ────────────────────────────────────────────────────────────────────
  * 9. FOOTER (mockup design)
  * ──────────────────────────────────────────────────────────────────── */
 const FOOTER = {
@@ -338,18 +551,17 @@ export default function HomePage() {
             <span className="flex h-2 w-2 rounded-full bg-teal-400 animate-pulse" />
             {HERO.badge}
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 max-w-4xl mx-auto leading-tight">
-            {HERO.titleLead}{" "}
-            <span className="bold-gradient-text">{HERO.titleAccent}</span>
+          <h1 className="bold-gradient-text text-5xl md:text-7xl font-extrabold tracking-tight mb-8 max-w-4xl mx-auto leading-tight">
+            {HERO.title}
           </h1>
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12">
+          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12">
             {HERO.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <Link
               href={HERO.primaryCta.href}
               onClick={() => trackBookingClick("homepage_hero")}
-              className="w-full sm:w-auto bg-gradient-to-r from-pink-600 to-teal-500 text-white px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-transform flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(219,39,119,0.4)]"
+              className="w-full sm:w-auto bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-500 text-white px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-transform flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(219,39,119,0.4)]"
             >
               {HERO.primaryCta.label} <ArrowRight size={18} />
             </Link>
@@ -363,6 +575,9 @@ export default function HomePage() {
               {HERO.secondaryCta.label}
             </Link>
           </div>
+          <p className="text-sm text-slate-500 max-w-xl mx-auto mb-20">
+            {HERO.footnote}
+          </p>
 
           <div className="text-sm text-slate-500 font-medium mb-8 uppercase tracking-widest">
             Trusted by Enterprise Leaders
@@ -750,6 +965,146 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── PORTFOLIO ──────────────────────────────────────────── */}
+        <section className="py-24 bg-gradient-to-r from-pink-600/10 via-teal-500/10 to-yellow-400/10 border-y border-white/5">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <div className="text-center mb-12">
+              <h2 className="bold-gradient-text text-3xl md:text-5xl font-bold mb-4">
+                {PORTFOLIO_HEADING.title}
+              </h2>
+              <p className="text-lg text-slate-300 max-w-3xl mx-auto mb-3">
+                {PORTFOLIO_HEADING.subtitle}
+              </p>
+              <p className="text-sm text-slate-500 italic max-w-3xl mx-auto">
+                {PORTFOLIO_HEADING.disclaimer}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {PORTFOLIO_ITEMS.map((item) => {
+                const isExternal = item.url.startsWith("http");
+                return (
+                  <a
+                    key={item.title}
+                    href={item.url}
+                    {...(isExternal
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className="group relative h-full block"
+                  >
+                    <div className="absolute -inset-0.5 bg-gradient-to-br from-pink-600/40 via-teal-500/40 to-yellow-400/40 rounded-2xl blur opacity-0 group-hover:opacity-70 transition duration-500" />
+                    <div className="relative h-full bg-black/70 border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-white/20 group-hover:-translate-y-1 cursor-pointer flex flex-col">
+                      <div
+                        className={`relative aspect-video overflow-hidden bg-gradient-to-br ${item.gradient}`}
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur border border-white/20 text-[10px] uppercase tracking-wider font-semibold text-white">
+                          {item.badge}
+                        </div>
+                      </div>
+                      <div className="p-6 flex flex-col flex-1">
+                        <div className="text-[11px] text-teal-400 mb-2 uppercase tracking-wider font-semibold">
+                          {item.category}
+                        </div>
+                        <h3 className="text-lg font-bold mb-2 text-white leading-snug">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-slate-400 leading-relaxed mb-4">
+                          {item.description}
+                        </p>
+                        <div className="flex flex-wrap gap-1.5 mt-auto">
+                          {item.chips.map((chip) => (
+                            <span
+                              key={chip}
+                              className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider font-semibold bg-white/5 border border-white/10 text-slate-300"
+                            >
+                              {chip}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+
+            <div className="text-center max-w-2xl mx-auto pt-8 border-t border-white/10">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">
+                {PORTFOLIO_HEADING.ctaTitle}
+              </h3>
+              <Link
+                href={PORTFOLIO_HEADING.ctaHref}
+                onClick={() =>
+                  trackCTA(
+                    PORTFOLIO_HEADING.ctaLabel,
+                    "portfolio_cta",
+                    PORTFOLIO_HEADING.ctaHref
+                  )
+                }
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 text-black font-bold px-10 py-4 text-lg rounded-xl hover:opacity-90 transition"
+              >
+                {PORTFOLIO_HEADING.ctaLabel}
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+              <div className="mt-8">
+                <Link
+                  href={PORTFOLIO_HEADING.viewAllHref}
+                  className="text-sm text-slate-400 hover:text-teal-300 transition inline-flex items-center gap-1"
+                >
+                  {PORTFOLIO_HEADING.viewAllLabel}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── TOOLS / TECH STACK ─────────────────────────────────── */}
+        <section className="py-24 bg-black">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <div className="text-center mb-14">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-600/20 via-teal-500/20 to-yellow-400/20 border border-white/10 mb-6">
+                <span className="text-xs uppercase tracking-wider text-slate-200 font-semibold">
+                  {TOOLS_HEADING.eyebrow}
+                </span>
+              </div>
+              <h2 className="bold-gradient-text text-3xl md:text-5xl font-bold mb-6">
+                {TOOLS_HEADING.title}
+              </h2>
+              <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                {TOOLS_HEADING.subtitle}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {TOOL_CATEGORIES.map((cat) => (
+                <div key={cat.title} className="group relative h-full">
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-pink-600/30 via-teal-500/30 to-yellow-400/30 rounded-2xl blur opacity-0 group-hover:opacity-60 transition duration-500" />
+                  <div className="relative h-full bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 rounded-2xl transition-all duration-500 group-hover:border-white/20 group-hover:-translate-y-1">
+                    <div className="p-7 flex flex-col h-full">
+                      <h3 className="text-xl font-bold mb-5 text-white">{cat.title}</h3>
+                      <div className="flex flex-wrap gap-2.5 mt-auto">
+                        {cat.tools.map((tool, i) => (
+                          <ToolPill key={`${tool.name}-${i}`} name={tool.name} logo={tool.logo} />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-xs text-slate-500 italic text-center mt-10 max-w-3xl mx-auto leading-relaxed">
+              {TOOLS_HEADING.disclaimer}
+            </p>
           </div>
         </section>
 
