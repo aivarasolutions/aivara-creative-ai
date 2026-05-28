@@ -25,8 +25,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { trackCTA, trackBookingClick } from "@/lib/analytics";
 import {
   ArrowRight,
@@ -48,6 +46,25 @@ import {
   Activity,
 } from "lucide-react";
 import "./styles/aivara-os.css";
+
+/* ────────────────────────────────────────────────────────────────────
+ * 0. HEADER (sticky nav, mockup design)
+ * ──────────────────────────────────────────────────────────────────── */
+const HEADER = {
+  logoSrc: "/images/aivara-logo.png",
+  brand: "AIVARA OS",
+  nav: [
+    { label: "Platform", href: "#modules" },
+    { label: "Modules", href: "#modules" },
+    { label: "Industries", href: "#industries" },
+    { label: "Pricing", href: "/contact" },
+    { label: "Resources", href: "/portfolio" },
+  ],
+  signInLabel: "Sign In",
+  signInHref: "/contact",
+  bookDemoLabel: "Book Demo",
+  bookDemoHref: "/contact",
+};
 
 /* ────────────────────────────────────────────────────────────────────
  * 1. HERO
@@ -208,6 +225,58 @@ const FINAL_CTA = {
 };
 
 /* ────────────────────────────────────────────────────────────────────
+ * 9. FOOTER (mockup design)
+ * ──────────────────────────────────────────────────────────────────── */
+const FOOTER = {
+  logoSrc: "/images/aivara-logo.png",
+  blurb:
+    "The AI-Powered Operating System for Modern Businesses. Unify, automate, and scale.",
+  columns: [
+    {
+      title: "Platform",
+      links: [
+        { label: "Architecture", href: "#" },
+        { label: "Security", href: "#" },
+        { label: "White-Label", href: "#" },
+        { label: "API", href: "#" },
+      ],
+    },
+    {
+      title: "Modules",
+      links: [
+        { label: "CRM", href: "#modules" },
+        { label: "Operations", href: "#modules" },
+        { label: "Finance", href: "#modules" },
+        { label: "Copilot", href: "#modules" },
+      ],
+    },
+    {
+      title: "Industries",
+      links: [
+        { label: "Logistics", href: "#industries" },
+        { label: "E-Commerce", href: "#industries" },
+        { label: "Real Estate", href: "#industries" },
+        { label: "Agencies", href: "#industries" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { label: "About", href: "/contact" },
+        { label: "Blog", href: "#" },
+        { label: "Careers", href: "#" },
+        { label: "Contact", href: "/contact" },
+      ],
+    },
+  ],
+  legalLinks: [
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms of Service", href: "#" },
+    { label: "Security", href: "#" },
+  ],
+};
+
+/* ────────────────────────────────────────────────────────────────────
  *  PAGE
  * ──────────────────────────────────────────────────────────────────── */
 export default function HomePage() {
@@ -218,9 +287,51 @@ export default function HomePage() {
       <div className="bold-gradient-blob bg-teal-500 w-[500px] h-[500px] rounded-full top-[20%] right-[-200px]" />
       <div className="bold-gradient-blob bg-yellow-500 w-80 h-80 rounded-full bottom-[10%] left-[10%]" />
 
-      <Header />
+      {/* ── HEADER (sticky) ────────────────────────────────────── */}
+      <header className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5">
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src={HEADER.logoSrc}
+              alt="Aivara Solutions"
+              width={120}
+              height={32}
+              className="h-8 w-auto"
+            />
+            <span className="font-bold text-xl tracking-tight hidden sm:block">
+              {HEADER.brand}
+            </span>
+          </Link>
+          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+            {HEADER.nav.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="hover:text-white transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex items-center gap-4">
+            <Link
+              href={HEADER.signInHref}
+              className="text-sm font-medium hover:text-white transition-colors hidden sm:block"
+            >
+              {HEADER.signInLabel}
+            </Link>
+            <Link
+              href={HEADER.bookDemoHref}
+              onClick={() => trackBookingClick("homepage_header")}
+              className="bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-500 hover:opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-[0_0_20px_rgba(20,184,166,0.3)]"
+            >
+              {HEADER.bookDemoLabel}
+            </Link>
+          </div>
+        </div>
+      </header>
 
-      <main className="relative z-10 pb-20">
+      <main className="relative z-10 pt-32 pb-20">
         {/* ── HERO ────────────────────────────────────────────────── */}
         <section className="container mx-auto px-6 pt-16 pb-24 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium mb-8">
@@ -678,7 +789,54 @@ export default function HomePage() {
         </section>
       </main>
 
-      <Footer />
+      {/* ── FOOTER ────────────────────────────────────────────── */}
+      <footer className="border-t border-white/10 bg-slate-950 pt-20 pb-10 relative z-10">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-10 mb-16">
+            <div className="col-span-2">
+              <Image
+                src={FOOTER.logoSrc}
+                alt="Aivara Solutions"
+                width={120}
+                height={32}
+                className="h-8 w-auto mb-4 opacity-80"
+              />
+              <p className="text-slate-400 text-sm mb-6 max-w-xs">{FOOTER.blurb}</p>
+            </div>
+            {FOOTER.columns.map((col) => (
+              <div key={col.title}>
+                <h4 className="font-semibold mb-4 text-white">{col.title}</h4>
+                <ul className="space-y-2 text-sm text-slate-400">
+                  {col.links.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="hover:text-teal-400 transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-xs text-slate-500">
+            <p>© {new Date().getFullYear()} Aivara Solutions. All rights reserved.</p>
+            <div className="flex gap-4 mt-4 md:mt-0">
+              {FOOTER.legalLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
