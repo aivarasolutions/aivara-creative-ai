@@ -82,11 +82,12 @@ const HEADER = {
 const HERO = {
   badge: "Now in private beta",
   // Full gradient title (whole headline rendered with bold-gradient-text)
-  title: "AI-Powered Systems for Modern Businesses",
+  title: "The AI-Powered Operating System For Modern Businesses",
   subtitle:
-    "Replace your fragmented software stack with one intelligent, unified platform. Automate workflows, analyze data, and run your entire enterprise from a single dashboard.",
-  primaryCta: { label: "Book a Demo", href: "/contact" },
-  secondaryCta: { label: "Explore Platform", href: "#modules" },
+    "CRM • Automations • Dashboards • Analytics • Operations • AI Assistants • White-Label Portals",
+  primaryCta: { label: "Book Demo", href: "/contact" },
+  secondaryCta: { label: "See Platform", href: "#modules" },
+  tertiaryCta: { label: "Start Free", href: "/contact" },
 };
 
 const TRUSTED_BY = [
@@ -571,6 +572,15 @@ export default function HomePage() {
               className="w-full sm:w-auto glass-panel hover:bg-white/10 px-8 py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
             >
               {HERO.secondaryCta.label}
+            </Link>
+            <Link
+              href={HERO.tertiaryCta.href}
+              onClick={() =>
+                trackCTA(HERO.tertiaryCta.label, "homepage_hero", HERO.tertiaryCta.href)
+              }
+              className="w-full sm:w-auto border border-white/20 hover:bg-white/5 px-8 py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
+            >
+              {HERO.tertiaryCta.label}
             </Link>
           </div>
 
