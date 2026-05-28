@@ -939,7 +939,7 @@ export default function HomePage() {
         </section>
 
         {/* ── WHITE-LABEL ────────────────────────────────────────── */}
-        <section className="container mx-auto px-6 py-24">
+        <section id="whitelabel" className="container mx-auto px-6 py-24">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -958,51 +958,165 @@ export default function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="flex-1 relative">
-              <div className="absolute -inset-10 bg-gradient-to-tr from-pink-600/20 to-yellow-500/20 blur-3xl rounded-full" />
+            <div className="flex-1 relative w-full">
+              {/* gradient glow */}
+              <div className="absolute -inset-10 bg-gradient-to-tr from-pink-600/30 via-teal-500/20 to-yellow-500/20 blur-3xl rounded-full" />
 
-              <div className="relative">
-                <div className="rounded-xl border border-white/10 bg-slate-900 shadow-2xl relative z-10 w-[80%] ml-auto">
-                  <div className="h-8 bg-black/40 border-b border-white/5 px-3 flex items-center">
-                    <Globe size={10} className="text-slate-500 mr-2" />
-                    <span className="text-[10px] text-slate-500">app.aivara.os</span>
+              {/* Browser frame */}
+              <div className="relative rounded-xl border border-white/10 bg-slate-950 shadow-2xl overflow-hidden">
+                <div className="h-8 bg-black/60 border-b border-white/10 px-3 flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/15" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/15" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/15" />
                   </div>
-                  <div className="p-4 bg-slate-950">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 bg-gradient-to-br from-pink-500 to-teal-500 rounded flex items-center justify-center">
-                        <Image
-                          src="/images/aivara-logo.png"
-                          alt=""
-                          width={16}
-                          height={16}
-                          className="w-4 h-auto"
-                        />
+                  <div className="ml-3 flex items-center gap-1.5 px-2 py-0.5 rounded bg-white/5 text-[10px] text-slate-400">
+                    <Globe size={9} />
+                    portal.yourcompany.com
+                  </div>
+                </div>
+
+                {/* Dashboard body */}
+                <div className="flex bg-slate-950 text-white min-h-[340px]">
+                  {/* Sidebar — modules */}
+                  <aside className="hidden sm:flex w-32 shrink-0 flex-col border-r border-white/10 bg-black/40 p-3 gap-1">
+                    {/* Branding placeholder */}
+                    <div className="mb-3 px-2 py-2 rounded-md border border-dashed border-pink-400/60 bg-pink-500/10 text-center">
+                      <div className="text-[8px] uppercase tracking-wider text-pink-300 font-bold leading-tight">
+                        Your Logo
                       </div>
-                      <div className="h-2 w-16 bg-white/20 rounded" />
                     </div>
-                    <div className="space-y-2">
-                      <div className="h-16 bg-white/5 rounded border border-white/5 border-l-2 border-l-pink-500" />
-                      <div className="h-16 bg-white/5 rounded border border-white/5" />
-                    </div>
-                  </div>
-                </div>
+                    {[
+                      { icon: Users, label: "CRM", active: true },
+                      { icon: Workflow, label: "Operations" },
+                      { icon: BarChart3, label: "Analytics" },
+                      { icon: Layers, label: "Projects" },
+                      { icon: Database, label: "Finance" },
+                      { icon: MessageSquare, label: "Support" },
+                      { icon: Settings, label: "Settings" },
+                    ].map((m) => (
+                      <div
+                        key={m.label}
+                        className={`flex items-center gap-2 px-2 py-1.5 rounded text-[10px] ${
+                          m.active
+                            ? "bg-gradient-to-r from-pink-600/30 to-teal-500/20 text-white border border-pink-400/30"
+                            : "text-slate-400"
+                        }`}
+                      >
+                        <m.icon size={11} />
+                        <span>{m.label}</span>
+                      </div>
+                    ))}
+                  </aside>
 
-                <div className="rounded-xl border border-white/10 bg-slate-900 shadow-2xl absolute -bottom-10 -left-4 w-[80%] z-20">
-                  <div className="h-8 bg-black/40 border-b border-white/5 px-3 flex items-center">
-                    <Globe size={10} className="text-slate-500 mr-2" />
-                    <span className="text-[10px] text-slate-500">portal.acmelogistics.com</span>
-                  </div>
-                  <div className="p-4 bg-slate-50">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 bg-blue-600 rounded" />
-                      <div className="h-2 w-16 bg-slate-300 rounded" />
+                  {/* Main */}
+                  <div className="flex-1 p-4 space-y-3 min-w-0">
+                    {/* Top bar with branding placeholder */}
+                    <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                      <div className="flex items-center gap-2">
+                        <div className="px-3 py-1.5 rounded-md border-2 border-dashed border-teal-400/70 bg-teal-500/10">
+                          <span className="text-[9px] uppercase tracking-widest font-bold text-teal-300">
+                            Your Branding Here
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Search size={11} className="text-slate-500" />
+                        <Bell size={11} className="text-slate-500" />
+                        <div className="w-5 h-5 rounded-full bg-gradient-to-br from-pink-500 to-teal-500" />
+                      </div>
                     </div>
-                    <div className="space-y-2">
-                      <div className="h-16 bg-white rounded border border-slate-200 border-l-4 border-l-blue-600 shadow-sm" />
-                      <div className="h-16 bg-white rounded border border-slate-200 shadow-sm" />
+
+                    <div>
+                      <div className="text-[11px] font-semibold text-white">
+                        Good morning, Sarah
+                      </div>
+                      <div className="text-[9px] text-slate-500">
+                        Here's what's happening today
+                      </div>
+                    </div>
+
+                    {/* KPI cards */}
+                    <div className="grid grid-cols-3 gap-2">
+                      {[
+                        { label: "Revenue", value: "$124.5K", delta: "+12.5%" },
+                        { label: "Active Clients", value: "1,284", delta: "+3.2%" },
+                        { label: "Open Tasks", value: "47", delta: "-8%" },
+                      ].map((k) => (
+                        <div
+                          key={k.label}
+                          className="rounded-md border border-white/10 bg-white/[0.03] p-2"
+                        >
+                          <div className="text-[8px] text-slate-500 uppercase tracking-wider">
+                            {k.label}
+                          </div>
+                          <div className="text-[12px] font-bold text-white mt-0.5">
+                            {k.value}
+                          </div>
+                          <div className="text-[8px] text-teal-400">{k.delta}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Chart placeholder */}
+                    <div className="rounded-md border border-white/10 bg-white/[0.02] p-2 h-20 relative overflow-hidden">
+                      <div className="text-[8px] text-slate-500 uppercase tracking-wider mb-1">
+                        Pipeline · Last 30 days
+                      </div>
+                      <svg viewBox="0 0 200 40" className="w-full h-12">
+                        <defs>
+                          <linearGradient id="wlChart" x1="0" x2="1" y1="0" y2="0">
+                            <stop offset="0%" stopColor="#db2777" />
+                            <stop offset="50%" stopColor="#14b8a6" />
+                            <stop offset="100%" stopColor="#facc15" />
+                          </linearGradient>
+                          <linearGradient id="wlFill" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.4" />
+                            <stop offset="100%" stopColor="#14b8a6" stopOpacity="0" />
+                          </linearGradient>
+                        </defs>
+                        <path
+                          d="M0 32 L20 26 L40 28 L60 18 L80 22 L100 12 L120 16 L140 8 L160 14 L180 6 L200 10 L200 40 L0 40 Z"
+                          fill="url(#wlFill)"
+                        />
+                        <path
+                          d="M0 32 L20 26 L40 28 L60 18 L80 22 L100 12 L120 16 L140 8 L160 14 L180 6 L200 10"
+                          fill="none"
+                          stroke="url(#wlChart)"
+                          strokeWidth="1.5"
+                        />
+                      </svg>
+                    </div>
+
+                    {/* Activity */}
+                    <div className="space-y-1">
+                      {[
+                        { tag: "AI", text: "Lead scored 92 · Acme Corp", color: "bg-pink-500" },
+                        { tag: "OPS", text: "Workflow #284 completed", color: "bg-teal-500" },
+                        { tag: "FIN", text: "Invoice #1042 paid · $4,200", color: "bg-yellow-500" },
+                      ].map((a) => (
+                        <div
+                          key={a.text}
+                          className="flex items-center gap-2 rounded border border-white/5 bg-white/[0.02] px-2 py-1"
+                        >
+                          <span
+                            className={`${a.color} text-[7px] font-bold text-black px-1.5 py-0.5 rounded`}
+                          >
+                            {a.tag}
+                          </span>
+                          <span className="text-[9px] text-slate-300 truncate">
+                            {a.text}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Floating "white-label" badge */}
+              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 text-black text-[10px] font-bold uppercase tracking-wider shadow-lg">
+                White-Labeled
               </div>
             </div>
           </div>
