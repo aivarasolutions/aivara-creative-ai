@@ -1,0 +1,135 @@
+Please add legal policy pages to the Aivara Solutions website so we can use them for Twilio A2P 10DLC registration and general business compliance.
+
+Website: https://www.aivarasolutions.com/
+
+Goal:
+Add a Privacy Policy page and Terms & Conditions page for Aivara Solutions. These pages do NOT need to appear in the main navigation menu, but they should be linked in the website footer.
+
+Create these routes/pages:
+
+1. Privacy Policy
+   Preferred URL:
+   https://www.aivarasolutions.com/privacy-policy
+
+2. Terms & Conditions
+   Preferred URL:
+   https://www.aivarasolutions.com/terms-and-conditions
+
+Footer links:
+Add footer links labeled:
+
+* Privacy Policy
+* Terms & Conditions
+
+Important:
+These pages should cover all Aivara Solutions services, including but not limited to:
+
+* website design and development
+* booking systems
+* automation services
+* SMS/email notifications
+* marketing and promotions
+* social media/content services
+* business consulting
+* client portals and dashboards
+* payment/booking notification systems
+* property, travel, event, and hospitality-related digital services
+
+Privacy Policy requirements:
+Please write a complete professional Privacy Policy for Aivara Solutions that includes:
+
+* Information we collect:
+
+  * name
+  * email address
+  * phone number
+  * business name
+  * billing/payment-related information
+  * booking/reservation details
+  * website usage data
+  * communications with us
+  * form submissions
+  * client/customer data submitted through our systems
+
+* How we use information:
+
+  * to provide services
+  * to manage client accounts
+  * to send booking/payment/account notifications
+  * to communicate with clients and authorized users
+  * to improve websites, systems, automations, and services
+  * to process payments and reservations
+  * to provide support
+  * to comply with legal/business obligations
+
+* SMS/Text messaging section:
+  Add a clear section titled “SMS/Text Message Communications” that includes:
+
+  * Aivara Solutions may send SMS/text messages for account-related, booking-related, reservation-related, payment-related, operational, and service notifications.
+  * Message frequency may vary.
+  * Message and data rates may apply.
+  * Recipients may reply STOP to opt out.
+  * Recipients may reply HELP for assistance.
+  * SMS consent is not a condition of purchase.
+  * Mobile phone numbers and SMS consent information will not be sold, rented, shared, or disclosed to third parties or affiliates for marketing or promotional purposes.
+  * SMS information may only be shared with service providers as necessary to deliver the messages, comply with law, or operate the service.
+
+* Data sharing:
+  Explain we may share information with service providers needed to operate the business, such as hosting providers, payment processors, email/SMS providers, analytics tools, booking systems, and customer support tools.
+  Make it clear that we do not sell personal information.
+
+* Data retention:
+  Explain we retain information only as long as needed for business, legal, accounting, support, and operational purposes.
+
+* User rights:
+  Include that users may contact us to access, correct, update, or delete their information where applicable.
+
+* Contact info:
+  Use this contact email:
+  [kevin@aivarasolutions.com](mailto:kevin@aivarasolutions.com)
+
+Terms & Conditions requirements:
+Please write complete Terms & Conditions for Aivara Solutions that include:
+
+* Acceptance of terms
+* Description of services
+* Client responsibilities
+* Payment terms
+* Project timelines and scope
+* No guarantee of specific marketing results
+* Third-party platforms disclaimer
+* Website, automation, booking system, and notification service limitations
+* SMS/Text messaging terms:
+
+  * By providing a phone number and agreeing to receive messages, users authorize Aivara Solutions to send account-related, booking-related, reservation-related, payment-related, operational, and service notifications by SMS.
+  * Message frequency may vary.
+  * Message and data rates may apply.
+  * Reply STOP to opt out.
+  * Reply HELP for assistance.
+  * SMS consent is not required as a condition of purchase.
+* Intellectual property
+* Confidentiality
+* Limitation of liability
+* Indemnification
+* Termination
+* Changes to terms
+* Governing law, preferably United States / Texas unless the existing site already specifies another jurisdiction
+* Contact email:
+  [kevin@aivarasolutions.com](mailto:kevin@aivarasolutions.com)
+
+Design requirements:
+
+* Match the existing Aivara Solutions website design.
+* Keep the pages clean, professional, mobile responsive, and easy to read.
+* Use headings, sections, and spacing.
+* Do not add these pages to the main header/menu.
+* Add links only in the footer.
+* Make sure both URLs are live and accessible publicly without login.
+* Make sure the website builds/deploys successfully.
+
+After completion:
+
+* Confirm the final Privacy Policy URL.
+* Confirm the final Terms & Conditions URL.
+* Confirm the footer links were added.
+* Confirm the policy includes the required SMS non-sharing language needed for Twilio A2P registration.

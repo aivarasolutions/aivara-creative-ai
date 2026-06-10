@@ -76,8 +76,17 @@ export function Footer() {
 
         <NewsletterForm />
       </div>
-      <div className="border-t border-white/10 text-center text-xs text-gray-500 py-6">
-        © {new Date().getFullYear()} Aivara Solutions. All rights reserved.
+      <div className="border-t border-white/10 py-6 px-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs text-gray-500">
+        <span>© {new Date().getFullYear()} Aivara Solutions. All rights reserved.</span>
+        <span className="hidden sm:inline text-gray-700">|</span>
+        <div className="flex items-center gap-4">
+          <Link href="/privacy-policy" className="hover:text-white transition">
+            Privacy Policy
+          </Link>
+          <Link href="/terms-and-conditions" className="hover:text-white transition">
+            Terms &amp; Conditions
+          </Link>
+        </div>
       </div>
     </footer>
   );
