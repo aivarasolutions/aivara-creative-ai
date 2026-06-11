@@ -134,18 +134,16 @@ export default function TermsAndConditionsPage() {
                 SMS/Text Messaging Terms
               </h2>
               <p>
-                By providing a phone number and agreeing to receive messages, users
+                By providing a phone number and agreeing to receive messages, you
                 authorize Aivara Solutions to send account-related, booking-related,
                 reservation-related, payment-related, operational, and service
-                notifications by SMS.
+                notifications by SMS/text message.
               </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Message frequency may vary.</li>
-                <li>Message and data rates may apply.</li>
-                <li>Reply STOP to opt out at any time.</li>
-                <li>Reply HELP for assistance.</li>
-                <li>SMS consent is not required as a condition of purchase.</li>
-              </ul>
+              <p>
+                Message frequency may vary. Message and data rates may apply. Reply STOP
+                to opt out. Reply HELP for assistance. SMS consent is not required as a
+                condition of purchase.
+              </p>
             </section>
 
             <section className="space-y-4">

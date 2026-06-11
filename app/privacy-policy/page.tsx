@@ -84,26 +84,26 @@ export default function PrivacyPolicyPage() {
 
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-white">
-                SMS/Text Message Communications
+                SMS/Text Message Privacy
               </h2>
               <p>
-                Aivara Solutions may send SMS/text messages for account-related,
-                booking-related, reservation-related, payment-related, operational, and
-                service notifications.
+                Aivara Solutions may collect and use mobile phone numbers to send
+                account-related, booking-related, reservation-related, payment-related,
+                operational, and service notifications by SMS/text message.
               </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Message frequency may vary.</li>
-                <li>Message and data rates may apply.</li>
-                <li>Recipients may reply STOP to opt out at any time.</li>
-                <li>Recipients may reply HELP for assistance.</li>
-                <li>SMS consent is not a condition of purchase.</li>
-              </ul>
+              <p>
+                Message frequency may vary. Message and data rates may apply. Recipients
+                may reply STOP to opt out of future messages and HELP for assistance.
+              </p>
               <p>
                 Mobile phone numbers and SMS consent information will not be sold, rented,
                 shared, or disclosed to third parties or affiliates for marketing or
-                promotional purposes. SMS information may only be shared with service
-                providers as necessary to deliver the messages, comply with law, or
-                operate the Service.
+                promotional purposes.
+              </p>
+              <p>
+                SMS opt-in data and consent will not be shared with any third parties,
+                except with service providers as necessary to deliver SMS messages, comply
+                with legal obligations, or operate our services.
               </p>
             </section>
 
