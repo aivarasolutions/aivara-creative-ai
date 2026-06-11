@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback, FormEvent } from 'react';
+import { usePathname } from 'next/navigation';
 import { X } from 'lucide-react';
 import { trackEvent, trackNewsletterSignup } from '@/lib/analytics';
 
@@ -8,6 +9,10 @@ const STORAGE_KEY = 'aivara_popup_state_v1';
 const DISMISS_DAYS = 7;
 const SHOW_DELAY_MS = 8000;
 const MOBILE_SCROLL_PCT = 0.4;
+
+// Routes where the newsletter popup must never appear (e.g. legal pages that
+// need to be cleanly verifiable by third parties such as Twilio A2P review).
+const EXCLUDED_PATHS = ['/privacy-policy', '/terms-and-conditions'];
 
 type PopupState = {
   dismissedAt?: number;
@@ -53,6 +58,8 @@ const INTEREST_OPTIONS = [
 ];
 
 export function NewsletterPopup() {
+  const pathname = usePathname();
+  const isExcluded = EXCLUDED_PATHS.includes(pathname);
   const [open, setOpen] = useState(false);
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
@@ -73,6 +80,7 @@ export function NewsletterPopup() {
   // Trigger logic: timer, exit-intent (desktop), scroll 40% (mobile)
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (isExcluded) return;
     if (shouldSuppress(readState())) return;
 
     let shown = false;
@@ -109,7 +117,7 @@ export function NewsletterPopup() {
       document.removeEventListener('mouseout', onMouseOut);
       window.removeEventListener('scroll', onScroll);
     };
-  }, []);
+  }, [isExcluded]);
 
   // Escape key
   useEffect(() => {
@@ -196,7 +204,7 @@ export function NewsletterPopup() {
     }
   };
 
-  if (!open) return null;
+  if (isExcluded || !open) return null;
 
   return (
     <div
