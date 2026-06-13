@@ -84,26 +84,31 @@ export default function PrivacyPolicyPage() {
 
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-white">
-                SMS/Text Message Privacy
+                SMS Privacy and Consent Policy
               </h2>
               <p>
-                Aivara Solutions may collect and use mobile phone numbers to send
-                account-related, booking-related, reservation-related, payment-related,
-                operational, and service notifications by SMS/text message.
+                Aivara Solutions may collect mobile phone numbers when users submit forms,
+                request quotes, create bookings, communicate with our team, or use our
+                client portals. By providing a mobile phone number, users may receive SMS
+                messages related to bookings, reservations, service updates, payment
+                notifications, account notifications, customer support, and other
+                operational communications.
               </p>
               <p>
-                Message frequency may vary. Message and data rates may apply. Recipients
-                may reply STOP to opt out of future messages and HELP for assistance.
+                Aivara Solutions does not sell, rent, share, or disclose mobile phone
+                numbers, SMS opt-in data, or SMS consent information to third parties or
+                affiliates for marketing or promotional purposes.
               </p>
               <p>
-                Mobile phone numbers and SMS consent information will not be sold, rented,
-                shared, or disclosed to third parties or affiliates for marketing or
-                promotional purposes.
+                SMS opt-in data and consent information will only be used to provide the
+                requested communication services and may be shared only with service
+                providers when necessary to deliver SMS messages on behalf of Aivara
+                Solutions.
               </p>
               <p>
-                SMS opt-in data and consent will not be shared with any third parties,
-                except with service providers as necessary to deliver SMS messages, comply
-                with legal obligations, or operate our services.
+                Users may opt out of SMS messages at any time by replying STOP. Users may
+                reply HELP for assistance. Message frequency may vary. Message and data
+                rates may apply.
               </p>
             </section>
 

@@ -1,0 +1,47 @@
+Please update the Aivara Solutions website compliance pages for Twilio A2P 10DLC approval.
+
+Website:
+https://www.aivarasolutions.com
+
+Pages to update:
+1. Privacy Policy page:
+https://www.aivarasolutions.com/privacy-policy
+
+2. Terms and Conditions page:
+https://www.aivarasolutions.com/terms-and-conditions
+
+Add a clear section to the Privacy Policy titled:
+
+SMS Privacy and Consent Policy
+
+Use this wording:
+
+Aivara Solutions may collect mobile phone numbers when users submit forms, request quotes, create bookings, communicate with our team, or use our client portals. By providing a mobile phone number, users may receive SMS messages related to bookings, reservations, service updates, payment notifications, account notifications, customer support, and other operational communications.
+
+Aivara Solutions does not sell, rent, share, or disclose mobile phone numbers, SMS opt-in data, or SMS consent information to third parties or affiliates for marketing or promotional purposes.
+
+SMS opt-in data and consent information will only be used to provide the requested communication services and may be shared only with service providers when necessary to deliver SMS messages on behalf of Aivara Solutions.
+
+Users may opt out of SMS messages at any time by replying STOP. Users may reply HELP for assistance. Message frequency may vary. Message and data rates may apply.
+
+Also add or confirm a clear section on the Terms and Conditions page titled:
+
+SMS Terms and Conditions
+
+Use this wording:
+
+By providing your mobile phone number to Aivara Solutions through our website, booking forms, client portals, quote forms, or during communication with our team, you agree to receive SMS messages from Aivara Solutions.
+
+SMS messages may include booking updates, reservation notifications, service updates, payment notifications, account notifications, customer support messages, and other operational communications.
+
+Message frequency may vary. Message and data rates may apply. Reply STOP to unsubscribe at any time. Reply HELP for assistance.
+
+SMS consent is not required as a condition of purchase.
+
+Aivara Solutions does not sell, rent, share, or disclose mobile phone numbers, SMS opt-in data, or SMS consent information to third parties or affiliates for marketing or promotional purposes.
+
+Please make sure both pages are publicly accessible, cleanly formatted, mobile responsive, and include the exact page URLs in the footer or page content if appropriate.
+
+After updating, confirm the changes are live and provide the final URLs:
+https://www.aivarasolutions.com/privacy-policy
+https://www.aivarasolutions.com/terms-and-conditions

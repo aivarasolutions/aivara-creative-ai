@@ -131,18 +131,28 @@ export default function TermsAndConditionsPage() {
 
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-white">
-                SMS/Text Messaging Terms
+                SMS Terms and Conditions
               </h2>
               <p>
-                By providing a phone number and agreeing to receive messages, you
-                authorize Aivara Solutions to send account-related, booking-related,
-                reservation-related, payment-related, operational, and service
-                notifications by SMS/text message.
+                By providing your mobile phone number to Aivara Solutions through our
+                website, booking forms, client portals, quote forms, or during
+                communication with our team, you agree to receive SMS messages from Aivara
+                Solutions.
               </p>
               <p>
-                Message frequency may vary. Message and data rates may apply. Reply STOP
-                to opt out. Reply HELP for assistance. SMS consent is not required as a
-                condition of purchase.
+                SMS messages may include booking updates, reservation notifications,
+                service updates, payment notifications, account notifications, customer
+                support messages, and other operational communications.
+              </p>
+              <p>
+                Message frequency may vary. Message and data rates may apply. Reply STOP to
+                unsubscribe at any time. Reply HELP for assistance.
+              </p>
+              <p>SMS consent is not required as a condition of purchase.</p>
+              <p>
+                Aivara Solutions does not sell, rent, share, or disclose mobile phone
+                numbers, SMS opt-in data, or SMS consent information to third parties or
+                affiliates for marketing or promotional purposes.
               </p>
             </section>
 
