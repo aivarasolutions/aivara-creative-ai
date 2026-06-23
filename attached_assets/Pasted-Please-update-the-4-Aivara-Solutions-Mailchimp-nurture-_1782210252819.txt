@@ -1,0 +1,70 @@
+Please update the 4 Aivara Solutions Mailchimp nurture email templates to include professional branded images while keeping the existing design, branding, copy, Mailchimp compatibility, and Resend/Mailchimp flow intact.
+
+Current templates:
+
+* email-templates/aivara-nurture-1-thank-you.html
+* email-templates/aivara-nurture-2-smarter-systems.html
+* email-templates/aivara-nurture-3-services.html
+* email-templates/aivara-nurture-4-consultation.html
+
+Goal:
+Add relevant visual images to each email so they feel more polished, branded, and engaging.
+
+Branding to keep:
+
+* Logo: https://aivarasolutions.com/images/aivara-logo.png
+* Primary Pink: #db2777
+* Secondary Teal: #14b8a6
+* Accent Yellow: #facc15
+* Signature gradient: linear-gradient(135deg,#db2777,#14b8a6,#facc15)
+
+Image requirements:
+
+* Use images that match Aivara Solutions’ technology/SaaS/business automation brand.
+* Images should support the message of each email:
+
+  1. Thank You email: modern business/technology welcome image
+  2. Smarter Systems email: workflow automation, dashboards, AI, or connected systems image
+  3. Services email: software, portals, operations dashboard, booking/dispatch/business systems image
+  4. Consultation email: professional strategy call, business planning, or technology consultation image
+* Use royalty-free/publicly usable images or existing project/site assets only.
+* Do not use copyrighted, watermarked, random, broken, or hotlinked images from unknown sources.
+* If using remote images, use stable URLs only.
+* Prefer existing hosted Aivara/project assets if available.
+* Add descriptive alt text for every image.
+* Keep images lightweight and email-safe.
+* Images should be responsive on mobile.
+* Use inline styles compatible with Mailchimp “Code your own” templates.
+* Do not use JavaScript, external tracking scripts, or unsupported CSS.
+* Make sure the templates still render cleanly if images are blocked by an email client.
+
+Design direction:
+
+* Add one strong hero image or branded visual section near the top of each email.
+* Keep the logo/header clean.
+* Keep CTAs visible and not pushed too far down.
+* Maintain the current Aivara color palette and gradient CTA styling.
+* Do not redesign from scratch.
+* Do not change the Mailchimp merge tags, unsubscribe footer, required address/footer placeholders, or compliance content.
+* Do not change the website form, Mailchimp audience logic, tags, Resend sending logic, or API routes.
+
+Testing:
+
+* Send updated test previews of all 4 Aivara nurture emails to [Kevin@AivaraSolutions.com](mailto:Kevin@AivaraSolutions.com).
+* Confirm all images load correctly in the test emails.
+* Confirm mobile responsiveness still looks good.
+* Confirm Mailchimp-required placeholders still exist.
+* Confirm no broken image links.
+* Provide a short summary of:
+
+  * Which image was added to each template
+  * Image source/path/URL used
+  * Test email results
+  * Any issues or limitations
+
+Important:
+
+* Do not modify IPM’s working setup.
+* Do not modify RichAF.Global yet.
+* Do not create branches.
+* Keep this change limited to the Aivara nurture email templates and documentation only if needed.
