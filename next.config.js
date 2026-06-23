@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/services',
+        destination: '/#offers',
+        permanent: false,
+      },
+    ];
+  },
   // Allow all hosts for Replit proxy environment
   async headers() {
     return [
