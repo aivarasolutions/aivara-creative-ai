@@ -1,0 +1,50 @@
+We are working on the Aivara Solutions Mailchimp nurture flow.
+
+Context:
+- We already sent Email #1 manually to all current Aivara Solutions Mailchimp subscribers.
+- Dry run confirmed there are 17 subscribed contacts.
+- All 17 contacts already have the tag: Nurture-1-Sent
+- None of the 17 contacts currently have the tag: Aivara-Nurture-Start
+- These 17 existing contacts should now enter the remaining nurture flow starting at Email #2, then Email #3, then Email #4.
+- New signups should start from Email #1, not Email #2.
+- New signups should be included whether or not they have the Website Lead tag.
+
+Goal:
+Make sure the Mailchimp automation setup supports two paths:
+
+1. Existing 17 contacts:
+   - Since they already received Email #1, they should be moved into the Email #2 flow.
+   - Apply the tag Aivara-Nurture-Start to all 17 contacts that:
+     - are subscribed
+     - have Nurture-1-Sent
+     - do not already have Aivara-Nurture-Start
+   - Do not send Email #1 again to these 17 contacts.
+
+2. Future new signups:
+   - They should start at Email #1.
+   - After Email #1 is sent, apply the tag Nurture-1-Sent.
+   - Then continue automatically to Email #2, Email #3, and Email #4.
+   - They should not depend only on the Website Lead tag unless that is already the main signup trigger.
+   - If possible, make the flow start for every new subscribed contact in the Aivara Solutions audience, with or without Website Lead tag.
+
+Before making live changes:
+- Verify the Mailchimp Customer Journey status is Active.
+- Verify the catch-up journey trigger is: Contact is tagged with Aivara-Nurture-Start.
+- Verify that the catch-up journey starts at Email #2, not Email #1.
+- Verify the main new-subscriber journey starts at Email #1.
+- Verify Email #1 applies Nurture-1-Sent after sending.
+- Verify there is no risk of duplicate Email #1 being sent to the existing 17 contacts.
+
+Then run a dry run first and show:
+- total subscribed contacts checked
+- how many have Nurture-1-Sent
+- how many already have Aivara-Nurture-Start
+- how many will receive Aivara-Nurture-Start
+- any skipped contacts and why
+
+After the dry run looks clean, ask for confirmation before applying the tag live.
+
+Do not create branches.
+Do not change unrelated email code.
+Do not send any emails directly from the app.
+Only use Mailchimp tags and automation triggers.
