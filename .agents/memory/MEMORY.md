@@ -1,0 +1,1 @@
+- [Email/Mailchimp env split](email-env-split.md) — Mailchimp creds live only in prod (Vercel), not Replit dev; Resend key IS in dev. Test email sends locally, not Mailchimp sync.

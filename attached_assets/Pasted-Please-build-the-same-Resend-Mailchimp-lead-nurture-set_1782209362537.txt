@@ -1,0 +1,245 @@
+Please build the same Resend + Mailchimp lead nurture setup for Aivara Solutions that we just completed for IPM.
+
+Goal:
+When someone submits a lead/contact form on the Aivara Solutions website, the system should:
+
+1. Send the lead into the correct Mailchimp audience for Aivara Solutions.
+2. Apply the correct lead tags.
+3. Send an internal/admin notification through Resend.
+4. Send the visitor a confirmation email through Resend.
+5. Provide 4 branded HTML nurture email templates for a Mailchimp Customer Journey.
+6. Send test previews of all 4 emails to [Kevin@AivaraSolutions.com](mailto:Kevin@AivaraSolutions.com).
+7. Document the manual Mailchimp setup steps.
+
+Use the same setup flow as IPM:
+
+* Website handles capture + Mailchimp audience + tags.
+* Resend handles website notifications and confirmation emails.
+* Mailchimp Customer Journey handles the 4-email nurture sequence.
+* The journey will be built manually once in Mailchimp because Mailchimp’s Customer Journeys API cannot create/publish the journey.
+
+Brand:
+Aivara Solutions
+
+Website:
+Use the existing Aivara Solutions website/domain configured in the project.
+
+Brand Consistency Requirements:
+
+Before creating any email templates, inspect the existing Aivara Solutions website and use the current branding already present in the project.
+
+The Aivara Solutions website is the source of truth for branding.
+
+Use:
+
+* Existing Aivara Solutions logo
+* Existing website color palette
+* Existing typography/font hierarchy where possible
+* Existing button styles
+* Existing visual identity
+* Existing brand voice and messaging
+
+Do not invent a new color scheme, logo, branding style, or generic SaaS template design.
+
+The email sequence should feel like a natural extension of the Aivara Solutions website so that visitors experience a consistent brand journey:
+
+Website → Form Submission → Confirmation Email → Nurture Sequence
+
+Reuse existing brand assets already available in the project whenever possible.
+
+If the logo exists in the project:
+
+* Automatically include it in all 4 nurture emails.
+* Use the same logo treatment and spacing throughout the sequence.
+
+If branding assets are unclear or missing:
+
+* Stop and report what is missing before generating the templates.
+* Do not guess.
+
+Before generating the templates, identify and document:
+
+* Primary brand color
+* Secondary brand color
+* Accent color
+* Logo asset location
+* Any existing email brand assets already available
+
+The 4 nurture emails should:
+
+* Match the current Aivara Solutions website branding
+* Be mobile responsive
+* Have a modern technology/SaaS appearance
+* Use consistent headers and footers
+* Use consistent CTA button styling
+* Use consistent spacing and layout
+* Use professional, conversion-focused copy
+
+Do not use:
+
+* Generic Mailchimp themes
+* Stock branding
+* Random colors
+* Placeholder logos
+* Placeholder company information
+
+All templates should appear as if they were designed specifically for Aivara Solutions and should maintain a consistent visual identity across the entire nurture sequence.
+
+Sending setup:
+
+* Send automated emails from [notifications@aivarasolutions.com](mailto:notifications@aivarasolutions.com) if available/verified in Resend.
+* Reply-To should be [Kevin@AivaraSolutions.com](mailto:Kevin@AivaraSolutions.com) unless a better support email already exists in the project.
+* Admin/internal lead notifications should go to [Kevin@AivaraSolutions.com](mailto:Kevin@AivaraSolutions.com).
+* Do not create or require a paid inbox.
+
+Mailchimp:
+
+* Use or create/confirm the correct Mailchimp audience for Aivara Solutions.
+* Do NOT send Aivara Solutions leads to IPM, RichAF, or any unrelated audience.
+* Add list/audience ID caching if needed like the IPM setup.
+* Use Promise.allSettled or equivalent resilient handling so a Resend/Mailchimp issue does not crash the form submission flow.
+* Protect and do not expose secrets.
+
+Baseline tags for every Aivara Solutions website lead:
+
+* Website Lead
+* Aivara Inquiry
+* Aivara Solutions Lead
+* Business Inquiry
+
+Conditional tags based on form/page/source if applicable:
+
+* Contact Form
+* Software Inquiry
+* Portal Inquiry
+* Automation Inquiry
+* AI Solutions Inquiry
+* FreightSync Inquiry
+* Social Scheduler Inquiry
+* Consulting Inquiry
+
+Please map the conditional tags based on the actual forms/routes/pages that exist in the project. Do not invent pages that do not exist.
+
+Resend website email behavior:
+
+1. Admin notification email:
+
+* To: [Kevin@AivaraSolutions.com](mailto:Kevin@AivaraSolutions.com)
+* From: [notifications@aivarasolutions.com](mailto:notifications@aivarasolutions.com) if verified, otherwise use the current verified Resend sender already in the project.
+* Reply-To: the visitor’s submitted email if collected.
+* Subject: New Aivara Solutions Website Lead
+* Include all submitted form fields in the email body.
+
+2. Visitor confirmation email:
+
+* To: visitor’s submitted email
+* From: [notifications@aivarasolutions.com](mailto:notifications@aivarasolutions.com) if verified, otherwise use the current verified Resend sender already in the project.
+* Reply-To: [Kevin@AivaraSolutions.com](mailto:Kevin@AivaraSolutions.com)
+* Subject: Thank You for Contacting Aivara Solutions
+* Message should confirm we received the inquiry and will follow up shortly.
+
+Create 4 branded Mailchimp HTML templates:
+
+Save them in an email-templates/ folder, similar to IPM.
+
+Template 1:
+File: aivara-nurture-1-thank-you.html
+Subject: Thank You for Contacting Aivara Solutions
+Timing: Immediate
+
+Purpose:
+Confirm inquiry, introduce Aivara Solutions, explain that we help businesses build smarter systems, portals, automations, and digital workflows.
+
+Template 2:
+File: aivara-nurture-2-smarter-systems.html
+Subject: Build Smarter Systems for Your Business
+Timing: Day 2
+
+Purpose:
+Explain how Aivara Solutions helps businesses reduce manual work with custom portals, automation, AI tools, dashboards, and workflow systems.
+
+Template 3:
+File: aivara-nurture-3-services.html
+Subject: What Aivara Solutions Can Build for You
+Timing: Day 5
+
+Purpose:
+Highlight service categories such as business portals, booking systems, dispatch/logistics tools, dashboards, AI automations, email/SMS notifications, operational software, custom SaaS platforms, and business management systems.
+
+Template 4:
+File: aivara-nurture-4-consultation.html
+Subject: Ready to Build Your Next System?
+Timing: Day 7
+
+Purpose:
+Encourage the lead to schedule a consultation or reply directly to discuss their business needs.
+
+Technical Design Requirements:
+
+* Professional, clean, modern SaaS/technology look.
+* Match Aivara Solutions branding already used on the website.
+* Mobile responsive.
+* Use polished copy, strong CTA buttons, and clear footer.
+* No external tracking scripts.
+* No broken image dependencies.
+* Include unsubscribe/required Mailchimp footer placeholders if needed.
+* Keep the structure compatible with Mailchimp “Code your own” HTML templates.
+
+Manual Mailchimp setup documentation:
+
+Create:
+email-templates/AIVARA_MAILCHIMP_SETUP.md
+
+Include:
+
+1. How to save the 4 templates in Mailchimp.
+
+2. Which audience to use.
+
+3. Trigger: Tag added → Website Lead.
+
+4. Journey flow:
+
+   * Email 1 immediately
+   * Delay 2 days
+   * Email 2
+   * Delay 3 days
+   * Email 3
+   * Delay 2 days
+   * Email 4
+
+5. From name:
+   Aivara Solutions
+
+6. From email:
+   [notifications@aivarasolutions.com](mailto:notifications@aivarasolutions.com) if verified, otherwise document the actual verified sender used.
+
+7. Reply-To:
+   [Kevin@AivaraSolutions.com](mailto:Kevin@AivaraSolutions.com)
+
+Testing:
+
+* Send test previews of all 4 Aivara nurture emails to [Kevin@AivaraSolutions.com](mailto:Kevin@AivaraSolutions.com).
+* Submit a test lead through the Aivara website form.
+* Confirm the test lead lands in the correct Aivara Mailchimp audience.
+* Confirm the correct baseline and conditional tags are applied.
+* Confirm the visitor confirmation email sends.
+* Confirm the admin notification email sends.
+* Archive/delete the test contact afterward if appropriate.
+
+Important:
+
+* Do not modify IPM’s working Mailchimp/Resend setup.
+* Do not modify RichAF.Global yet.
+* Do not touch unrelated files or page-reskin work.
+* Do not create branches.
+* Keep the implementation minimal, safe, and consistent with the IPM setup.
+
+After completion, provide a clear summary of:
+
+* Audience used
+* Tags applied
+* Files created
+* Brand colors/logo assets identified and used
+* Test email results
+* Any manual Mailchimp setup still required

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { sendContactNotification } from '@/lib/email';
+import { sendContactNotification, sendVisitorConfirmation } from '@/lib/email';
+import { buildLeadTags, syncLeadToMailchimp } from '@/lib/mailchimp';
 
 export async function POST(req: Request) {
   try {
@@ -16,139 +17,41 @@ export async function POST(req: Request) {
     const sourceMatch = message.match(/^\[([^\]]+)\]/);
     const source = sourceMatch ? sourceMatch[1] : 'Contact Form';
 
-    // Send notification email to Kevin (non-blocking — never break the form if email fails)
-    sendContactNotification({ name, email, phone, service, message, source }).catch((err) =>
-      console.error('Notification email error:', err)
-    );
-
-    const API_KEY = process.env.MAILCHIMP_API_KEY;
-    const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
-    const DATACENTER = process.env.MAILCHIMP_API_SERVER;
-
-    if (!API_KEY || !AUDIENCE_ID || !DATACENTER) {
-      // Mailchimp not configured — but email notification still goes out
-      return NextResponse.json(
-        { message: 'Thank you! Your message has been received. We\'ll get back to you within 24 hours.' },
-        { status: 200 }
-      );
-    }
-
-    const nameParts = name.split(' ');
+    const nameParts = name.trim().split(' ');
     const firstName = nameParts[0];
     const lastName = nameParts.slice(1).join(' ');
 
-    const response = await fetch(
-      `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`,
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Basic ${Buffer.from(`anystring:${API_KEY}`).toString('base64')}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email_address: email,
-          status: 'subscribed',
-          merge_fields: {
-            FNAME: firstName,
-            LNAME: lastName,
-            PHONE: phone || '',
-            MESSAGE: message.substring(0, 255),
-          },
-          tags: ['Contact Form', service],
-        }),
+    const tags = buildLeadTags(source, service);
+
+    // Run Mailchimp sync + both Resend emails resiliently — a failure in any
+    // one of them must not crash the form submission flow.
+    const results = await Promise.allSettled([
+      syncLeadToMailchimp({
+        email,
+        firstName,
+        lastName,
+        phone,
+        message,
+        service,
+        source,
+        tags,
+      }),
+      sendContactNotification({ name, email, phone, service, message, source }),
+      sendVisitorConfirmation({ name, email, service, source }),
+    ]);
+
+    results.forEach((r, i) => {
+      if (r.status === 'rejected') {
+        const label = ['Mailchimp sync', 'admin notification', 'visitor confirmation'][i];
+        console.error(`[contact] ${label} failed:`, r.reason);
       }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      if (response.status === 400 && data.title === 'Member Exists') {
-        try {
-          const emailHash = await crypto.subtle.digest(
-            'SHA-256',
-            new TextEncoder().encode(email.toLowerCase())
-          );
-          const hashArray = Array.from(new Uint8Array(emailHash));
-          const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-
-          const updateResponse = await fetch(
-            `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members/${hashHex}`,
-            {
-              method: 'PATCH',
-              headers: {
-                Authorization: `Basic ${Buffer.from(`anystring:${API_KEY}`).toString('base64')}`,
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                merge_fields: {
-                  FNAME: firstName,
-                  LNAME: lastName,
-                  PHONE: phone || '',
-                  MESSAGE: message.substring(0, 255),
-                },
-              }),
-            }
-          );
-
-          if (updateResponse.ok) {
-            const noteResponse = await fetch(
-              `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members/${hashHex}/notes`,
-              {
-                method: 'POST',
-                headers: {
-                  Authorization: `Basic ${Buffer.from(`anystring:${API_KEY}`).toString('base64')}`,
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                  note: `Contact Form Inquiry - ${service}\n\nMessage: ${message}\n\nSubmitted: ${new Date().toISOString()}`,
-                }),
-              }
-            );
-
-            return NextResponse.json(
-              { message: 'Thank you! Your message has been received. We\'ll get back to you within 24 hours.' },
-              { status: 200 }
-            );
-          }
-        } catch (updateError) {
-          console.error('Update error:', updateError);
-        }
-        
-        return NextResponse.json(
-          { message: 'Thank you! We already have your contact information and will respond to your inquiry shortly.' },
-          { status: 200 }
-        );
-      }
-      
-      return NextResponse.json(
-        { error: data.title || 'Subscription failed. Please try again or contact us directly at Kevin@AivaraSolutions.com' },
-        { status: response.status }
-      );
-    }
-
-    const emailHash = await crypto.subtle.digest(
-      'SHA-256',
-      new TextEncoder().encode(email.toLowerCase())
-    );
-    const hashArray = Array.from(new Uint8Array(emailHash));
-    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-
-    await fetch(
-      `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members/${hashHex}/notes`,
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Basic ${Buffer.from(`anystring:${API_KEY}`).toString('base64')}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          note: `Contact Form Inquiry - ${service}\n\nMessage: ${message}\n\nSubmitted: ${new Date().toISOString()}`,
-        }),
-      }
-    );
+    });
 
     return NextResponse.json(
-      { message: 'Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.' },
+      {
+        message:
+          "Thank you! Your message has been received. We'll get back to you within 24 hours.",
+      },
       { status: 200 }
     );
   } catch (error) {

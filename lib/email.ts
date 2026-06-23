@@ -132,7 +132,7 @@ export async function sendContactNotification(data: ContactNotification): Promis
   }
 
   const source = data.source || 'Contact Form';
-  const subject = `New Lead · ${data.name} · ${source}`;
+  const subject = 'New Aivara Solutions Website Lead';
   const ts = timestamp();
 
   const detailRow = (label: string, value: string, isLink?: 'email' | 'tel') => {
@@ -428,5 +428,96 @@ Aivara Solutions · aivarasolutions.com`;
     }
   } catch (error) {
     console.error('[Resend] newsletter notification failed:', error);
+  }
+}
+
+interface VisitorConfirmationData {
+  name: string;
+  email: string;
+  service: string;
+  source?: string;
+}
+
+export async function sendVisitorConfirmation(data: VisitorConfirmationData): Promise<void> {
+  const resend = getResend();
+  if (!resend) {
+    console.warn('RESEND_API_KEY not set — skipping visitor confirmation email');
+    return;
+  }
+
+  const first = (data.name || '').trim().split(' ')[0] || 'there';
+
+  const bodyHtml = `
+    <p style="margin:0 0 18px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:15px; color:#1a1a1a; line-height:1.65;">
+      Hi ${escape(first)},
+    </p>
+
+    <p style="margin:0 0 18px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:15px; color:#4b5563; line-height:1.7;">
+      Thank you for reaching out to <strong style="color:#1a1a1a;">Aivara Solutions</strong>. We've received your inquiry${data.service ? ` about <strong style="color:#1a1a1a;">${escape(data.service)}</strong>` : ''} and a member of our team will follow up with you shortly — typically within 24 hours.
+    </p>
+
+    <p style="margin:0 0 24px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:15px; color:#4b5563; line-height:1.7;">
+      In the meantime, you're welcome to explore the systems we build — custom portals, automation, AI tools, dashboards, and operational software designed to help businesses run smarter.
+    </p>
+
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin:8px 0 24px 0;">
+      <tr>
+        <td style="border-radius:10px; background:linear-gradient(135deg, #db2777 0%, #14b8a6 50%, #facc15 100%);">
+          <a href="${SITE_URL}/services"
+             style="display:inline-block; padding:14px 32px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:15px; font-weight:700; color:#000000; text-decoration:none; border-radius:10px;">
+            Explore What We Build
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <p style="margin:24px 0 6px 0; padding-top:20px; border-top:1px solid #ececec; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:13px; color:#6b7280; line-height:1.6;">
+      <strong style="color:#1a1a1a;">Kevin · Aivara Solutions</strong><br>
+      <a href="mailto:Kevin@AivaraSolutions.com" style="color:#0f766e; text-decoration:none;">Kevin@AivaraSolutions.com</a><br>
+      <a href="${SITE_URL}" style="color:#0f766e; text-decoration:none;">aivarasolutions.com</a>
+    </p>
+  `;
+
+  const html = brandedShell({
+    preheader: "We've received your inquiry — the Aivara Solutions team will follow up shortly.",
+    badge: 'INQUIRY RECEIVED',
+    title: 'Thank You for Contacting Us',
+    intro:
+      "We've received your message and will be in touch soon. Here's what happens next.",
+    bodyHtml,
+  });
+
+  const text = `Thank You for Contacting Aivara Solutions
+
+Hi ${first},
+
+Thank you for reaching out to Aivara Solutions. We've received your inquiry${data.service ? ` about ${data.service}` : ''} and a member of our team will follow up with you shortly — typically within 24 hours.
+
+In the meantime, explore the systems we build — custom portals, automation, AI tools, dashboards, and operational software designed to help businesses run smarter.
+
+Explore what we build: ${SITE_URL}/services
+
+Kevin · Aivara Solutions
+Kevin@AivaraSolutions.com
+${SITE_URL}`;
+
+  try {
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: data.email,
+      replyTo: 'Kevin@AivaraSolutions.com',
+      subject: 'Thank You for Contacting Aivara Solutions',
+      html,
+      text,
+    });
+    if ((result as { error?: unknown }).error) {
+      console.error('[Resend] visitor confirmation API error:', (result as { error: unknown }).error);
+      throw new Error(
+        `Resend rejected visitor confirmation: ${JSON.stringify((result as { error: unknown }).error)}`
+      );
+    }
+  } catch (error) {
+    console.error('[Resend] visitor confirmation failed:', error);
+    throw error;
   }
 }
