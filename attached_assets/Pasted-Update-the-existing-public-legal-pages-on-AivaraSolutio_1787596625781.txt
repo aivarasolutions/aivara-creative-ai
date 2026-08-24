@@ -1,0 +1,180 @@
+Update the existing public legal pages on **AivaraSolutions.com** so they clearly cover Aivara's Social Scheduler and third-party social media integrations, including TikTok.
+
+Existing public pages:
+
+* Terms & Conditions:
+  `https://www.aivarasolutions.com/terms-and-conditions`
+
+* Privacy Policy:
+  `https://www.aivarasolutions.com/privacy-policy`
+
+IMPORTANT:
+Do not replace the existing policies with completely new documents unless necessary.
+Preserve the existing structure, legal language, company information, contact information, governing law, disclaimers, and other existing provisions.
+
+The objective is to ADD clear language covering social media account connections, OAuth authorization, publishing, stored authorization data, and user control so these pages accurately describe how the Aivara Social Scheduler works.
+
+## PRIVACY POLICY UPDATES
+
+Add a clear section titled something similar to:
+
+### Social Media Account Integrations
+
+Explain that users may connect third-party social media accounts to Aivara, including platforms such as TikTok, Facebook, Instagram, and other supported services.
+
+Explain that when a user authorizes a social account, Aivara may receive and process information made available through the user's authorization, including:
+
+* Social platform user/account identifiers
+* Username, display name, or account/profile information
+* Profile image/avatar where provided
+* OAuth access tokens
+* OAuth refresh tokens
+* Token expiration information
+* Permissions/scopes granted by the user
+* Social account connection status
+* Creator/account settings returned by the platform
+* Content users choose to upload, schedule, or publish
+* Captions, descriptions, titles, and publishing preferences
+* Uploaded images and videos
+* Publishing job identifiers
+* Post status, publishing results, and provider error information
+
+Clearly state that:
+
+* Aivara uses this information only to provide the requested social media management, scheduling, publishing, account connection, and related platform functionality.
+* OAuth access and refresh tokens are stored securely and are not exposed in the frontend.
+* Social platform credentials and authorization tokens are not sold.
+* Aivara does not use connected-account authorization data for unrelated advertising purposes.
+* Users may disconnect a connected social account from Aivara.
+* Disconnecting an account prevents future use of that authorization by Aivara, subject to technical processing and legal retention requirements.
+* Users may also revoke Aivara's authorization directly through the applicable third-party platform.
+* Third-party social platforms operate under their own privacy policies and terms.
+* Aivara only accesses information permitted by the scopes/permissions the user explicitly authorizes.
+
+Add language explaining that Aivara may retain limited records of publishing activity, audit history, publishing status, and error information for legitimate operational, security, fraud-prevention, support, audit, and compliance purposes even after an account is disconnected, where permitted by law.
+
+Do not claim that Aivara deletes every record immediately if that is not technically true.
+
+## TIKTOK-SPECIFIC PRIVACY DISCLOSURE
+
+Add language making it clear that when users connect TikTok:
+
+* Aivara uses TikTok Login/OAuth to obtain authorized access.
+* Aivara may process TikTok account identity information made available through the approved TikTok scopes.
+* Aivara may receive and securely store TikTok OAuth tokens needed to maintain the connection.
+* Aivara may send user-selected video or photo content, captions, privacy selections, commercial-content disclosures, and other publishing preferences to TikTok when the user instructs Aivara to publish or schedule content.
+* Aivara may retrieve TikTok Creator Info and publishing-status information necessary to validate and complete publishing.
+* Aivara does not post to TikTok unless the user has connected the account and instructed Aivara to publish or schedule content.
+
+Do not claim permissions or scopes that Aivara does not actually use.
+
+The current planned TikTok scopes are:
+
+* `user.info.basic`
+* `video.publish`
+
+## TERMS & CONDITIONS UPDATES
+
+Add a section titled something similar to:
+
+### Third-Party Social Media Integrations
+
+Explain that Aivara may allow users to connect supported third-party social media accounts.
+
+By connecting an account, the user represents that:
+
+* They own the account or have proper authority to manage it.
+* They authorize Aivara to interact with the connected service within the permissions they grant.
+* They authorize Aivara to submit or publish content on their behalf when they intentionally use the Social Scheduler.
+* They remain responsible for the legality, accuracy, ownership, licensing, and appropriateness of all content they upload or publish.
+* Their use remains subject to the applicable third-party platform's own terms, policies, community guidelines, advertising requirements, music/content rules, and other requirements.
+
+Clearly state that Aivara does not guarantee:
+
+* Approval of content by a third-party platform
+* Continuous availability of third-party APIs
+* Successful publication where a platform rejects, delays, limits, moderates, removes, or blocks content
+* Continued availability of a specific third-party integration if the provider changes or restricts its API
+
+Explain that third-party platforms may impose:
+
+* Rate limits
+* Account restrictions
+* Privacy limitations
+* Content moderation
+* Publishing limits
+* API outages
+* Authorization expiration
+* Review/audit requirements
+
+Aivara may temporarily disable an integration if required by a provider or for security/compliance reasons.
+
+## SOCIAL SCHEDULER AUTHORIZATION
+
+Add language explaining that when a user schedules a post through Aivara:
+
+* The user is giving Aivara an instruction to attempt publication at the selected time.
+* Aivara may transmit the selected content and settings to the applicable third-party platform.
+* Publishing may be delayed by platform processing, moderation, API availability, or other third-party limitations.
+* Users should review captions, media, privacy settings, commercial disclosures, and publishing targets before scheduling.
+
+Make clear that Aivara does not silently publish content that the user has not intentionally scheduled or submitted.
+
+## SECURITY LANGUAGE
+
+Where appropriate in the Privacy Policy, add concise language stating that Aivara uses reasonable technical and organizational safeguards for sensitive integration credentials, including secure server-side storage and encryption of authorization tokens where implemented.
+
+Do not make absolute claims such as "100% secure" or "cannot be breached."
+
+## DATA SHARING
+
+Clarify that when users use social publishing features, Aivara necessarily transmits selected content and related publishing information to the social platform selected by the user.
+
+Explain that this is a service-provider interaction initiated by the user and is necessary to provide the requested publishing functionality.
+
+## THIRD-PARTY POLICIES
+
+Add a statement that use of connected social media platforms is also governed by the third party's terms and privacy policies.
+
+Where appropriate, mention providers generically rather than making the policy TikTok-only, so it also covers current and future integrations.
+
+## DO NOT
+
+Do NOT:
+
+* Remove existing legal protections
+* Change the company entity information unless the current site information is wrong
+* Change the governing law without instruction
+* Invent certifications
+* Claim SOC 2, HIPAA, PCI, GDPR certification, ISO certification, or other compliance certifications unless they already legitimately apply
+* Claim tokens are never retained if the application actually stores refresh tokens
+* Claim all data is instantly deleted after disconnect
+* Promise uptime or publication success
+* Overstate security guarantees
+
+## FINAL REVIEW
+
+After updating both pages:
+
+1. Confirm the Terms & Conditions page remains publicly accessible without login.
+2. Confirm the Privacy Policy page remains publicly accessible without login.
+3. Confirm the URLs remain exactly:
+
+`https://www.aivarasolutions.com/terms-and-conditions`
+
+`https://www.aivarasolutions.com/privacy-policy`
+
+4. Check both pages on desktop and mobile.
+5. Make sure no placeholder text remains.
+6. Make sure the legal pages still display the existing effective/updated date appropriately.
+7. Update the "Last Updated" date to the current date if the policy content materially changed.
+8. Confirm that TikTok, OAuth, connected social accounts, social publishing, authorization tokens, and user disconnect/revocation rights are clearly covered.
+
+After making the changes, STOP and return:
+
+* A summary of what you added to the Terms
+* A summary of what you added to the Privacy Policy
+* Exact files modified
+* Confirmation that both public URLs still work
+* Any legal or technical assumptions you had to make
+* Any wording you believe should be reviewed by an attorney before production launch

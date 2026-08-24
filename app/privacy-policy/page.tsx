@@ -6,11 +6,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Aivara Solutions, covering the information we collect, how we use it, SMS/text message communications, data sharing, retention, and your rights.",
+    "Privacy Policy for Aivara Solutions, covering the information we collect, social media integrations, social publishing, SMS/text message communications, data sharing, retention, and your rights.",
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "June 10, 2026";
+const LAST_UPDATED = "August 25, 2026";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -61,6 +61,82 @@ export default function PrivacyPolicyPage() {
                 <li>Form submissions</li>
                 <li>Client and customer data submitted through our systems</li>
               </ul>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold text-white">
+                Social Media Account Integrations
+              </h2>
+              <p>
+                Aivara may allow you to connect third-party social media accounts to our
+                Services, including accounts on platforms such as TikTok, Facebook,
+                Instagram, and other supported services. When you connect an account, we
+                may receive and process information made available through the
+                authorization you provide and the permissions or scopes you approve.
+              </p>
+              <p>Depending on the platform and the permissions you grant, this may include:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Social platform user or account identifiers</li>
+                <li>Username, display name, and account or profile information</li>
+                <li>Profile image or avatar, where provided</li>
+                <li>OAuth access tokens and refresh tokens</li>
+                <li>Token expiration information and permissions or scopes granted</li>
+                <li>Social account connection status</li>
+                <li>Creator or account settings returned by the platform</li>
+                <li>Content you choose to upload, schedule, or publish</li>
+                <li>Captions, descriptions, titles, and publishing preferences</li>
+                <li>Uploaded images and videos</li>
+                <li>Publishing job identifiers, post status, publishing results, and provider error information</li>
+              </ul>
+              <p>
+                We use this information only to provide the social media management,
+                scheduling, publishing, account connection, and related platform
+                functionality you request. OAuth access and refresh tokens are stored
+                securely on the server side and are not exposed in the frontend. We do not
+                sell social platform credentials or authorization tokens, and we do not use
+                connected-account authorization data for unrelated advertising purposes.
+              </p>
+              <p>
+                You may disconnect a connected social account from Aivara. Disconnecting
+                prevents future use of that authorization by Aivara, subject to technical
+                processing and legal retention requirements. You may also revoke Aivara&apos;s
+                authorization directly through the applicable third-party platform. Aivara
+                only accesses information permitted by the scopes or permissions you
+                explicitly authorize. Your use of a connected platform is also governed by
+                that platform&apos;s own privacy policy and terms.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold text-white">
+                TikTok Integration
+              </h2>
+              <p>
+                When you connect TikTok, Aivara uses TikTok Login and OAuth to obtain the
+                access you authorize. Aivara may process TikTok account identity
+                information made available through the approved TikTok scopes and may
+                securely store the TikTok OAuth tokens needed to maintain the connection.
+                The current planned TikTok scopes are{" "}
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-sm text-teal-300">
+                  user.info.basic
+                </code>{" "}
+                and{" "}
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-sm text-teal-300">
+                  video.publish
+                </code>
+                . Aivara only requests or uses permissions that are presented to you and
+                authorized by you.
+              </p>
+              <p>
+                When you instruct Aivara to publish or schedule content, Aivara may send
+                your selected video or photo content, captions, privacy selections,
+                commercial-content disclosures, and other publishing preferences to TikTok.
+                Aivara may also receive TikTok Creator Info and publishing-status
+                information returned by TikTok that is necessary to validate and complete
+                publishing, subject to the scopes and access TikTok makes available.
+                Aivara does not post to TikTok unless you have connected the account and
+                instructed Aivara to publish or schedule content.
+              </p>
             </section>
 
             <section className="space-y-4">
@@ -117,9 +193,14 @@ export default function PrivacyPolicyPage() {
               <p>
                 We may share information with service providers needed to operate our
                 business, such as hosting providers, payment processors, email and SMS
-                providers, analytics tools, booking systems, and customer support tools.
-                These providers are permitted to use the information only as necessary to
-                provide services to us.
+                providers, analytics tools, booking systems, customer support tools, and
+                connected social media platforms. When you use social publishing features,
+                we necessarily transmit the content you select and related publishing
+                information to the social platform you select. This is a service-provider
+                interaction initiated by you and is necessary to provide the requested
+                publishing functionality. These providers are permitted to use the
+                information only as necessary to provide services to us or at your
+                direction.
               </p>
               <p className="font-semibold text-white">
                 We do not sell personal information.
@@ -131,7 +212,25 @@ export default function PrivacyPolicyPage() {
               <p>
                 We retain information only as long as needed for business, legal,
                 accounting, support, and operational purposes, after which it is deleted
-                or anonymized in accordance with applicable law.
+                or anonymized in accordance with applicable law. After a connected social
+                account is disconnected, we may retain limited records of publishing
+                activity, audit history, publishing status, and error information for
+                legitimate operational, security, fraud-prevention, support, audit, and
+                compliance purposes, where permitted by law. Disconnecting an account does
+                not necessarily result in the immediate deletion of every related record.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold text-white">
+                Security of Integration Information
+              </h2>
+              <p>
+                We use reasonable technical and organizational safeguards designed to
+                protect sensitive integration credentials and related information,
+                including secure server-side storage and encryption of authorization tokens
+                where implemented. No method of transmission or storage can be guaranteed
+                to be completely secure.
               </p>
             </section>
 

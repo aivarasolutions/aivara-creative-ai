@@ -6,11 +6,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Terms & Conditions for Aivara Solutions, covering acceptance of terms, services, client responsibilities, payment terms, SMS/text messaging terms, liability, and governing law.",
+    "Terms & Conditions for Aivara Solutions, covering acceptance of terms, services, social media integrations, Social Scheduler authorization, client responsibilities, payment terms, SMS/text messaging terms, liability, and governing law.",
   alternates: { canonical: "/terms-and-conditions" },
 };
 
-const LAST_UPDATED = "June 10, 2026";
+const LAST_UPDATED = "August 25, 2026";
 
 export default function TermsAndConditionsPage() {
   return (
@@ -113,6 +113,74 @@ export default function TermsAndConditionsPage() {
                 responsible for the availability, performance, policies, or actions of
                 these third parties, and your use of them may be subject to their own
                 terms.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold text-white">
+                Third-Party Social Media Integrations
+              </h2>
+              <p>
+                Aivara may allow you to connect supported third-party social media
+                accounts, including accounts on platforms such as TikTok, Facebook,
+                Instagram, and other supported services. By connecting an account, you
+                represent and warrant that:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>You own the account or have proper authority to manage it.</li>
+                <li>
+                  You authorize Aivara to interact with the connected service within the
+                  permissions you grant.
+                </li>
+                <li>
+                  You authorize Aivara to submit or publish content on your behalf when
+                  you intentionally use the Social Scheduler.
+                </li>
+                <li>
+                  You remain responsible for the legality, accuracy, ownership, licensing,
+                  and appropriateness of all content you upload or publish.
+                </li>
+                <li>
+                  Your use remains subject to the applicable third-party platform&apos;s
+                  terms, policies, community guidelines, advertising requirements,
+                  music/content rules, and other requirements.
+                </li>
+              </ul>
+              <p>
+                Third-party platforms may impose rate limits, account restrictions, privacy
+                limitations, content moderation, publishing limits, API outages,
+                authorization expiration, and review or audit requirements. Aivara may
+                temporarily disable an integration if required by a provider or for
+                security or compliance reasons.
+              </p>
+              <p>
+                Aivara does not guarantee approval of content by a third-party platform,
+                continuous availability of third-party APIs, successful publication where
+                a platform rejects, delays, limits, moderates, removes, or blocks content,
+                or continued availability of a specific integration if the provider
+                changes or restricts its API. Your use of each connected platform is also
+                governed by that platform&apos;s own terms and privacy policies.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold text-white">
+                Social Scheduler Authorization
+              </h2>
+              <p>
+                When you schedule a post through Aivara, you are giving Aivara an
+                instruction to attempt publication at the selected time. Aivara may
+                transmit the content and settings you select to the applicable third-party
+                platform. Publishing may be delayed or prevented by platform processing,
+                moderation, API availability, authorization issues, or other third-party
+                limitations.
+              </p>
+              <p>
+                Before scheduling, you should review your captions, media, privacy
+                settings, commercial disclosures, publishing targets, and any other
+                applicable settings. Aivara does not silently publish content that you
+                have not intentionally scheduled or submitted through the Social
+                Scheduler.
               </p>
             </section>
 
