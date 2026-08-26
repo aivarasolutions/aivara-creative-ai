@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback, FormEvent } from 'react';
+import { useEffect, useState, useCallback, useRef, FormEvent } from 'react';
 import { usePathname } from 'next/navigation';
 import { X } from 'lucide-react';
 import { trackEvent, trackNewsletterSignup } from '@/lib/analytics';
@@ -66,6 +66,8 @@ export function NewsletterPopup() {
   const [interest, setInterest] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
 
   const closePopup = useCallback(
     (reason: 'close' | 'maybe_later' | 'escape' | 'backdrop' = 'close') => {
@@ -87,6 +89,8 @@ export function NewsletterPopup() {
     const show = () => {
       if (shown) return;
       shown = true;
+      previouslyFocusedRef.current =
+        document.activeElement instanceof HTMLElement ? document.activeElement : null;
       setOpen(true);
       track('newsletter_popup_view', { page_path: window.location.pathname });
     };
@@ -122,11 +126,45 @@ export function NewsletterPopup() {
   // Escape key
   useEffect(() => {
     if (!open) return;
+
+    const focusableSelector =
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    const focusFirstControl = () => {
+      const firstControl = dialogRef.current?.querySelector<HTMLElement>(focusableSelector);
+      (firstControl || dialogRef.current)?.focus();
+    };
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closePopup('escape');
+      if (e.key !== 'Tab') return;
+
+      const focusable = Array.from(
+        dialogRef.current?.querySelectorAll<HTMLElement>(focusableSelector) || []
+      );
+      if (focusable.length === 0) {
+        e.preventDefault();
+        dialogRef.current?.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
+
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    const focusTimer = window.requestAnimationFrame(focusFirstControl);
+    return () => {
+      window.cancelAnimationFrame(focusTimer);
+      document.removeEventListener('keydown', onKey);
+      window.requestAnimationFrame(() => previouslyFocusedRef.current?.focus());
+    };
   }, [open, closePopup]);
 
   // Lock body scroll while open
@@ -211,12 +249,19 @@ export function NewsletterPopup() {
       role="dialog"
       aria-modal="true"
       aria-labelledby="aivara-popup-title"
+      aria-describedby={
+        status === 'success' ? 'aivara-popup-message' : 'aivara-popup-description'
+      }
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={(e) => {
         if (e.target === e.currentTarget) closePopup('backdrop');
       }}
     >
-      <div className="relative w-full max-w-lg">
+      <div
+        ref={dialogRef}
+        tabIndex={-1}
+        className="relative w-full max-w-lg outline-none"
+      >
         {/* Gradient glow border */}
         <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-pink-600 via-teal-500 to-yellow-400 opacity-70 blur-lg" />
         <div className="relative bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
@@ -250,11 +295,11 @@ export function NewsletterPopup() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">You&apos;re in!</h2>
-                <p className="text-sm text-gray-300 leading-relaxed mb-6">{message}</p>
+                 <h2 id="aivara-popup-title" className="text-xl sm:text-2xl font-bold text-white mb-2">You&apos;re in!</h2>
+                 <p id="aivara-popup-message" className="text-sm text-gray-300 leading-relaxed mb-6" role="status" aria-live="polite">{message}</p>
                 <button
                   type="button"
-                  onClick={() => setOpen(false)}
+                   onClick={() => closePopup('close')}
                   className="px-6 py-2.5 rounded-lg bg-white/10 hover:bg-white/15 text-white text-sm font-semibold transition"
                 >
                   Close
@@ -268,12 +313,14 @@ export function NewsletterPopup() {
                 >
                   Build Smarter. Automate Faster.
                 </h2>
-                <p className="text-sm sm:text-base text-gray-300 text-center mb-6 leading-relaxed">
+                 <p id="aivara-popup-description" className="text-sm sm:text-base text-gray-300 text-center mb-6 leading-relaxed">
                   Join the Aivara Solutions list for AI tools, automation tips, business systems, marketing strategies, and launch updates.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
+                   <label htmlFor="popup-first-name" className="sr-only">First name</label>
                   <input
+                     id="popup-first-name"
                     type="text"
                     placeholder="First name"
                     value={firstName}
@@ -282,7 +329,9 @@ export function NewsletterPopup() {
                     className="w-full px-4 py-3 rounded-lg bg-black/60 border border-white/10 text-white placeholder:text-gray-500 text-sm focus:outline-none focus:border-teal-400/60 focus:ring-1 focus:ring-teal-400/30"
                     disabled={status === 'loading'}
                   />
+                   <label htmlFor="popup-email" className="sr-only">Email address</label>
                   <input
+                     id="popup-email"
                     type="email"
                     placeholder="Email address"
                     value={email}
@@ -292,7 +341,9 @@ export function NewsletterPopup() {
                     className="w-full px-4 py-3 rounded-lg bg-black/60 border border-white/10 text-white placeholder:text-gray-500 text-sm focus:outline-none focus:border-teal-400/60 focus:ring-1 focus:ring-teal-400/30"
                     disabled={status === 'loading'}
                   />
+                   <label htmlFor="popup-interest" className="sr-only">Business type or interest</label>
                   <select
+                     id="popup-interest"
                     value={interest}
                     onChange={(e) => setInterest(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg bg-black/60 border border-white/10 text-white text-sm focus:outline-none focus:border-teal-400/60 focus:ring-1 focus:ring-teal-400/30"
@@ -315,7 +366,7 @@ export function NewsletterPopup() {
                   </button>
 
                   {status === 'error' && message && (
-                    <p className="text-xs text-red-400 text-center pt-1">{message}</p>
+                     <p className="text-xs text-red-400 text-center pt-1" role="alert" aria-live="assertive">{message}</p>
                   )}
                 </form>
 

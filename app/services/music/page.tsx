@@ -2,7 +2,6 @@ import { Header } from "@/components/layout/Header";
 import { ServicePageView } from "@/components/ServicePageView";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/ui/faq";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -67,7 +66,7 @@ export default function MusicPage() {
           </h1>
           
           <p className="text-xl text-gray-300 mb-8">
-            Your brand's sound identity—custom jingles, themes, and background tracks that make people remember you.
+            Your brand&apos;s sound identity—custom jingles, themes, and background tracks that make people remember you.
           </p>
 
           <div className="mb-12">
@@ -86,6 +85,7 @@ export default function MusicPage() {
             <h2 className="text-2xl font-semibold mb-6 text-teal-300">Listen to Our Work</h2>
             <div className="bg-black/60 border border-white/10 rounded-lg overflow-hidden p-4">
               <iframe 
+                title="Aivara Music playlist on SoundCloud"
                 width="100%" 
                 height="600" 
                 scrolling="no" 
@@ -143,40 +143,17 @@ export default function MusicPage() {
 
           <div className="bg-gradient-to-r from-pink-600/10 via-teal-500/10 to-yellow-400/10 rounded-2xl p-8 border border-white/10">
             <h3 className="text-2xl font-bold mb-4 text-center">Order Your Custom Jingle</h3>
-            <p className="text-gray-300 mb-6 text-center">Ready to create a memorable sound for your brand?</p>
-            
-            <form className="max-w-xl mx-auto space-y-4">
-              <input 
-                type="text" 
-                placeholder="Your Name" 
-                className="w-full p-4 rounded-xl bg-black/70 border border-white/20 text-white"
-                required
-              />
-              <input 
-                type="text" 
-                placeholder="Brand Name" 
-                className="w-full p-4 rounded-xl bg-black/70 border border-white/20 text-white"
-                required
-              />
-              <input 
-                type="text" 
-                placeholder="Use Case (e.g., website intro, podcast theme)" 
-                className="w-full p-4 rounded-xl bg-black/70 border border-white/20 text-white"
-              />
-              <input 
-                type="text" 
-                placeholder="Desired Vibe (e.g., energetic, calm, professional)" 
-                className="w-full p-4 rounded-xl bg-black/70 border border-white/20 text-white"
-              />
-              <input 
-                type="date" 
-                placeholder="Deadline" 
-                className="w-full p-4 rounded-xl bg-black/70 border border-white/20 text-white"
-              />
-              <Link href="/contact?service=music">
-                <Button className="w-full px-8 py-4 text-lg">Submit Request</Button>
-              </Link>
-            </form>
+            <p className="text-gray-300 mb-6 text-center">
+              Tell us about your brand, intended use, preferred vibe, and timing through our
+              contact form so we can respond with the right next steps.
+            </p>
+
+            <Link
+              href="/contact?service=music"
+              className="mx-auto flex max-w-xl items-center justify-center rounded-2xl bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 px-8 py-4 text-lg font-semibold text-black transition hover:opacity-90"
+            >
+              Open Contact Form
+            </Link>
           </div>
         </div>
       </Section>

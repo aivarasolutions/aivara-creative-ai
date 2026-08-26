@@ -122,6 +122,7 @@ interface ContactNotification {
   service: string;
   message: string;
   source?: string;
+  marketingConsent?: boolean;
 }
 
 export async function sendContactNotification(data: ContactNotification): Promise<void> {
@@ -162,6 +163,7 @@ export async function sendContactNotification(data: ContactNotification): Promis
       ${data.phone ? detailRow('Phone', data.phone, 'tel') : ''}
       ${detailRow('Service', data.service)}
       ${detailRow('Source', source)}
+       ${detailRow('Email Updates', data.marketingConsent ? 'Opted in' : 'Not opted in')}
       ${detailRow('Received', ts)}
     </table>
 
@@ -187,7 +189,9 @@ export async function sendContactNotification(data: ContactNotification): Promis
     </table>
 
     <p style="margin:24px 0 0 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:12px; color:#9ca3af;">
-      Lead also saved to Mailchimp audience and tagged with “${escape(source)}”.
+      ${data.marketingConsent
+        ? `Lead opted in to email updates and was saved to Mailchimp with the “${escape(source)}” tag.`
+        : 'Lead did not opt in to email updates and was not added to the Mailchimp marketing audience.'}
     </p>
   `;
 
@@ -209,13 +213,14 @@ CONTACT DETAILS
   Name:    ${data.name}
   Email:   ${data.email}${data.phone ? `\n  Phone:   ${data.phone}` : ''}
   Service: ${data.service}
+  Email updates: ${data.marketingConsent ? 'Opted in' : 'Not opted in'}
 
 MESSAGE
 ${data.message}
 
 ${'-'.repeat(50)}
 Reply directly to this email to respond to ${data.name}.
-Lead also saved to Mailchimp.
+${data.marketingConsent ? 'Lead opted in to email updates and was saved to Mailchimp.' : 'Lead was not added to the Mailchimp marketing audience.'}
 
 Aivara Solutions · aivarasolutions.com`;
 

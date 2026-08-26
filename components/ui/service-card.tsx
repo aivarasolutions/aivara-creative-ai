@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Card, CardContent } from "./card";
-import { Button } from "./button";
 
 interface ServiceCardProps {
   title: string;
@@ -16,8 +15,8 @@ export function ServiceCard({ title, description, href, icon }: ServiceCardProps
         {icon && <div className="mb-4 text-teal-400">{icon}</div>}
         <h3 className="text-2xl font-semibold mb-4 text-teal-300 group-hover:text-teal-200 transition">{title}</h3>
         <p className="text-gray-300 mb-6">{description}</p>
-        <Link href={href}>
-          <Button variant="outline" className="w-full">Learn More</Button>
+        <Link href={href} className="w-full rounded-2xl inline-flex items-center justify-center border border-pink-400 px-4 py-2 font-semibold text-pink-400 transition hover:bg-pink-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black">
+          Learn More
         </Link>
       </CardContent>
     </Card>

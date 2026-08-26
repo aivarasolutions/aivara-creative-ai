@@ -4,7 +4,7 @@ import { buildLeadTags, syncLeadToMailchimp } from '@/lib/mailchimp';
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, service, message } = await req.json();
+    const { name, email, phone, service, message, marketingConsent } = await req.json();
 
     if (!name || !email || !service || !message) {
       return NextResponse.json(
@@ -21,28 +21,47 @@ export async function POST(req: Request) {
     const firstName = nameParts[0];
     const lastName = nameParts.slice(1).join(' ');
 
-    const tags = buildLeadTags(source, service);
+    const emailMarketingConsent = marketingConsent === true;
+    const tags = emailMarketingConsent
+      ? [...buildLeadTags(source, service), 'Email Marketing Opt-In']
+      : [];
 
-    // Run Mailchimp sync + both Resend emails resiliently — a failure in any
-    // one of them must not crash the form submission flow.
-    const results = await Promise.allSettled([
-      syncLeadToMailchimp({
+    // Marketing-list enrollment is optional. Every inquiry still receives the
+    // operational response and internal notification needed to handle it.
+    const requests = [
+      ...(emailMarketingConsent
+        ? [
+            syncLeadToMailchimp({
+              email,
+              firstName,
+              lastName,
+              phone,
+              message,
+              service,
+              source,
+              tags,
+            }),
+          ]
+        : []),
+      sendContactNotification({
+        name,
         email,
-        firstName,
-        lastName,
         phone,
-        message,
         service,
+        message,
         source,
-        tags,
+        marketingConsent: emailMarketingConsent,
       }),
-      sendContactNotification({ name, email, phone, service, message, source }),
       sendVisitorConfirmation({ name, email, service, source }),
-    ]);
+    ];
+    const labels = emailMarketingConsent
+      ? ['Mailchimp sync', 'admin notification', 'visitor confirmation']
+      : ['admin notification', 'visitor confirmation'];
+    const results = await Promise.allSettled(requests);
 
     results.forEach((r, i) => {
       if (r.status === 'rejected') {
-        const label = ['Mailchimp sync', 'admin notification', 'visitor confirmation'][i];
+        const label = labels[i];
         console.error(`[contact] ${label} failed:`, r.reason);
       }
     });

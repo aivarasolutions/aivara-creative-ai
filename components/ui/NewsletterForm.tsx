@@ -57,9 +57,12 @@ export function NewsletterForm() {
     <div>
       <h4 className="text-sm font-semibold mb-3 text-gray-200">Get Updates</h4>
       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+        <label htmlFor="footer-newsletter-email" className="sr-only">Email address</label>
         <input
+          id="footer-newsletter-email"
           type="email"
           placeholder="Email address"
+          autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -70,11 +73,17 @@ export function NewsletterForm() {
           type="submit" 
           className="w-full" 
           disabled={status === 'loading'}
+          aria-busy={status === 'loading'}
         >
           {status === 'loading' ? 'Joining...' : 'Join'}
         </Button>
         {message && (
-          <p className={`text-xs ${status === 'success' ? 'text-teal-400' : 'text-red-400'}`}>
+          <p
+            role={status === 'error' ? 'alert' : 'status'}
+            aria-live="polite"
+            aria-atomic="true"
+            className={`text-xs ${status === 'success' ? 'text-teal-400' : 'text-red-400'}`}
+          >
             {message}
           </p>
         )}

@@ -33,7 +33,10 @@ export default function PortfolioPage() {
           {["All", "AI", "Web", "Logistics", "Music"].map((category) => (
             <button
               key={category}
+              type="button"
               onClick={() => setFilter(category)}
+              aria-pressed={filter === category}
+              aria-label={`Show ${category === "All" ? "all portfolio" : `${category} portfolio`} items`}
               className={`px-6 py-2 rounded-full transition ${
                 filter === category
                   ? "bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 text-black font-semibold"
@@ -54,6 +57,7 @@ export default function PortfolioPage() {
                 <div key={item.id} className="bg-black/70 border border-white/10 rounded-lg overflow-hidden hover:border-white/20 transition-all">
                   <div className="aspect-video bg-black overflow-hidden">
                     <iframe 
+                      title={`${item.title} audio player`}
                       width="100%" 
                       height="100%" 
                       scrolling="no" 

@@ -40,6 +40,7 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
     <div className="space-y-4">
       <audio 
         ref={audioRef} 
+        aria-label="Aivara Music audio player"
         onEnded={() => setIsPlaying(false)}
         onPause={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}
@@ -47,7 +48,7 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
       
       {tracks.map((track, index) => (
         <div 
-          key={index} 
+          key={`${track.title}-${track.src}`}
           className={`flex items-center gap-4 p-4 rounded-xl border transition ${
             currentTrack === index 
               ? 'border-teal-400 bg-teal-400/10' 
@@ -68,7 +69,7 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
             {track.tags && track.tags.length > 0 && (
               <div className="flex gap-2 mt-2">
                 {track.tags.map((tag, i) => (
-                  <span key={i} className="text-xs px-2 py-1 rounded-full bg-white/10 text-gray-400">
+                  <span key={`${tag}-${i}`} className="text-xs px-2 py-1 rounded-full bg-white/10 text-gray-400">
                     {tag}
                   </span>
                 ))}
@@ -77,9 +78,10 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
           </div>
           
           <button
+            type="button"
             onClick={() => handlePlayPause(index)}
             className="p-3 rounded-full bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 hover:opacity-90 transition"
-            aria-label={isPlaying && currentTrack === index ? "Pause" : "Play"}
+            aria-label={`${isPlaying && currentTrack === index ? "Pause" : "Play"} ${track.title}`}
           >
             {isPlaying && currentTrack === index ? (
               <Pause className="h-5 w-5 text-black" />

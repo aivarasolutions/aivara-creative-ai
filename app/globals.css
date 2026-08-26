@@ -16,3 +16,14 @@ body {
 
 /* Nice gradient text helper */
 .gradient-text { @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-teal-400 to-yellow-400; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

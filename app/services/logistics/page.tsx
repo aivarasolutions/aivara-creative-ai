@@ -2,7 +2,6 @@ import { Header } from "@/components/layout/Header";
 import { ServicePageView } from "@/components/ServicePageView";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/ui/faq";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -112,9 +111,9 @@ export default function LogisticsPage() {
 
           <div className="bg-gradient-to-r from-pink-600/10 via-teal-500/10 to-yellow-400/10 rounded-2xl p-8 text-center border border-white/10">
             <h3 className="text-2xl font-bold mb-4">Ready to Optimize Your Logistics?</h3>
-            <p className="text-gray-300 mb-6">Let's discuss how we can streamline your operations and reduce costs.</p>
-            <Link href="/contact">
-              <Button className="px-8 py-4 text-lg">Get Started</Button>
+            <p className="text-gray-300 mb-6">Let&apos;s discuss how we can streamline your operations and reduce costs.</p>
+            <Link href="/contact" className="rounded-2xl inline-flex items-center justify-center bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 px-8 py-4 text-lg font-semibold text-black transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black">
+              Get Started
             </Link>
           </div>
         </div>

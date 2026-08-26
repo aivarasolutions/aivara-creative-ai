@@ -86,6 +86,9 @@ export function Footer() {
           <Link href="/terms-and-conditions" className="hover:text-white transition">
             Terms &amp; Conditions
           </Link>
+          <Link href="/accessibility" className="hover:text-white transition">
+            Accessibility
+          </Link>
         </div>
       </div>
     </footer>

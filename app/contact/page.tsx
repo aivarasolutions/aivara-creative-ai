@@ -19,11 +19,11 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-6">
-              Let's Work Together
+              Let&apos;s Work Together
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Ready to transform your business with AI, web solutions, logistics optimization, or custom music? 
-              Let's start with a discovery call.
+               Let&apos;s start with a discovery call.
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export default function ContactPage() {
                 <ol className="space-y-3 text-gray-300">
                   <li className="flex gap-3">
                     <span className="text-teal-400 font-semibold">1.</span>
-                    We'll review your message within 24 hours
+                    We&apos;ll review your message within 24 hours
                   </li>
                   <li className="flex gap-3">
                     <span className="text-teal-400 font-semibold">2.</span>

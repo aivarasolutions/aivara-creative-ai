@@ -6,11 +6,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Terms & Conditions for Aivara Solutions, covering acceptance of terms, services, social media integrations, Social Scheduler authorization, client responsibilities, payment terms, SMS/text messaging terms, liability, and governing law.",
+    "Terms & Conditions for Aivara Solutions, covering acceptance of terms, services, social media integrations, Social Scheduler authorization, client responsibilities, payment terms, phone number submissions, liability, and governing law.",
   alternates: { canonical: "/terms-and-conditions" },
 };
 
-const LAST_UPDATED = "August 25, 2026";
+const LAST_UPDATED = "August 26, 2026";
 
 export default function TermsAndConditionsPage() {
   return (
@@ -199,28 +199,36 @@ export default function TermsAndConditionsPage() {
 
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-white">
-                SMS Terms and Conditions
+                Phone Number Submissions
               </h2>
               <p>
-                By providing your mobile phone number to Aivara Solutions through our
-                website, booking forms, client portals, quote forms, or during
-                communication with our team, you agree to receive SMS messages from Aivara
-                Solutions.
+                You may choose to provide a phone number through our website contact and
+                quote forms. We may use that number to respond to your inquiry or coordinate
+                requested services.
               </p>
               <p>
-                SMS messages may include booking updates, reservation notifications,
-                service updates, payment notifications, account notifications, customer
-                support messages, and other operational communications.
+                Providing a phone number through a website form does not enroll you in SMS
+                marketing or automated text messages, and it is not a condition of purchase.
               </p>
               <p>
-                Message frequency may vary. Message and data rates may apply. Reply STOP to
-                unsubscribe at any time. Reply HELP for assistance.
+                If Aivara Solutions offers a text-message program in the future, the
+                applicable opt-in, message program, and notice terms will be presented before
+                enrollment.
               </p>
-              <p>SMS consent is not required as a condition of purchase.</p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold text-white">
+                Marketing Email Updates
+              </h2>
               <p>
-                Aivara Solutions does not sell, rent, share, or disclose mobile phone
-                numbers, SMS opt-in data, or SMS consent information to third parties or
-                affiliates for marketing or promotional purposes.
+                We add a website inquiry to our marketing email audience only when the
+                visitor separately selects the optional email-updates checkbox. Choosing not
+                to receive updates does not affect an inquiry, quote request, or purchase.
+              </p>
+              <p>
+                Visitors who opt in may unsubscribe from marketing emails using the
+                unsubscribe link in an email or by contacting us.
               </p>
             </section>
 

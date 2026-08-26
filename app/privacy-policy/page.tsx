@@ -6,11 +6,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Aivara Solutions, covering the information we collect, social media integrations, social publishing, SMS/text message communications, data sharing, retention, and your rights.",
+    "Privacy Policy for Aivara Solutions, covering the information we collect, social media integrations, social publishing, data sharing, retention, and your rights.",
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "August 25, 2026";
+const LAST_UPDATED = "August 26, 2026";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -160,31 +160,40 @@ export default function PrivacyPolicyPage() {
 
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-white">
-                SMS Privacy and Consent Policy
+                Phone Numbers and Text Messages
               </h2>
               <p>
                 Aivara Solutions may collect mobile phone numbers when users submit forms,
-                request quotes, create bookings, communicate with our team, or use our
-                client portals. By providing a mobile phone number, users may receive SMS
-                messages related to bookings, reservations, service updates, payment
-                notifications, account notifications, customer support, and other
-                operational communications.
+                request quotes, communicate with our team, or use our client portals. We use
+                website form phone numbers to respond to the associated inquiry or coordinate
+                requested services.
               </p>
               <p>
-                Aivara Solutions does not sell, rent, share, or disclose mobile phone
-                numbers, SMS opt-in data, or SMS consent information to third parties or
-                affiliates for marketing or promotional purposes.
+                Providing a phone number through a website form does not enroll a visitor in
+                SMS marketing or automated text messages. The website does not currently offer
+                a text-message opt-in program through its forms.
               </p>
               <p>
-                SMS opt-in data and consent information will only be used to provide the
-                requested communication services and may be shared only with service
-                providers when necessary to deliver SMS messages on behalf of Aivara
-                Solutions.
+                If we introduce a text-message program, we will provide any required
+                disclosures and obtain any required consent before using a phone number for
+                that program.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold text-white">
+                Email Marketing Choices
+              </h2>
+              <p>
+                When you send us an inquiry, you may separately choose to receive Aivara
+                Solutions tips, updates, and offers. We do not add inquiry contacts to our
+                marketing email audience unless that optional checkbox is selected.
               </p>
               <p>
-                Users may opt out of SMS messages at any time by replying STOP. Users may
-                reply HELP for assistance. Message frequency may vary. Message and data
-                rates may apply.
+                For opted-in contacts, we use Mailchimp to manage email subscriptions and
+                may share the contact details and inquiry information you provide with
+                Mailchimp for that purpose. You can unsubscribe using the link in a
+                marketing email or contact us to request help with your preferences.
               </p>
             </section>
 

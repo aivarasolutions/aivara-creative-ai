@@ -25,6 +25,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { trackCTA, trackBookingClick } from "@/lib/analytics";
 import {
   ArrowRight,
@@ -53,6 +54,8 @@ import {
   Compass,
   Bot,
   Music,
+  Menu,
+  X,
 } from "lucide-react";
 import { ToolPill } from "@/components/ui/ToolPill";
 import "./styles/aivara-os.css";
@@ -484,6 +487,7 @@ const FOOTER = {
   legalLinks: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-and-conditions" },
+    { label: "Accessibility", href: "/accessibility" },
     { label: "Security", href: "#" },
   ],
 };
@@ -492,6 +496,8 @@ const FOOTER = {
  *  PAGE
  * ──────────────────────────────────────────────────────────────────── */
 export default function HomePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50 font-sans overflow-x-hidden relative">
       {/* Background blobs */}
@@ -539,8 +545,45 @@ export default function HomePage() {
             >
               {HEADER.bookDemoLabel}
             </Link>
+            <button
+              type="button"
+              className="lg:hidden rounded-lg border border-white/20 p-2 text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-400"
+              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="homepage-mobile-menu"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
+        {mobileMenuOpen && (
+          <nav
+            id="homepage-mobile-menu"
+            aria-label="Primary navigation"
+            className="lg:hidden border-t border-white/10 bg-slate-950/95 px-6 py-4 backdrop-blur"
+          >
+            <div className="container mx-auto flex flex-col gap-1">
+              {HEADER.nav.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="rounded-lg px-3 py-3 text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Link
+                href={HEADER.signInHref}
+                className="rounded-lg px-3 py-3 text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-400"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {HEADER.signInLabel}
+              </Link>
+            </div>
+          </nav>
+        )}
       </header>
 
       <main className="relative z-10 pt-32 pb-20">
@@ -1032,7 +1075,7 @@ export default function HomePage() {
                         Good morning, Sarah
                       </div>
                       <div className="text-[9px] text-slate-500">
-                        Here's what's happening today
+                         Here&apos;s what&apos;s happening today
                       </div>
                     </div>
 

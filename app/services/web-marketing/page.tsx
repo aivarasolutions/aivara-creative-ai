@@ -2,7 +2,6 @@ import { Header } from "@/components/layout/Header";
 import { ServicePageView } from "@/components/ServicePageView";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/ui/faq";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -274,10 +273,8 @@ export default function WebMarketingPage() {
                       </ul>
                     </div>
 
-                    <Link href="/contact?package=starter" className="mt-auto">
-                      <Button className="w-full py-4 text-base font-semibold transition-transform hover:scale-[1.02]">
-                        Request Starter Package
-                      </Button>
+                    <Link href="/contact?package=starter" className="mt-auto w-full rounded-2xl inline-flex items-center justify-center bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 py-4 text-base font-semibold text-black transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black">
+                      Request Starter Package
                     </Link>
                   </CardContent>
                 </Card>
@@ -331,10 +328,8 @@ export default function WebMarketingPage() {
                       </ul>
                     </div>
 
-                    <Link href="/contact?package=professional" className="mt-auto">
-                      <Button className="w-full py-4 text-base font-semibold transition-transform hover:scale-[1.02]">
-                        Request Professional Build
-                      </Button>
+                    <Link href="/contact?package=professional" className="mt-auto w-full rounded-2xl inline-flex items-center justify-center bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 py-4 text-base font-semibold text-black transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black">
+                      Request Professional Build
                     </Link>
                   </CardContent>
                 </Card>
@@ -445,8 +440,8 @@ export default function WebMarketingPage() {
           <div className="bg-gradient-to-r from-pink-600/10 via-teal-500/10 to-yellow-400/10 rounded-2xl p-8 text-center border border-white/10 max-w-4xl">
             <h3 className="text-2xl font-bold mb-4">Ready to Grow Your Online Presence?</h3>
             <p className="text-gray-300 mb-6">Let&apos;s build a website and marketing strategy that converts.</p>
-            <Link href="/contact">
-              <Button className="px-8 py-4 text-lg">Get Started</Button>
+            <Link href="/contact" className="rounded-2xl inline-flex items-center justify-center bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 px-8 py-4 text-lg font-semibold text-black transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black">
+              Get Started
             </Link>
           </div>
         </div>

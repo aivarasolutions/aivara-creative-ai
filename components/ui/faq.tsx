@@ -18,10 +18,13 @@ export function FAQ({ items }: FAQProps) {
   return (
     <div className="space-y-4">
       {items.map((item, index) => (
-        <div key={index} className="border border-white/10 rounded-xl overflow-hidden bg-black/40">
+        <div key={item.question} className="border border-white/10 rounded-xl overflow-hidden bg-black/40">
           <button
+            type="button"
             className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-white/5 transition"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            aria-expanded={openIndex === index}
+            aria-controls={`faq-answer-${index}`}
           >
             <span className="font-semibold text-gray-200">{item.question}</span>
             <ChevronDown 
@@ -29,7 +32,7 @@ export function FAQ({ items }: FAQProps) {
             />
           </button>
           {openIndex === index && (
-            <div className="px-6 pb-4 text-gray-300">
+            <div id={`faq-answer-${index}`} className="px-6 pb-4 text-gray-300">
               {item.answer}
             </div>
           )}

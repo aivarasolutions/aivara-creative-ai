@@ -1,7 +1,6 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Section } from '@/components/ui/section';
-import { Button } from '@/components/ui/button';
 import { FAQ } from '@/components/ui/faq';
 import { Card, CardContent } from '@/components/ui/card';
 import { LandingForm } from '@/components/ui/LandingForm';
@@ -68,11 +67,9 @@ export function LandingPage(props: LandingPageProps) {
               ))}
             </ul>
 
-            <a href="#request">
-              <Button className="px-8 py-6 text-lg font-semibold">
+            <a href="#request" className="rounded-2xl inline-flex items-center justify-center bg-gradient-to-r from-pink-600 via-teal-500 to-yellow-400 px-8 py-6 text-lg font-semibold text-black transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black">
                 {props.primaryCta}
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
             </a>
 
             <div className="mt-10 flex flex-wrap gap-6 text-sm text-gray-400">
@@ -240,18 +237,11 @@ export function LandingPage(props: LandingPageProps) {
           <h2 className="text-3xl md:text-5xl font-bold mb-6">{props.finalCtaHeadline}</h2>
           <p className="text-lg md:text-xl mb-8 text-black/80">{props.finalCtaText}</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#request">
-              <Button className="px-8 py-6 text-lg bg-black text-white hover:bg-black/80">
+            <a href="#request" className="rounded-2xl inline-flex items-center justify-center bg-black px-8 py-6 text-lg font-semibold text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black">
                 {props.primaryCta}
-              </Button>
             </a>
-            <Link href="/contact">
-              <Button
-                variant="outline"
-                className="px-8 py-6 text-lg border-black text-black hover:bg-black hover:text-white"
-              >
-                Book a Strategy Call
-              </Button>
+            <Link href="/contact" className="rounded-2xl inline-flex items-center justify-center border border-black px-8 py-6 text-lg font-semibold text-black transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black">
+              Book a Strategy Call
             </Link>
           </div>
         </div>
