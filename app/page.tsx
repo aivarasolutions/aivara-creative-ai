@@ -6,15 +6,15 @@
  * ──────────────────────────────────────────────────────────────────────
  *  EDITING GUIDE
  * ──────────────────────────────────────────────────────────────────────
- *  All copy, links, and image paths live in the constants block below
+ *  All copy and links live in the constants block below
  *  (HERO, REPLACE_TOOLS, COMPARISON, MODULES, SHOWCASE, WHITE_LABEL,
  *  INDUSTRIES, FINAL_CTA).
  *
  *  - To change wording: edit the strings inside those arrays/objects.
  *  - To change a CTA link: edit `href` in HERO.primaryCta / secondaryCta
  *    or FINAL_CTA.primaryCta / secondaryCta.
- *  - To swap an image: drop the new file into /public/images/ and
- *    update the path string (e.g. "/images/portfolio/your-pic.png").
+ *  - Use code-drawn illustrative previews unless a media asset has a
+ *    documented source and approved public-use rights.
  *  - To add/remove a module or industry: add or
  *    remove an entry in its array — the grid auto-adjusts.
  *
@@ -24,7 +24,6 @@
  */
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { trackCTA, trackBookingClick } from "@/lib/analytics";
 import {
@@ -64,7 +63,6 @@ import "./styles/aivara-os.css";
  * 0. HEADER (sticky nav, mockup design)
  * ──────────────────────────────────────────────────────────────────── */
 const HEADER = {
-  logoSrc: "/images/aivara-logo.png",
   brand: "AIVARA OS",
   nav: [
     { label: "Platform", href: "#modules" },
@@ -151,12 +149,6 @@ const SHOWCASE_HEADING = {
   title: "Powered by Aivara OS",
   subtitle: "See how modern enterprises configure their platforms.",
 };
-
-const SHOWCASE = [
-  { img: "/images/portfolio/site-aivara-portal.png", industry: "Portal interface example" },
-  { img: "/images/portfolio/site-aivara.jpg", industry: "Lead workflow example" },
-  { img: "/images/portfolio/site-aivara-music.png", industry: "Creative system example" },
-];
 
 /* ────────────────────────────────────────────────────────────────────
  * 5. WHITE-LABEL
@@ -290,7 +282,6 @@ type PortfolioItem = {
   description: string;
   chips: string[];
   gradient: string;
-  image: string;
   url: string;
 };
 
@@ -303,7 +294,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An internal interface example for organizing requests, files, approvals, and updates.",
     chips: ["Portal", "Automation", "Client System"],
     gradient: "from-pink-500 via-purple-500 to-blue-500",
-    image: "/images/portfolio/site-aivara-portal.png",
     url: "/contact",
   },
   {
@@ -314,7 +304,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative dashboard concept for reviewing operational activity and reporting.",
     chips: ["Logistics", "Dashboard", "Reporting"],
     gradient: "from-blue-500 via-teal-500 to-green-500",
-    image: "/images/portfolio/site-aivara-portal.png",
     url: "/contact",
   },
   {
@@ -325,7 +314,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative portal concept for coordinating property operations and reporting.",
     chips: ["Property Management", "Portal", "Reporting"],
     gradient: "from-teal-500 via-green-500 to-yellow-400",
-    image: "/images/portfolio/site-aivara.jpg",
     url: "/contact",
   },
   {
@@ -336,7 +324,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative example of a booking workflow with campaign pages and reporting.",
     chips: ["Booking", "Marketing", "Analytics"],
     gradient: "from-cyan-400 via-blue-500 to-purple-500",
-    image: "/images/portfolio/site-aivara.jpg",
     url: "/contact",
   },
   {
@@ -347,7 +334,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An internal interface example for organizing lead capture, follow-up, and reporting.",
     chips: ["Lead Generation", "Tracking", "Automation"],
     gradient: "from-yellow-400 via-orange-500 to-pink-500",
-    image: "/images/portfolio/site-aivara.jpg",
     url: "/contact",
   },
   {
@@ -358,7 +344,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative concept for presenting destination content in a branded digital journey.",
     chips: ["Travel Tech", "Funnel", "Digital Product"],
     gradient: "from-purple-500 via-pink-500 to-orange-400",
-    image: "/images/portfolio/site-aivara.jpg",
     url: "/contact",
   },
   {
@@ -369,7 +354,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative example of creative assets for guest-facing marketing.",
     chips: ["Creative", "Tourism", "Branding"],
     gradient: "from-green-500 via-teal-500 to-cyan-500",
-    image: "/images/portfolio/site-aivara-music.png",
     url: "/contact",
   },
   {
@@ -380,7 +364,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative workflow for answering common questions and routing requests.",
     chips: ["AI", "Support", "Lead Capture"],
     gradient: "from-pink-500 via-purple-500 to-teal-500",
-    image: "/images/portfolio/site-aivara-portal.png",
     url: "/contact",
   },
   {
@@ -391,7 +374,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An internal example of how audio branding and theme music can be scoped for a project.",
     chips: ["Creative Media", "Audio", "Branding"],
     gradient: "from-orange-500 via-pink-500 to-purple-500",
-    image: "/images/portfolio/site-aivara-music.png",
     url: "/contact",
   },
 ];
@@ -400,7 +382,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
  * 9. FOOTER (mockup design)
  * ──────────────────────────────────────────────────────────────────── */
 const FOOTER = {
-  logoSrc: "/images/aivara-logo.png",
   blurb:
     "The AI-Powered Operating System for Modern Businesses. Unify, automate, and scale.",
   columns: [
@@ -466,13 +447,12 @@ export default function HomePage() {
       <header className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src={HEADER.logoSrc}
-              alt="Aivara Solutions"
-              width={120}
-              height={32}
-              className="h-8 w-auto"
-            />
+            <span
+              aria-hidden="true"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 via-teal-400 to-yellow-300 text-sm font-black text-slate-950"
+            >
+              A
+            </span>
             <span className="font-bold text-xl tracking-tight hidden sm:block">
               {HEADER.brand}
             </span>
@@ -723,13 +703,7 @@ export default function HomePage() {
               <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-600 to-teal-500 p-[1px] mb-4 shadow-[0_0_30px_rgba(20,184,166,0.3)]">
                 <div className="w-full h-full bg-slate-950 rounded-2xl flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-teal-500/20" />
-                  <Image
-                    src="/images/aivara-logo.png"
-                    alt="Aivara"
-                    width={40}
-                    height={40}
-                    className="h-10 w-auto relative z-10"
-                  />
+                  <span className="relative z-10 text-3xl font-black text-teal-300">A</span>
                 </div>
               </div>
               <div className="flex items-center gap-2 text-teal-400 font-medium bg-teal-400/10 px-3 py-1 rounded-full text-sm">
@@ -862,11 +836,21 @@ export default function HomePage() {
                       <div
                         className={`relative aspect-video overflow-hidden bg-gradient-to-br ${item.gradient}`}
                       >
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
+                        <div aria-hidden="true" className="absolute inset-0 p-5">
+                          <div className="h-full rounded-xl border border-white/30 bg-slate-950/45 p-3 backdrop-blur-sm">
+                            <div className="mb-3 flex gap-1.5">
+                              <span className="h-2 w-2 rounded-full bg-white/70" />
+                              <span className="h-2 w-2 rounded-full bg-white/40" />
+                              <span className="h-2 w-2 rounded-full bg-white/20" />
+                            </div>
+                            <div className="grid h-[calc(100%-20px)] grid-cols-3 gap-2">
+                              <span className="rounded-md bg-white/20" />
+                              <span className="col-span-2 rounded-md bg-white/10" />
+                              <span className="col-span-2 rounded-md bg-white/10" />
+                              <span className="rounded-md bg-teal-300/25" />
+                            </div>
+                          </div>
+                        </div>
                         <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur border border-white/20 text-[10px] uppercase tracking-wider font-semibold text-white">
                           {item.badge}
                         </div>
@@ -1135,7 +1119,6 @@ export default function HomePage() {
         <section className="container mx-auto px-6 py-12">
           <div className="relative rounded-3xl overflow-hidden px-8 py-20 text-center border border-white/10">
             <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-pink-900/30" />
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
 
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">{FINAL_CTA.title}</h2>
@@ -1172,13 +1155,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-10 mb-16">
             <div className="col-span-2">
-              <Image
-                src={FOOTER.logoSrc}
-                alt="Aivara Solutions"
-                width={120}
-                height={32}
-                className="h-8 w-auto mb-4 opacity-80"
-              />
+              <div className="mb-4 text-lg font-black tracking-[0.18em] text-white">AIVARA OS</div>
               <p className="text-slate-400 text-sm mb-6 max-w-xs">{FOOTER.blurb}</p>
             </div>
             {FOOTER.columns.map((col) => (

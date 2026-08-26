@@ -281,11 +281,9 @@ export function NewsletterPopup() {
           <div className="p-6 sm:p-8">
             {/* Logo */}
             <div className="flex justify-center mb-5">
-              <img
-                src="/images/aivara-logo.png"
-                alt="Aivara Solutions"
-                className="h-16 sm:h-20 w-auto"
-              />
+              <div className="rounded-xl bg-gradient-to-br from-pink-500 via-teal-400 to-yellow-300 px-5 py-3 text-center text-sm font-black tracking-[0.18em] text-black">
+                AIVARA
+              </div>
             </div>
 
             {status === 'success' ? (

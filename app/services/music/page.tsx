@@ -20,12 +20,6 @@ export default function MusicPage() {
     "Licensing & commercial deliverables",
   ];
 
-  const videoEmbeds = [
-    { platform: "TikTok", url: "https://www.tiktok.com", title: "Coffee Shop Jingle Demo" },
-    { platform: "Instagram", url: "https://www.instagram.com", title: "Tech Startup Sound Identity" },
-    { platform: "YouTube", url: "https://www.youtube.com", title: "Restaurant Theme Song" },
-  ];
-
   const faqs = [
     {
       question: "How long does it take to create a custom jingle?",
@@ -73,43 +67,28 @@ export default function MusicPage() {
           </div>
 
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 text-teal-300">Listen to Our Work</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-teal-300">Audio Samples</h2>
             <div className="bg-black/60 border border-white/10 rounded-lg overflow-hidden p-4">
-              <iframe 
-                title="Aivara Music playlist on SoundCloud"
-                width="100%" 
-                height="600" 
-                scrolling="no" 
-                frameBorder="no" 
-                allow="autoplay" 
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2058721338&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
-                className="w-full"
-              ></iframe>
-              <a 
-                href="https://soundcloud.com/thatbvmpz/sets/aivara-music-theme-songs?si=5d5005cf1b9f43cf940c46f12fcd7990&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-teal-400 hover:text-teal-300 text-sm"
-              >
-                View Full Playlist on SoundCloud →
-              </a>
+              <p className="text-gray-300">
+                Audio examples are not published until the applicable creator, client,
+                composition, master, and public-display rights have been confirmed.
+              </p>
+              <p className="mt-3 text-sm text-gray-400">
+                Contact us to discuss an appropriately cleared sample or a custom brief.
+              </p>
             </div>
           </div>
 
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 text-teal-300">Video Showcases</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {videoEmbeds.map((video, index) => (
-                <Card key={index} className="bg-black/60 border border-white/10">
-                  <CardContent className="p-6 text-center">
-                    <div className="aspect-video bg-gradient-to-br from-pink-600/20 via-teal-500/20 to-yellow-400/20 rounded-xl mb-4 flex items-center justify-center">
-                      <span className="text-gray-400">{video.platform} Video</span>
-                    </div>
-                    <p className="text-sm text-gray-300">{video.title}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <Card className="bg-black/60 border border-white/10">
+              <CardContent className="p-6">
+                <h2 className="text-2xl font-semibold text-teal-300">Delivery Formats</h2>
+                <p className="mt-3 text-gray-300">
+                  Deliverables, platform publishing, attribution, and licensing are defined
+                  in the written project scope before release.
+                </p>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="mb-12">

@@ -53,41 +53,7 @@ export default function PortfolioPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPortfolio.map((item) => {
-            const hasEmbed = !!(item.media as any)?.embedUrl;
             const isExternal = item.url.startsWith("http");
-            
-            if (hasEmbed) {
-              return (
-                <div key={item.id} className="bg-black/70 border border-white/10 rounded-lg overflow-hidden hover:border-white/20 transition-all">
-                  <div className="aspect-video bg-black overflow-hidden">
-                    <iframe 
-                      title={`${item.title} audio player`}
-                      width="100%" 
-                      height="100%" 
-                      scrolling="no" 
-                      frameBorder="no" 
-                      allow="autoplay" 
-                      src={(item.media as any).embedUrl}
-                      className="w-full h-full"
-                    ></iframe>
-                  </div>
-                  <div className="p-6">
-                    <div className="text-xs text-teal-400 mb-2">{item.category}</div>
-                    <h3 className="text-xl font-semibold mb-2 text-gray-200">{item.title}</h3>
-                    <p className="text-sm text-gray-400 mb-4">{item.summary}</p>
-                    <a 
-                      href={item.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-teal-400 hover:text-teal-300 text-sm"
-                    >
-                      Listen on SoundCloud →
-                    </a>
-                  </div>
-                </div>
-              );
-            }
-
             return (
               <a 
                 key={item.id} 
@@ -98,7 +64,6 @@ export default function PortfolioPage() {
                 <PortfolioCard 
                   title={item.title}
                   category={item.category}
-                  image={item.image}
                   description={item.summary}
                 />
               </a>

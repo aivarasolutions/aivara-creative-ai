@@ -31,8 +31,7 @@ For each file in this `email-templates/` folder:
 - The templates use standard Mailchimp merge tags: `*|FNAME|*`, `*|UNSUB|*`,
   `*|UPDATE_PROFILE|*`, `*|LIST:ADDRESS|*`, `*|CURRENT_YEAR|*`. Do not remove the
   footer block — Mailchimp requires the unsubscribe + physical address tags.
-- The logo loads from `https://aivarasolutions.com/images/aivara-logo.png`. No
-  image upload is needed; keep the site live so the logo resolves.
+- The templates are text-only and do not load external images or media.
 - No external tracking scripts are included.
 
 ---

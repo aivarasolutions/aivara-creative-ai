@@ -14,7 +14,6 @@ const getSiteUrl = () => {
 };
 
 const siteUrl = getSiteUrl();
-const logoUrl = `${siteUrl}/images/aivara-logo.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -28,31 +27,16 @@ export const metadata: Metadata = {
     description: "Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.",
     url: siteUrl,
     siteName: "Aivara Solutions",
-    images: [
-      {
-        url: logoUrl,
-        width: 1200,
-        height: 1200,
-        alt: "Aivara Solutions Logo",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Aivara Solutions — Technology + Creativity for the Modern Business",
     description: "Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.",
-    images: [logoUrl],
   },
   icons: {
-    icon: [
-      { url: "/favicon.png", type: "image/png" },
-      { url: "/images/aivara-logo.png", type: "image/png", sizes: "512x512" },
-    ],
-    apple: [
-      { url: "/images/aivara-logo.png", sizes: "180x180", type: "image/png" },
-    ],
+    icon: "/brand-mark.svg",
   },
 };
 
@@ -61,16 +45,10 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Aivara Solutions",
   url: siteUrl,
-  logo: logoUrl,
   email: "kevin@aivarasolutions.com",
   telephone: "+1-310-400-0032",
   description:
     "Aivara Solutions builds websites, portals, automations, AI workflows, lead generation systems, and creative content for modern businesses.",
-  sameAs: [
-    "https://instagram.com/aivarasolutions",
-    "https://www.facebook.com/share/1RtPaToeGh/",
-    "https://www.linkedin.com/company/aivara-solutions-llc/",
-  ],
   contactPoint: [
     {
       "@type": "ContactPoint",

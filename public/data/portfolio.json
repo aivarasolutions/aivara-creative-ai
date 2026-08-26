@@ -5,8 +5,6 @@
     "category": "AI",
     "summary": "Illustrative workflow for organizing common questions, requests, and handoffs.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara-portal.png",
-    "imageAlt": "Illustrative AI support workflow interface",
     "tags": ["chatbot", "lead-capture", "travel"]
   },
   {
@@ -15,8 +13,6 @@
     "category": "AI",
     "summary": "Illustrative workflow for list building, sequencing, inbox management, and follow-up.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara-portal.png",
-    "imageAlt": "Illustrative outreach workflow interface",
     "tags": ["apollo", "automation", "crm"]
   },
   {
@@ -25,8 +21,6 @@
     "category": "AI",
     "summary": "Illustrative onboarding flow with welcome steps, guided checklists, and feedback loops.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara-portal.png",
-    "imageAlt": "Illustrative onboarding automation interface",
     "tags": ["saas", "onboarding", "automation"]
   },
   {
@@ -35,8 +29,6 @@
     "category": "Web",
     "summary": "Illustrative storefront layout with product discovery, checkout, and SEO structure.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara.jpg",
-    "imageAlt": "Illustrative e-commerce interface",
     "tags": ["ecommerce", "seo", "ux"]
   },
   {
@@ -45,8 +37,6 @@
     "category": "Web",
     "summary": "Illustrative brand system with a website structure and accessible storytelling.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara.jpg",
-    "imageAlt": "Illustrative brand and site preview",
     "tags": ["branding", "nonprofit", "web"]
   },
   {
@@ -55,8 +45,6 @@
     "category": "Web",
     "summary": "Illustrative SEO planning interface covering technical review and content priorities.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara.jpg",
-    "imageAlt": "Illustrative SEO planning interface",
     "tags": ["seo", "content", "technical-seo"]
   },
   {
@@ -65,8 +53,6 @@
     "category": "Logistics",
     "summary": "Illustrative routing workflow with driver assignments, ETA views, and exception alerts.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara-portal.png",
-    "imageAlt": "Illustrative route planning interface",
     "tags": ["routing", "dispatch", "analytics"]
   },
   {
@@ -75,8 +61,6 @@
     "category": "Logistics",
     "summary": "Illustrative operations workflow with batching, zones, and proof-of-delivery steps.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara-portal.png",
-    "imageAlt": "Illustrative last-mile operations interface",
     "tags": ["last-mile", "tms", "ops"]
   },
   {
@@ -85,12 +69,7 @@
     "category": "Music",
     "summary": "Illustrative audio format for a promotional campaign.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara-music.png",
-    "imageAlt": "Illustrative campaign anthem artwork",
-    "tags": ["anthem", "fashion", "promo"],
-    "media": {
-      "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2166741768&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
-    }
+    "tags": ["anthem", "fashion", "promo"]
   },
   {
     "id": "music-ipm-llyoi",
@@ -98,12 +77,7 @@
     "category": "Music",
     "summary": "Illustrative audio format for campaigns, social content, and events.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara-music.png",
-    "imageAlt": "Illustrative theme song cover",
-    "tags": ["theme", "branding"],
-    "media": {
-      "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2174567340&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
-    }
+    "tags": ["theme", "branding"]
   },
   {
     "id": "music-isabella",
@@ -111,11 +85,6 @@
     "category": "Music",
     "summary": "Illustrative audio format for local advertising and social media.",
     "url": "/contact",
-    "image": "/images/portfolio/site-aivara-music.png",
-    "imageAlt": "Illustrative local jingle artwork",
-    "tags": ["jingle", "local", "beauty"],
-    "media": {
-      "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2136698598&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
-    }
+    "tags": ["jingle", "local", "beauty"]
   }
 ]
