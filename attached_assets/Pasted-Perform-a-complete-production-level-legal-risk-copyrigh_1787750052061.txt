@@ -1,0 +1,1094 @@
+Perform a **complete production-level legal-risk, copyright, trademark, privacy, advertising, licensing, and accessibility audit of this entire website/application — then automatically fix every issue that can be safely fixed without requiring a business or legal judgment.**
+
+This is not a surface-level review.
+
+Inspect **every page, route, component, image, asset, form, modal, legal page, footer, header, SEO field, structured-data field, social-sharing asset, downloadable file, email template stored in the project, public dashboard page, checkout flow, signup flow, error page, third-party integration, and hidden/legacy public route.**
+
+The goal is to make this project as defensible and compliant as reasonably possible before production use.
+
+## REQUIRED WORKFLOW
+
+Follow this exact order:
+
+1. **Inventory the entire project**
+2. **Audit every route and asset**
+3. **Identify all legal/compliance/accessibility risks**
+4. **Automatically fix every objective low-risk issue**
+5. **Automatically replace clearly unsafe or questionable assets when a verified-safe replacement is available**
+6. **Re-test the entire site**
+7. **Re-scan the entire site after fixes**
+8. **Provide a final report showing what was fixed and what still requires human/legal review**
+
+Do not stop after identifying problems.
+
+**You are expected to IMPLEMENT safe corrections automatically.**
+
+---
+
+# 1. COMPLETE SITE INVENTORY
+
+First identify every:
+
+* Public route
+* Dynamic route
+* Landing page
+* Blog/resource page
+* Login/signup page
+* Checkout/payment page
+* Contact/lead form
+* Account page accessible publicly
+* Error page
+* Legal-policy page
+* Downloadable PDF/file
+* Image
+* Background image
+* Video
+* Logo
+* Icon
+* Font
+* Third-party embed
+* Map
+* Review
+* Testimonial
+* Partner/customer logo
+* CSS-referenced asset
+* Remote asset URL
+* Open Graph image
+* Favicon
+* App icon
+* Manifest
+* Structured-data entry
+* SEO title
+* SEO description
+* Email/SMS template stored in the repository
+* Analytics/tracking script
+* Cookie/local-storage mechanism
+* Legacy/old route still publicly reachable
+
+Inspect the routing structure and source code.
+
+**Do not only crawl the navigation menu.**
+
+At completion report:
+
+**Total routes identified:**
+**Total routes reviewed:**
+**Total images/assets identified:**
+**Total images/assets reviewed:**
+
+If any public route cannot be reviewed, explain exactly why.
+
+---
+
+# 2. COPYRIGHT / PHOTO / MEDIA LICENSING AUDIT
+
+Review every:
+
+* Photo
+* Illustration
+* Background
+* Graphic
+* Video
+* Texture
+* Screenshot
+* Icon
+* SVG
+* Audio asset
+* Promotional artwork
+
+Determine where possible whether it is:
+
+* Created internally
+* Customer supplied
+* AI-generated
+* Properly licensed stock media
+* Open source
+* Public domain
+* From an icon library
+* Third-party promotional media
+* Social-media content
+* Copied from another website
+* Copied from Google Images
+* Hotlinked
+* Unknown provenance
+
+Pay particular attention to assets that may originate from:
+
+* Getty Images
+* Shutterstock
+* Adobe Stock
+* iStock
+* Alamy
+* Reuters
+* Associated Press
+* Google Images
+* Pinterest
+* Instagram
+* Facebook
+* TikTok
+* Airbnb
+* Booking.com
+* Expedia
+* Vrbo
+* TripAdvisor
+* Yelp
+* Hotels/resorts
+* Airlines
+* Artists
+* Musicians
+* Celebrities
+* Sports organizations
+* News outlets
+* Competitor websites
+
+If licensing cannot reasonably be verified, classify the asset:
+
+**REPLACE / LICENSE VERIFICATION REQUIRED**
+
+## AUTO-FIX RULE FOR QUESTIONABLE IMAGES
+
+If a questionable image is clearly nonessential and a verified-safe alternative already exists in the project:
+
+**Replace it automatically.**
+
+If an appropriate AI-generated, internally owned, open-license, or clearly safe generic replacement can be created or sourced through the tools available inside this environment:
+
+**Replace it automatically while preserving the page design and intent.**
+
+If you cannot obtain a confidently safe replacement:
+
+**Do not leave the risk hidden. Flag it clearly for immediate replacement.**
+
+Never assume an image is free to use merely because it is publicly accessible.
+
+Also check attribution requirements.
+
+---
+
+# 3. TRADEMARK REVIEW
+
+Search the entire project for:
+
+* Third-party business names
+* Logos
+* Product names
+* Platform names
+* Service names
+* Slogans
+* Taglines
+* Artist names
+* Event names
+* Sports teams
+* Hotel brands
+* Airline brands
+* Payment logos
+* Social-platform logos
+* Certifications
+* Awards
+* Partnership claims
+
+Determine whether use could imply:
+
+* Sponsorship
+* Partnership
+* Endorsement
+* Certification
+* Affiliation
+* Official status
+
+Examples include:
+
+Airbnb
+Booking.com
+Expedia
+Vrbo
+Stripe
+PayPal
+Visa
+Mastercard
+American Express
+Google
+Apple
+Meta
+Facebook
+Instagram
+TikTok
+Spotify
+YouTube
+Uber
+Lyft
+TripAdvisor
+Yelp
+
+Do not remove legitimate descriptive references automatically.
+
+However, automatically correct wording that obviously and unnecessarily implies an affiliation that is not supported by the site.
+
+Examples:
+
+Change unsupported language like:
+
+“Official partner of…”
+
+to neutral language such as:
+
+“Available through…”
+
+ONLY when the factual meaning is clear.
+
+If the correct factual relationship cannot be determined, flag it instead.
+
+Also inspect our own company/product names for obvious potential trademark conflicts.
+
+Do not claim formal clearance.
+
+Mark uncertain matters:
+
+**TRADEMARK SEARCH / LEGAL REVIEW RECOMMENDED**
+
+---
+
+# 4. WCAG 2.2 AA / ADA ACCESSIBILITY AUDIT
+
+Audit and automatically fix accessibility issues across the entire application.
+
+Use **WCAG 2.2 Level AA** as the technical baseline.
+
+Fix wherever safely possible:
+
+### Images
+
+* Missing alt text
+* Poor alt text
+* Decorative images that should use empty alt
+* Inaccessible image buttons
+
+### Keyboard navigation
+
+Ensure full keyboard operation for:
+
+* Navigation
+* Dropdowns
+* Modals
+* Accordions
+* Carousels
+* Forms
+* Checkout
+* Date selectors
+* Mobile menus
+* Buttons
+
+Remove keyboard traps.
+
+### Focus
+
+Automatically fix:
+
+* Invisible focus
+* Poor focus order
+* Lost modal focus
+* Missing skip-to-content behavior
+
+### Color contrast
+
+Check and fix WCAG AA contrast issues involving:
+
+* Body text
+* Navigation
+* Links
+* Buttons
+* Placeholder text
+* Form labels
+* Footer
+* Errors
+* Text over images
+
+Preserve branding as closely as possible.
+
+### Forms
+
+Automatically fix:
+
+* Missing labels
+* Incorrect label associations
+* Placeholder-only labels
+* Missing accessible descriptions
+* Required-field indicators
+* Error messaging
+* Errors communicated only through color
+* Checkbox/radio group semantics
+
+### Semantic structure
+
+Fix:
+
+* Heading hierarchy
+* Landmark elements
+* Page-title structure
+* Inappropriate heading use
+* Missing language declarations
+
+### Buttons/links
+
+Correct inaccessible labels such as ambiguous standalone:
+
+“Click here”
+“Learn more”
+“Read more”
+
+when accessible context is insufficient.
+
+### ARIA
+
+Fix:
+
+* Invalid ARIA
+* Redundant ARIA
+* Missing accessible names
+* Improper roles
+
+Prefer native semantic HTML whenever possible.
+
+### Screen-reader support
+
+Improve compatibility with:
+
+* VoiceOver
+* NVDA
+* JAWS
+* TalkBack
+
+### Zoom/responsive accessibility
+
+Verify the site remains usable at:
+
+* 200% zoom
+* Larger text
+* Narrow mobile widths
+
+### Motion
+
+Respect:
+
+`prefers-reduced-motion`
+
+Correct potentially problematic auto-animation where safe.
+
+### Video/audio
+
+Verify:
+
+* Captions
+* Transcripts
+* Controls
+* Autoplay behavior
+
+Automatically fix controls/settings where possible.
+
+Flag media requiring manual caption/transcript creation.
+
+---
+
+# 5. ACCESSIBILITY STATEMENT
+
+If the site does not contain an Accessibility Statement, create one.
+
+It should:
+
+* State the organization's commitment to accessibility
+* Reference WCAG 2.2 AA as a goal where appropriate
+* Provide a contact method for accessibility issues
+* Avoid guaranteeing perfect accessibility
+* Avoid statements like “100% ADA compliant”
+* Avoid unnecessary admissions of liability
+
+Add an appropriate footer link.
+
+---
+
+# 6. PRIVACY & DATA COLLECTION
+
+Identify all personal data collected through:
+
+* Forms
+* Checkout
+* Accounts
+* Reservations
+* Analytics
+* Cookies
+* Tracking
+* CRM
+* Payments
+* Uploads
+* Marketing tools
+
+Inspect for:
+
+* Names
+* Emails
+* Phone numbers
+* Addresses
+* Payment information
+* Reservation information
+* Uploaded identification
+* IP addresses
+* Browser/device details
+* Analytics identifiers
+* Location information
+* Marketing preferences
+
+Review actual site functionality against the Privacy Policy.
+
+If technical behavior obviously contradicts existing policy language, flag it.
+
+Automatically fix broken links and clearly obsolete technical references.
+
+Do not invent business practices.
+
+---
+
+# 7. COOKIES / TRACKING
+
+Identify:
+
+* Google Analytics
+* Google Tag Manager
+* Meta Pixel
+* TikTok Pixel
+* Microsoft Clarity
+* Hotjar
+* Session replay
+* Advertising pixels
+* Retargeting
+* Analytics cookies
+* Third-party embeds
+
+Determine whether consent mechanisms are appropriate.
+
+Where technically appropriate and safely implementable:
+
+**Prevent nonessential tracking from loading before required consent.**
+
+Do not add an unnecessary consent banner if there are no nonessential tracking technologies.
+
+Flag jurisdiction-dependent questions where legal review is appropriate.
+
+---
+
+# 8. PRIVACY POLICY
+
+Verify a Privacy Policy exists and is reachable.
+
+Review whether it covers:
+
+* Data collected
+* Purpose
+* Analytics
+* Cookies
+* Marketing
+* Payment processors
+* Service providers
+* Data retention
+* Security
+* User rights
+* Contact information
+* Children's privacy where relevant
+
+Automatically correct:
+
+* Broken links
+* Old brand names
+* Incorrect footer references
+* Obviously obsolete integration names
+
+Do not invent policies or retention periods.
+
+---
+
+# 9. TERMS & CONDITIONS
+
+Determine whether Terms are appropriate to the site's actual business.
+
+Review coverage of applicable areas such as:
+
+* Payments
+* Refunds
+* Reservations
+* Cancellations
+* User responsibilities
+* Accounts
+* Subscriptions
+* Auto-renewal
+* Chargebacks
+* Intellectual property
+* Third-party providers
+* Acceptable use
+* Disclaimers
+* Liability
+* Dispute resolution
+
+Do not invent business terms.
+
+Flag missing high-risk provisions.
+
+---
+
+# 10. ADVERTISING / FTC CLAIM REVIEW
+
+Search marketing copy for claims such as:
+
+* Best
+* #1
+* Guaranteed
+* Guaranteed approval
+* Guaranteed funding
+* Guaranteed results
+* Risk free
+* Lowest price
+* Save X%
+* Make $X
+* Earn $X
+* Official
+* Certified
+* Licensed
+* Insured
+* Approved
+* Partner
+
+Flag claims requiring substantiation.
+
+Automatically remove or replace **obvious demo/template claims** if they are clearly not real.
+
+Do not alter legitimate business claims unless clearly erroneous.
+
+---
+
+# 11. TESTIMONIALS & REVIEWS
+
+Audit:
+
+* Testimonials
+* Ratings
+* Reviews
+* Customer photos
+* Success stories
+* Before/after examples
+
+Flag:
+
+* Placeholder testimonials
+* Fake names
+* Stock-photo customers
+* AI-generated testimonials presented as authentic
+* Reviews copied without proper context
+* Undisclosed paid endorsements
+* Extraordinary results presented as typical
+
+Automatically remove obvious demo testimonials if they were clearly inserted by a template or AI builder and are not real.
+
+Do not delete actual customer testimonials.
+
+---
+
+# 12. INDUSTRY-SPECIFIC COMPLIANCE
+
+Identify THIS project's actual industry and conduct an additional review.
+
+## TRAVEL / EXPERIENCES / HOSPITALITY
+
+Review:
+
+* Booking terms
+* Cancellation policies
+* Refund rules
+* Tax/fee disclosures
+* Travel supplier disclaimers
+* Property/experience images
+* OTA logos
+* Travel insurance claims
+* Waivers
+* Third-party supplier representations
+
+## PROPERTY MANAGEMENT / RENTALS
+
+Review:
+
+* Fair Housing-sensitive language
+* Fees
+* Deposits
+* Occupancy claims
+* Property images
+* Cancellation/refund language
+* Accessibility claims
+
+## FREIGHT / TRANSPORTATION
+
+Review:
+
+* FMCSA representations
+* DOT claims
+* MC authority statements
+* Carrier vs broker terminology
+* Insurance claims
+* Shipment guarantees
+* Customer/carrier terms
+
+## FINANCIAL / FUNDING / HOLDING COMPANY
+
+Apply increased scrutiny to:
+
+* Funding claims
+* Approval guarantees
+* Credit claims
+* Investment claims
+* Earnings claims
+* Financial-advice wording
+* Lending/broker terminology
+* “Bank” and “banking” terminology
+
+## TECH / AI / SAAS
+
+Review:
+
+* Subscription terms
+* Auto-renewal
+* Data practices
+* User content
+* AI disclosures
+* API provider trademarks
+* Account termination
+* Service availability claims
+
+Use the appropriate rules for the actual project.
+
+---
+
+# 13. BUSINESS IDENTITY CONSISTENCY
+
+Verify consistency across:
+
+* Brand name
+* Legal entity name where appropriate
+* DBA
+* Email
+* Phone
+* Contact page
+* Privacy Policy
+* Terms
+* Accessibility Statement
+* Footer
+* SEO
+* Structured data
+
+Automatically fix stale/incorrect branding when the correct current branding is unambiguous from the project.
+
+Do not replace legal entity names unless clearly supported.
+
+---
+
+# 14. COPYRIGHT NOTICE
+
+Ensure the footer uses a current year dynamically where appropriate.
+
+Example:
+
+© [current year] [Brand]. All rights reserved.
+
+Do not claim ownership over third-party content.
+
+---
+
+# 15. OPEN-SOURCE LICENSE REVIEW
+
+Audit major dependencies.
+
+Flag potentially significant licenses such as:
+
+* GPL
+* AGPL
+* SSPL
+* Strong copyleft licenses
+
+Do not incorrectly treat:
+
+* MIT
+* Apache-2.0
+* BSD
+
+as automatically unsafe.
+
+Provide any attribution requirements that should be addressed.
+
+---
+
+# 16. FONT LICENSING
+
+Audit locally hosted/custom fonts.
+
+Determine whether they appear:
+
+* Open source
+* Google Fonts
+* Properly licensed
+* Unknown
+
+Flag unknown commercial fonts:
+
+**FONT LICENSE VERIFICATION REQUIRED**
+
+If a safe open-source alternative can be substituted without materially changing the design, you may replace it.
+
+---
+
+# 17. SEO / METADATA / STRUCTURED DATA
+
+Audit all:
+
+* Titles
+* Meta descriptions
+* Canonicals
+* Open Graph metadata
+* Twitter/social metadata
+* Schema
+* Manifest
+* Favicon
+* Sitemap
+* Robots.txt
+
+Automatically fix:
+
+* Old company names
+* Old domains
+* Incorrect branding
+* Template branding
+* Competitor names accidentally retained
+* Broken canonical URLs
+* Old social images where a safe owned replacement already exists
+
+---
+
+# 18. TEMPLATE / DEMO CONTENT
+
+Search aggressively for:
+
+* Lorem ipsum
+* Placeholder testimonials
+* Demo logos
+* Fake customer names
+* Fake ratings
+* Fake statistics
+* Old branding
+* Test URLs
+* Dummy phone numbers
+* Demo addresses
+* Placeholder stock images
+* AI-builder sample text
+* Replit/Rapid boilerplate
+* Development payment information
+
+Automatically remove or replace anything that is clearly accidental production residue.
+
+---
+
+# 19. BROKEN LINKS
+
+Test:
+
+* Navigation
+* Footer
+* Privacy
+* Terms
+* Accessibility
+* Contact
+* Refund/cancellation pages
+* Social profiles
+* Download buttons
+* Important CTAs
+
+Automatically fix obvious internal broken links.
+
+Flag unavailable external resources.
+
+---
+
+# 20. DO NOT FALSELY CLAIM LEGAL CERTIFICATION
+
+Never add claims such as:
+
+* ADA Certified
+* 100% ADA Compliant
+* WCAG Certified
+* Legally compliant
+* Trademark approved
+* Copyright cleared
+* Lawsuit proof
+
+unless independent evidence exists.
+
+---
+
+# 21. AUTOMATIC FIX AUTHORIZATION
+
+You are specifically authorized to automatically fix all **objective, low-risk technical issues** you identify.
+
+Examples:
+
+* Alt text
+* Accessible labels
+* Heading structure
+* Keyboard issues
+* Focus
+* Contrast
+* Semantic HTML
+* ARIA
+* Skip links
+* Language attributes
+* Reduced-motion support
+* Broken links
+* Dynamic copyright year
+* SEO leftovers
+* Template/demo content
+* Stale brand names
+* Missing accessibility statement
+* Missing accessible button names
+* Obvious UI accessibility issues
+* Clearly unsafe placeholder media when a safe replacement exists
+* Clearly obsolete metadata
+* Consent-gating implementation for obviously nonessential analytics where appropriate
+
+Do not merely recommend these fixes.
+
+**Implement them.**
+
+---
+
+# 22. QUESTIONABLE IMAGE AUTO-REPLACEMENT
+
+This is especially important.
+
+For every visual asset with questionable or unknown licensing:
+
+### First choice
+
+Replace it with an existing verified-owned asset in the project.
+
+### Second choice
+
+Replace it with an appropriate internally generated or clearly licensed/open alternative available through the project's supported tools.
+
+### Third choice
+
+Use a neutral CSS/design treatment that removes the questionable asset without damaging usability.
+
+### If none of those are possible
+
+Leave the current design intact but flag:
+
+**URGENT HUMAN ACTION — IMAGE LICENSE CANNOT BE VERIFIED**
+
+Do not silently treat unknown licensing as acceptable.
+
+---
+
+# 23. THINGS YOU MUST NOT GUESS
+
+Do not automatically make substantive changes to:
+
+* Refund policy
+* Cancellation policy
+* Deposit policy
+* Prices
+* Payment terms
+* Governing law
+* Arbitration
+* Insurance representations
+* Licenses
+* Government registrations
+* MC/DOT authority
+* Company ownership
+* Financial guarantees
+* Investment claims
+* Third-party contracts
+* Customer testimonials
+* Material business promises
+
+Flag these instead.
+
+---
+
+# 24. BUILD & FUNCTIONAL TESTING
+
+After making fixes:
+
+Run all available:
+
+* Build checks
+* Type checks
+* Linting
+* Unit tests
+* Integration tests
+* Route checks
+
+Manually verify important flows where feasible:
+
+* Navigation
+* Login
+* Signup
+* Contact forms
+* Booking
+* Checkout
+* Payments
+* Mobile navigation
+* Forms
+* Legal links
+
+Do not break:
+
+* Stripe
+* Payments
+* Authentication
+* Reservations
+* Scheduling
+* Email
+* SMS
+* APIs
+* Databases
+* Analytics that are lawfully configured
+
+---
+
+# 25. SECOND PASS REQUIRED
+
+After all safe fixes are completed:
+
+**Re-run the entire audit from the beginning.**
+
+Do not assume the first pass solved everything.
+
+Perform a second scan for:
+
+* Accessibility
+* Copyright
+* Images
+* Trademark issues
+* Privacy
+* Broken links
+* Metadata
+* Branding
+* Legal navigation
+* Tracking
+* Template content
+
+Fix any additional safe issues discovered.
+
+---
+
+# 26. FINAL REPORT FORMAT
+
+Produce a report with:
+
+## A. OVERALL RISK STATUS
+
+Choose:
+
+* CRITICAL
+* HIGH
+* MEDIUM
+* LOW
+
+Explain briefly.
+
+## B. COVERAGE
+
+Report exact totals:
+
+**Routes identified:**
+**Routes audited:**
+**Images/media audited:**
+**Third-party logos audited:**
+**Forms audited:**
+**Accessibility issues initially found:**
+**Accessibility issues automatically fixed:**
+**Accessibility issues remaining:**
+**Copyright/licensing concerns found:**
+**Questionable images automatically replaced:**
+**Trademark concerns found:**
+**Privacy/cookie issues found:**
+**Broken links found:**
+**Broken links fixed:**
+
+## C. AUTOMATICALLY FIXED
+
+List every material correction made.
+
+Include relevant filenames/routes.
+
+## D. MEDIA REPLACED
+
+For every replaced image/media asset provide:
+
+* Original asset
+* Page
+* Reason replaced
+* Replacement used
+
+## E. COPYRIGHT / LICENSING ITEMS REMAINING
+
+Only include unresolved concerns.
+
+## F. TRADEMARK ITEMS REMAINING
+
+## G. ADA/WCAG ITEMS REMAINING
+
+## H. PRIVACY / COOKIE ITEMS REMAINING
+
+## I. TERMS / LEGAL POLICY ITEMS REMAINING
+
+## J. ADVERTISING / TESTIMONIAL ITEMS REMAINING
+
+## K. INDUSTRY-SPECIFIC ISSUES
+
+## L. HUMAN ACTION REQUIRED
+
+Group items as:
+
+### CRITICAL
+
+Must be handled immediately.
+
+### HIGH
+
+Handle before significant advertising/traffic.
+
+### MEDIUM
+
+Recommended.
+
+### LOW
+
+Housekeeping.
+
+## M. FINAL BUILD STATUS
+
+State:
+
+* Build passes: YES/NO
+* Tests pass: YES/NO
+* Production functionality verified: YES/PARTIAL/NO
+* Remaining unresolved legal-review items: [number]
+
+---
+
+# 27. FINAL RULE
+
+Do not stop at:
+
+“I found these issues.”
+
+Your job is:
+
+**AUDIT → FIX → REPLACE UNSAFE ASSETS WHERE POSSIBLE → TEST → RE-SCAN → REPORT ONLY WHAT STILL NEEDS HUMAN ATTENTION.**
+
+Be conservative with legal certainty and aggressive with safe technical remediation.
+
+The objective is to leave this website materially safer than it was before the audit while preserving the business, branding, functionality, integrations, and user experience.
