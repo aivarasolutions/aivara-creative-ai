@@ -46,3 +46,7 @@ build = ["npm", "run", "build"]
 
 [userenv.shared]
 MAILCHIMP_AUDIENCE_ID = "64919424d6"
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 180000
