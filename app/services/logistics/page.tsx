@@ -20,26 +20,22 @@ export default function LogisticsPage() {
     "Systems integration & APIs",
   ];
 
-  const caseStudies = [
+  const examples = [
     {
-      title: "Last-Mile Delivery Optimization",
-      description: "Implemented AI-powered route optimization reducing delivery times and fuel costs for regional courier service.",
-      results: "35% reduction in delivery costs",
+      title: "Last-mile workflow example",
+      description: "An illustrative routing workflow with delivery zones, assignments, and proof-of-delivery steps.",
     },
     {
-      title: "Fleet Tracking System",
-      description: "Built real-time GPS tracking dashboard with automated notifications for 100+ vehicle fleet.",
-      results: "99.2% on-time delivery rate",
+      title: "Fleet visibility example",
+      description: "An illustrative dashboard format for reviewing fleet activity, ETAs, and operational alerts.",
     },
     {
-      title: "Warehouse Management Integration",
-      description: "Connected existing WMS with new dispatch system for seamless order-to-delivery workflow.",
-      results: "50% faster order processing",
+      title: "Warehouse-to-dispatch example",
+      description: "An illustrative integration plan connecting order, warehouse, and dispatch workflows.",
     },
     {
-      title: "Driver App & Dispatch Portal",
-      description: "Custom mobile app for drivers with live updates and automated dispatcher dashboard.",
-      results: "4.8/5 driver satisfaction score",
+      title: "Driver and dispatch example",
+      description: "An illustrative mobile and dashboard workflow for status updates and dispatch coordination.",
     },
   ];
 
@@ -74,7 +70,7 @@ export default function LogisticsPage() {
           </h1>
           
           <p className="text-xl text-gray-300 mb-8">
-            From dispatch to doorstep, we streamline routes, tracking, and ops dashboards to cut costs and missed windows.
+            From dispatch to doorstep, we design route, tracking, and operations dashboards around your workflow.
           </p>
 
           <div className="mb-12">
@@ -90,14 +86,16 @@ export default function LogisticsPage() {
           </div>
 
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 text-teal-300">Case Studies</h2>
+            <h2 className="text-2xl font-semibold mb-2 text-teal-300">Illustrative Project Examples</h2>
+            <p className="text-sm text-gray-400 mb-6">
+              These examples describe possible project formats, not customer results or guaranteed outcomes.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {caseStudies.map((study, index) => (
+              {examples.map((study, index) => (
                 <Card key={index} className="bg-black/60 border border-white/10">
                   <CardContent className="p-6">
                     <h3 className="text-lg font-semibold mb-2 text-gray-200">{study.title}</h3>
                     <p className="text-sm text-gray-400 mb-3">{study.description}</p>
-                    <p className="text-sm font-semibold text-teal-400">{study.results}</p>
                   </CardContent>
                 </Card>
               ))}

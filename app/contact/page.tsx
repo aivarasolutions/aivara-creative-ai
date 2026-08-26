@@ -82,7 +82,7 @@ export default function ContactPage() {
                   <p>Sunday: Closed</p>
                 </div>
                 <p className="text-sm text-gray-400 mt-4">
-                  Emergency support available for existing clients 24/7
+                  Support availability for existing clients is defined in the applicable service agreement.
                 </p>
               </div>
 
@@ -91,7 +91,7 @@ export default function ContactPage() {
                 <ol className="space-y-3 text-gray-300">
                   <li className="flex gap-3">
                     <span className="text-teal-400 font-semibold">1.</span>
-                    We&apos;ll review your message within 24 hours
+                    We&apos;ll review your message and follow up with next steps
                   </li>
                   <li className="flex gap-3">
                     <span className="text-teal-400 font-semibold">2.</span>

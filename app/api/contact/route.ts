@@ -69,7 +69,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         message:
-          "Thank you! Your message has been received. We'll get back to you within 24 hours.",
+          "Thank you! Your message has been received. We'll follow up with next steps.",
       },
       { status: 200 }
     );

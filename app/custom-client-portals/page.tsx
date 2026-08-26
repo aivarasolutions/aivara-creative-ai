@@ -33,9 +33,9 @@ export default function ClientPortalPage() {
       benefits={[
         {
           icon: <Lock className="h-6 w-6" />,
-          title: 'Secure & Professional',
+           title: 'Security-Focused Design',
           description:
-            'Bank-grade authentication, encrypted data, role-based access. Your clients trust you more the moment they log in.',
+             'We can scope secure authentication, role-based access, and appropriate data-handling controls for your project.',
         },
         {
           icon: <LayoutDashboard className="h-6 w-6" />,
@@ -45,9 +45,9 @@ export default function ClientPortalPage() {
         },
         {
           icon: <FileText className="h-6 w-6" />,
-          title: 'Cuts Email & Admin Time',
+           title: 'Organized Requests & Updates',
           description:
-            'Stop chasing files, statuses, and updates in email threads. Everything lives in one organized place — for you and your clients.',
+             'A portal can bring files, statuses, and updates into one organized place for your team and authorized users.',
         },
       ]}
       features={[
@@ -102,7 +102,7 @@ export default function ClientPortalPage() {
         {
           question: 'How long does it take to build a custom portal?',
           answer:
-            'Most portals launch in 4–8 weeks depending on complexity. We build in phases so you see progress quickly.',
+            'Portal timing depends on scope, integrations, content readiness, and approvals. Your project schedule is confirmed in the written proposal.',
         },
         {
           question: 'Will the portal match my brand?',
@@ -127,7 +127,7 @@ export default function ClientPortalPage() {
         {
           question: 'What does a custom portal cost?',
           answer:
-            'Most portals range from $5,000–$15,000+ depending on scope and features. Book a discovery call for a tailored quote within 24 hours.',
+            'Portal pricing depends on scope and features. Book a discovery call to discuss a tailored proposal and response timing.',
         },
         {
           question: 'Do you offer ongoing support?',
@@ -136,7 +136,7 @@ export default function ClientPortalPage() {
         },
       ]}
       formHeadline="Get a Custom Portal Quote"
-      formSubheadline="Tell us how your business operates. We’ll send a tailored plan and quote within 24 hours."
+      formSubheadline="Tell us how your business operates, and we’ll follow up with next steps and a tailored proposal."
       formCta="Get My Portal Quote"
       finalCtaHeadline="Ready to Build a Portal Your Clients Will Love?"
       finalCtaText="Tell us how your business runs. We’ll design the portal that fits."

@@ -1,2 +1,3 @@
 - [Email/Mailchimp env split](email-env-split.md) — Mailchimp creds live only in prod (Vercel), not Replit dev; Resend key IS in dev. Test email sends locally, not Mailchimp sync.
 - [Mailchimp audience IDs](mailchimp-audience-ids.md) — Aivara Solutions = `64919424d6`; previously wrong ID (RichAF) caused silent misfires on all form syncs.
+- [Public substantiation rule](public-substantiation.md) — customer references, results, timelines, availability, and third-party logos need written support or anonymized, scope-based copy.

@@ -16,7 +16,7 @@ export function LandingForm({
   offer,
   service,
   headline = 'Request Your Free Strategy Call',
-  subheadline = 'Tell us about your business — we’ll send back a quick plan and quote within 24 hours.',
+  subheadline = 'Tell us about your business and we’ll follow up with next steps and a tailored proposal.',
   ctaLabel = 'Send My Request',
 }: LandingFormProps) {
   const formId = offer.toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -54,7 +54,7 @@ export function LandingForm({
 
       if (res.ok) {
         setStatus('success');
-        setMessage(data.message || 'Thanks! We’ll be in touch within 24 hours.');
+        setMessage(data.message || 'Thanks! Your message has been received. We’ll follow up with next steps.');
         trackLead({
           service,
           source: 'landing_page',
@@ -224,7 +224,7 @@ export function LandingForm({
           )}
 
           <p className="text-xs text-gray-500 text-center pt-2">
-            No spam. We respond within 24 hours.
+            No spam. We’ll follow up with next steps.
           </p>
         </form>
       </div>

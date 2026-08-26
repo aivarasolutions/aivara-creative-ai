@@ -24,7 +24,10 @@ export default function PortfolioPage() {
             Our Portfolio
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Explore our work across AI & Education, Web & Marketing, Logistics, and Aivara Music.
+            Explore internal and illustrative examples across AI & Education, Web & Marketing, Logistics, and Aivara Music.
+          </p>
+          <p className="text-sm text-gray-500 max-w-3xl mx-auto mt-4">
+            Examples are anonymized and illustrative. They do not identify clients or imply customer endorsement, affiliation, or a guaranteed outcome.
           </p>
         </div>
 
@@ -51,6 +54,7 @@ export default function PortfolioPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPortfolio.map((item) => {
             const hasEmbed = !!(item.media as any)?.embedUrl;
+            const isExternal = item.url.startsWith("http");
             
             if (hasEmbed) {
               return (
@@ -87,9 +91,8 @@ export default function PortfolioPage() {
             return (
               <a 
                 key={item.id} 
-                href={item.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href={item.url}
+                {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="block"
               >
                 <PortfolioCard 

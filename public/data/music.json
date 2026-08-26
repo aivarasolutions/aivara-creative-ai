@@ -1,84 +1,84 @@
 [
   {
     "title": "Tech Startup Jingle",
-    "client": "InnovateNow",
+    "client": "Illustrative example",
     "src": "/audio/tech-startup-jingle.mp3",
     "cover": "/images/music/tech-startup.jpg",
     "tags": ["upbeat", "tech", "30sec"]
   },
   {
     "title": "Coffee Shop Theme",
-    "client": "Brew & Co",
+    "client": "Illustrative example",
     "src": "/audio/coffee-shop-theme.mp3",
     "cover": "/images/music/coffee-shop.jpg",
     "tags": ["chill", "acoustic", "loop"]
   },
   {
     "title": "Fitness Brand Anthem",
-    "client": "PowerFit",
+    "client": "Illustrative example",
     "src": "/audio/fitness-anthem.mp3",
     "cover": "/images/music/fitness-brand.jpg",
     "tags": ["energetic", "motivational", "60sec"]
   },
   {
     "title": "Real Estate Signature Sound",
-    "client": "Luxury Homes Group",
+    "client": "Illustrative example",
     "src": "/audio/real-estate-sound.mp3",
     "cover": "/images/music/real-estate.jpg",
     "tags": ["elegant", "professional", "15sec"]
   },
   {
     "title": "E-Commerce Checkout Tune",
-    "client": "ShopSmart",
+    "client": "Illustrative example",
     "src": "/audio/ecommerce-checkout.mp3",
     "cover": "/images/music/ecommerce.jpg",
     "tags": ["friendly", "quick", "10sec"]
   },
   {
     "title": "Podcast Intro Music",
-    "client": "The Business Hour",
+    "client": "Illustrative example",
     "src": "/audio/podcast-intro.mp3",
     "cover": "/images/music/podcast.jpg",
     "tags": ["professional", "intro", "20sec"]
   },
   {
     "title": "Restaurant Background Loop",
-    "client": "Bella Vista",
+    "client": "Illustrative example",
     "src": "/audio/restaurant-loop.mp3",
     "cover": "/images/music/restaurant.jpg",
     "tags": ["ambient", "sophisticated", "loop"]
   },
   {
     "title": "Gaming App Sound Identity",
-    "client": "PixelQuest",
+    "client": "Illustrative example",
     "src": "/audio/gaming-identity.mp3",
     "cover": "/images/music/gaming.jpg",
     "tags": ["playful", "digital", "brand"]
   },
   {
     "title": "Wellness Brand Theme",
-    "client": "Zen Life",
+    "client": "Illustrative example",
     "src": "/audio/wellness-theme.mp3",
     "cover": "/images/music/wellness.jpg",
     "tags": ["calm", "healing", "45sec"]
   },
   {
     "title": "Educational Platform Jingle",
-    "client": "LearnHub",
+    "client": "Illustrative example",
     "src": "/audio/educational-jingle.mp3",
     "cover": "/images/music/education.jpg",
     "tags": ["bright", "inspiring", "30sec"]
   },
   {
     "title": "Fashion Brand Signature",
-    "client": "Vogue Collective",
+    "client": "Illustrative example",
     "src": "/audio/fashion-signature.mp3",
     "cover": "/images/music/fashion.jpg",
     "tags": ["stylish", "modern", "brand"]
   },
   {
     "title": "Automotive Showroom Music",
-    "client": "AutoElite",
+    "client": "Illustrative example",
     "src": "/audio/automotive-music.mp3",
     "cover": "/images/music/automotive.jpg",
     "tags": ["powerful", "premium", "loop"]

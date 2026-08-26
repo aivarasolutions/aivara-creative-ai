@@ -7,15 +7,15 @@
  *  EDITING GUIDE
  * ──────────────────────────────────────────────────────────────────────
  *  All copy, links, and image paths live in the constants block below
- *  (HERO, TRUSTED_BY, REPLACE_TOOLS, COMPARISON, MODULES, SHOWCASE,
- *  WHITE_LABEL, INDUSTRIES, STATS, TESTIMONIALS, FINAL_CTA).
+ *  (HERO, REPLACE_TOOLS, COMPARISON, MODULES, SHOWCASE, WHITE_LABEL,
+ *  INDUSTRIES, FINAL_CTA).
  *
  *  - To change wording: edit the strings inside those arrays/objects.
  *  - To change a CTA link: edit `href` in HERO.primaryCta / secondaryCta
  *    or FINAL_CTA.primaryCta / secondaryCta.
  *  - To swap an image: drop the new file into /public/images/ and
  *    update the path string (e.g. "/images/portfolio/your-pic.png").
- *  - To add/remove a module, industry, testimonial, etc.: add or
+ *  - To add/remove a module or industry: add or
  *    remove an entry in its array — the grid auto-adjusts.
  *
  *  The site Header and Footer are reused from components/layout — edit
@@ -83,7 +83,7 @@ const HEADER = {
  * 1. HERO
  * ──────────────────────────────────────────────────────────────────── */
 const HERO = {
-  badge: "Now in private beta",
+  badge: "Aivara OS preview",
   // Full gradient title (whole headline rendered with bold-gradient-text)
   title: "The AI-Powered Operating System For Modern Businesses",
   subtitle:
@@ -93,22 +93,14 @@ const HERO = {
   tertiaryCta: { label: "Start Free", href: "/contact" },
 };
 
-const TRUSTED_BY = [
-  { name: "AURA LOGISTICS", className: "text-xl font-bold font-serif" },
-  { name: "NexusCorp", className: "text-xl font-bold tracking-tighter" },
-  { name: "Vanguard Ecom", className: "text-xl font-bold italic" },
-  { name: "SYNERGY", className: "text-xl font-bold" },
-  { name: "VERTEX", className: "text-xl font-bold tracking-widest" },
-];
-
 /* ────────────────────────────────────────────────────────────────────
  * 2. REPLACE YOUR STACK
  * ──────────────────────────────────────────────────────────────────── */
 const REPLACE_HEADING = {
-  titleLead: "Replace 12 tools.",
-  titleAccent: "One platform.",
+  titleLead: "Bring your workflows together.",
+  titleAccent: "One configurable platform.",
   subtitle:
-    "Stop paying for fragmented software and wasting time integrating them. Aivara OS unifies your entire business operations natively.",
+    "Aivara OS can consolidate selected business workflows into one configurable workspace, based on your needs and existing systems.",
 };
 
 const REPLACE_TOOLS = [
@@ -122,11 +114,11 @@ const REPLACE_TOOLS = [
 ];
 
 const COMPARISON: { label: string; old: string; new: string; hl?: boolean }[] = [
-  { label: "Total Cost", old: "$2,400/mo", new: "From $499/mo", hl: true },
-  { label: "Setup Time", old: "3-6 months", new: "Days" },
+  { label: "Pricing", old: "Multiple subscriptions", new: "Scoped proposal", hl: true },
+  { label: "Implementation", old: "Varies by vendor", new: "Planned with you" },
   { label: "AI-Native", old: "Bolted-on", new: "Core Architecture", hl: true },
-  { label: "Data Silos", old: "Scattered", new: "Unified Graph" },
-  { label: "Support", old: "Multiple vendors", new: "One dedicated team" },
+  { label: "Data", old: "Across systems", new: "Connected where configured" },
+  { label: "Support", old: "Vendor-dependent", new: "Support options available" },
 ];
 
 /* ────────────────────────────────────────────────────────────────────
@@ -161,10 +153,9 @@ const SHOWCASE_HEADING = {
 };
 
 const SHOWCASE = [
-  { img: "/images/portfolio/site-aivara-portal.png", industry: "Corporate Operations" },
-  { img: "/images/portfolio/log-freightsync-lastmile.png", industry: "Logistics & Supply Chain" },
-  { img: "/images/portfolio/ai-ipm-apollo.png", industry: "Professional Services" },
-  { img: "/images/portfolio/site-richaf.png", industry: "E-Commerce" },
+  { img: "/images/portfolio/site-aivara-portal.png", industry: "Portal interface example" },
+  { img: "/images/portfolio/site-aivara.jpg", industry: "Lead workflow example" },
+  { img: "/images/portfolio/site-aivara-music.png", industry: "Creative system example" },
 ];
 
 /* ────────────────────────────────────────────────────────────────────
@@ -173,11 +164,11 @@ const SHOWCASE = [
 const WHITE_LABEL = {
   titleLine1: "Your brand.",
   titleLine2: "Our platform.",
-  body: "Aivara OS is fully white-labelable. Offer a premium, enterprise-grade portal to your clients under your own domain and brand identity.",
+  body: "Aivara OS is designed for white-label configurations, allowing an eligible project to use your domain and brand identity where included in the agreed scope.",
   bullets: [
     "Custom domain routing (app.yourcompany.com)",
     "Upload your own logos and favicons",
-    "Match your brand color palette exactly",
+    "Align the interface with your brand palette",
     "Configure custom pricing and billing modules",
   ],
 };
@@ -197,43 +188,12 @@ const INDUSTRIES = [
 ];
 
 /* ────────────────────────────────────────────────────────────────────
- * 7. SOCIAL PROOF
- * ──────────────────────────────────────────────────────────────────── */
-const STATS = [
-  { val: "$2.4B", label: "GMV Processed" },
-  { val: "12k+", label: "Workflows Automated" },
-  { val: "98%", label: "Enterprise Retention" },
-  { val: "50+", label: "Enterprise Customers" },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "Aivara OS allowed us to deprecate 7 different SaaS tools within our first month. The integrated data model is game-changing.",
-    author: "Marcus T.",
-    role: "CEO, FreightSync Logistics",
-  },
-  {
-    quote:
-      "We configured a complete custom portal for our 500+ B2B clients in under two weeks. The white-label capabilities are unmatched.",
-    author: "Elena R.",
-    role: "COO, Vanguard Ecom",
-  },
-  {
-    quote:
-      "Managing royalty splits and release schedules used to take days. Now it's an automated workflow. Incredibly powerful platform.",
-    author: "David K.",
-    role: "Founder, SoundWave Label",
-  },
-];
-
-/* ────────────────────────────────────────────────────────────────────
  * 8. FINAL CTA
  * ──────────────────────────────────────────────────────────────────── */
 const FINAL_CTA = {
   title: "Run your entire business on Aivara OS",
   subtitle:
-    "Join the forward-thinking enterprises consolidating their operations into one intelligent platform.",
+    "Explore whether a configurable workspace fits your operations, team, and implementation goals.",
   primaryCta: { label: "Book Enterprise Demo", href: "/contact" },
   secondaryCta: { label: "Talk to Sales", href: "/contact" },
 };
@@ -242,16 +202,13 @@ const FINAL_CTA = {
  *  TOOLS — "The Tools We Use to Build, Automate & Scale Businesses"
  * ──────────────────────────────────────────────────────────────────── */
 const TOOLS_HEADING = {
-  eyebrow: "Powered by Industry-Leading Tools",
+  eyebrow: "Tools we work with",
   title: "The Tools We Use to Build, Automate & Scale Businesses",
   subtitle:
-    "Powered by industry-leading platforms for AI, development, automation, communication, creative production, and business infrastructure.",
+    "Our workflow may include platforms for AI, development, automation, communication, creative production, and business infrastructure.",
   disclaimer:
-    "Logos shown represent tools and platforms we use in our workflow. Aivara Solutions is not claiming official partnership or endorsement unless stated. All logos and product names are trademarks of their respective owners.",
+    "Product names are shown only to identify tools that may be used in a project. Aivara Solutions does not claim partnership, sponsorship, or endorsement unless expressly stated. Product names are trademarks of their respective owners.",
 };
-
-const si = (slug: string) => `https://cdn.simpleicons.org/${slug}`;
-const siWhite = (slug: string) => `https://cdn.simpleicons.org/${slug}/ffffff`;
 
 const TOOL_CATEGORIES: {
   title: string;
@@ -260,52 +217,52 @@ const TOOL_CATEGORIES: {
   {
     title: "AI Strategy & Automation",
     tools: [
-      { name: "ChatGPT", logo: "/images/logos/chatgpt.svg" },
-      { name: "Manus", logo: "/images/logos/manus.svg" },
-      { name: "Runway", logo: "/images/logos/runway.svg" },
+      { name: "ChatGPT", logo: null },
+      { name: "Manus", logo: null },
+      { name: "Runway", logo: null },
     ],
   },
   {
     title: "App & Portal Development",
     tools: [
-      { name: "Replit", logo: si("replit") },
-      { name: "Supabase", logo: si("supabase") },
-      { name: "Vercel", logo: siWhite("vercel") },
-      { name: "GitHub", logo: siWhite("github") },
+      { name: "Replit", logo: null },
+      { name: "Supabase", logo: null },
+      { name: "Vercel", logo: null },
+      { name: "GitHub", logo: null },
     ],
   },
   {
     title: "Email & Client Communication",
     tools: [
-      { name: "Resend", logo: siWhite("resend") },
-      { name: "Mailchimp", logo: si("mailchimp") },
-      { name: "Google Workspace", logo: si("google") },
-      { name: "Slack", logo: "/images/logos/slack.svg" },
+      { name: "Resend", logo: null },
+      { name: "Mailchimp", logo: null },
+      { name: "Google Workspace", logo: null },
+      { name: "Slack", logo: null },
     ],
   },
   {
     title: "Creative Production",
     tools: [
-      { name: "Canva", logo: "/images/logos/canva.svg" },
-      { name: "CapCut", logo: "/images/logos/capcut.svg" },
-      { name: "Runway", logo: "/images/logos/runway.svg" },
+      { name: "Canva", logo: null },
+      { name: "CapCut", logo: null },
+      { name: "Runway", logo: null },
     ],
   },
   {
     title: "Payments & Financial Operations",
     tools: [
-      { name: "Stripe", logo: si("stripe") },
-      { name: "PayPal", logo: si("paypal") },
-      { name: "QuickBooks", logo: si("quickbooks") },
-      { name: "Square", logo: siWhite("square") },
+      { name: "Stripe", logo: null },
+      { name: "PayPal", logo: null },
+      { name: "QuickBooks", logo: null },
+      { name: "Square", logo: null },
     ],
   },
   {
     title: "Websites, Domains & Infrastructure",
     tools: [
-      { name: "Squarespace", logo: siWhite("squarespace") },
-      { name: "GoDaddy", logo: si("godaddy") },
-      { name: "Vercel", logo: siWhite("vercel") },
+      { name: "Squarespace", logo: null },
+      { name: "GoDaddy", logo: null },
+      { name: "Vercel", logo: null },
     ],
   },
 ];
@@ -314,11 +271,11 @@ const TOOL_CATEGORIES: {
  *  PORTFOLIO — "Systems, Brands & Builds Powered by Aivara"
  * ──────────────────────────────────────────────────────────────────── */
 const PORTFOLIO_HEADING = {
-  title: "Systems, Brands & Builds Powered by Aivara",
+  title: "Systems & Builds by Aivara",
   subtitle:
-    "From client portals and AI automations to booking systems, lead funnels, dashboards, and creative campaigns — these are the types of systems we build to help businesses operate and grow smarter.",
+    "Explore internal interfaces and illustrative examples of the portals, automations, dashboards, and creative systems we can scope for a project.",
   disclaimer:
-    "Some projects shown are internal Aivara-built systems, owned brands, or client-facing builds currently in development.",
+    "Examples are internal Aivara builds or illustrative demonstrations. They do not identify clients or imply customer endorsement, affiliation, or a guaranteed outcome.",
   ctaTitle: "Want a system like this built for your business?",
   ctaLabel: "Start My Build",
   ctaHref: "/contact",
@@ -339,99 +296,99 @@ type PortfolioItem = {
 
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
-    title: "Aivara Client Portal",
+    title: "Aivara Portal Interface",
     category: "Portal / AI Automation",
     badge: "Internal Build",
     description:
-      "Manage requests, budgets, files, approvals, and updates from one client-facing system.",
+      "An internal interface example for organizing requests, files, approvals, and updates.",
     chips: ["Portal", "Automation", "Client System"],
     gradient: "from-pink-500 via-purple-500 to-blue-500",
     image: "/images/portfolio/site-aivara-portal.png",
-    url: "https://portal.aivarasolutions.com",
+    url: "/contact",
   },
   {
-    title: "FreightSync TMS Owner Portal",
+    title: "Operations Dashboard Concept",
     category: "Logistics / Dashboard",
-    badge: "Logistics System",
+    badge: "Illustrative Example",
     description:
-      "Track loads, revenue, expenses, and settlements from one owner-facing dashboard.",
+      "An illustrative dashboard concept for reviewing operational activity and reporting.",
     chips: ["Logistics", "Dashboard", "Reporting"],
     gradient: "from-blue-500 via-teal-500 to-green-500",
-    image: "/images/portfolio/site-freightsync.png",
-    url: "https://freightsynctms.com",
+    image: "/images/portfolio/site-aivara-portal.png",
+    url: "/contact",
   },
   {
-    title: "IPM Owner & Property Portal",
+    title: "Property Operations Concept",
     category: "Property Management / Portal",
-    badge: "Property Management",
+    badge: "Illustrative Example",
     description:
-      "Monitor reservations, expenses, payouts, and property performance in one place.",
+      "An illustrative portal concept for coordinating property operations and reporting.",
     chips: ["Property Management", "Portal", "Reporting"],
     gradient: "from-teal-500 via-green-500 to-yellow-400",
-    image: "/images/portfolio/ai-ipm-apollo.png",
-    url: "https://ipm.services",
+    image: "/images/portfolio/site-aivara.jpg",
+    url: "/contact",
   },
   {
-    title: "Wave Sandy Booking & Campaign System",
+    title: "Booking Workflow Concept",
     category: "Travel / Rentals / Marketing",
-    badge: "Booking + Marketing",
+    badge: "Illustrative Example",
     description:
-      "Drive bookings with campaign pages, analytics, and conversion-focused rental marketing.",
+      "An illustrative example of a booking workflow with campaign pages and reporting.",
     chips: ["Booking", "Marketing", "Analytics"],
     gradient: "from-cyan-400 via-blue-500 to-purple-500",
-    image: "/images/portfolio/site-wavesandy.png",
-    url: "https://book.wavesandy.com",
+    image: "/images/portfolio/site-aivara.jpg",
+    url: "/contact",
   },
   {
-    title: "Google Ads Lead Generation System",
+    title: "Lead Workflow Interface",
     category: "Marketing / Lead Gen",
-    badge: "Lead Generation",
+    badge: "Internal Build",
     description:
-      "Capture and track leads with landing pages, analytics, follow-up, and reporting.",
+      "An internal interface example for organizing lead capture, follow-up, and reporting.",
     chips: ["Lead Generation", "Tracking", "Automation"],
     gradient: "from-yellow-400 via-orange-500 to-pink-500",
     image: "/images/portfolio/site-aivara.jpg",
     url: "/contact",
   },
   {
-    title: "RichAF.Global Guidebook Funnel",
+    title: "Content Funnel Concept",
     category: "Travel / Digital Product",
-    badge: "Travel Tech",
+    badge: "Illustrative Example",
     description:
-      "Turn destination content into a branded funnel for guidebook sales and audience growth.",
+      "An illustrative concept for presenting destination content in a branded digital journey.",
     chips: ["Travel Tech", "Funnel", "Digital Product"],
     gradient: "from-purple-500 via-pink-500 to-orange-400",
-    image: "/images/portfolio/site-richaf.png",
-    url: "https://guides.richaf.global",
+    image: "/images/portfolio/site-aivara.jpg",
+    url: "/contact",
   },
   {
-    title: "Hidden Jade Experiences Brand Assets",
+    title: "Experience Brand Concept",
     category: "Creative / Tourism",
-    badge: "Creative Production",
+    badge: "Illustrative Example",
     description:
-      "Present experiences with polished brand visuals, brochures, and guest-facing marketing.",
+      "An illustrative example of creative assets for guest-facing marketing.",
     chips: ["Creative", "Tourism", "Branding"],
     gradient: "from-green-500 via-teal-500 to-cyan-500",
-    image: "/images/portfolio/site-hiddenjade.png",
-    url: "https://hiddenjadeexperiences.com",
+    image: "/images/portfolio/site-aivara-music.png",
+    url: "/contact",
   },
   {
-    title: "AI Customer Support Bot",
+    title: "AI Support Workflow Concept",
     category: "AI / Automation",
-    badge: "AI Automation",
+    badge: "Illustrative Example",
     description:
-      "Answer FAQs, capture leads, and route customer requests automatically.",
+      "An illustrative workflow for answering common questions and routing requests.",
     chips: ["AI", "Support", "Lead Capture"],
     gradient: "from-pink-500 via-purple-500 to-teal-500",
-    image: "/images/portfolio/ai-richaf-bot.png",
-    url: "https://richaf.global",
+    image: "/images/portfolio/site-aivara-portal.png",
+    url: "/contact",
   },
   {
-    title: "Brand Sound Identity",
+    title: "Aivara Music Concept",
     category: "Creative / Music",
-    badge: "Creative Media",
+    badge: "Internal Build",
     description:
-      "Strengthen campaigns and content with custom audio branding and theme music.",
+      "An internal example of how audio branding and theme music can be scoped for a project.",
     chips: ["Creative Media", "Audio", "Branding"],
     gradient: "from-orange-500 via-pink-500 to-purple-500",
     image: "/images/portfolio/site-aivara-music.png",
@@ -627,16 +584,10 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="text-sm text-slate-500 font-medium mb-8 uppercase tracking-widest">
-            Trusted by Enterprise Leaders
-          </div>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {TRUSTED_BY.map((logo) => (
-              <span key={logo.name} className={logo.className}>
-                {logo.name}
-              </span>
-            ))}
-          </div>
+          <p className="text-sm text-slate-500 max-w-xl mx-auto">
+            Aivara OS is currently presented as a product preview. Features, scope, pricing, and
+            implementation timing are confirmed in a written proposal.
+          </p>
 
           {/* Inline dashboard preview */}
           <div className="mt-24 relative max-w-6xl mx-auto group">
@@ -660,8 +611,8 @@ export default function HomePage() {
                       V
                     </div>
                     <div>
-                      <div className="text-sm font-semibold">Vanguard Ecom</div>
-                      <div className="text-xs text-slate-400">Enterprise Plan</div>
+                      <div className="text-sm font-semibold">Sample Workspace</div>
+                      <div className="text-xs text-slate-400">Illustrative interface</div>
                     </div>
                   </div>
                   {["Dashboard", "Analytics", "Customers", "Operations", "Finance"].map(
@@ -686,8 +637,8 @@ export default function HomePage() {
                 <div className="flex-1 p-6 overflow-y-auto">
                   <div className="flex justify-between items-center mb-6">
                     <div>
-                      <h3 className="text-2xl font-bold">Good morning, Sarah</h3>
-                      <p className="text-slate-400 text-sm">Here&apos;s what&apos;s happening today.</p>
+                      <h3 className="text-2xl font-bold">Welcome to your workspace</h3>
+                      <p className="text-slate-400 text-sm">Illustrative interface preview.</p>
                     </div>
                     <div className="flex gap-3">
                       <div className="p-2 rounded-lg bg-white/5 border border-white/10">
@@ -702,28 +653,25 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <div className="p-4 rounded-xl bg-white/5 border border-white/5">
                       <div className="text-slate-400 text-sm mb-1">Total Revenue</div>
-                      <div className="text-3xl font-bold">
-                        $124,500
-                        <span className="text-teal-400 text-sm ml-2 font-normal">+12.5%</span>
-                      </div>
+                        <div className="text-3xl font-bold">Sample</div>
                     </div>
                     <div className="p-4 rounded-xl bg-white/5 border border-white/5 relative overflow-hidden">
                       <div className="absolute right-0 top-0 w-24 h-24 bg-pink-500/20 blur-2xl rounded-full" />
                       <div className="text-slate-400 text-sm mb-1">Active Workflows</div>
-                      <div className="text-3xl font-bold">1,204</div>
+                       <div className="text-3xl font-bold">Example</div>
                     </div>
                     <div className="p-4 rounded-xl bg-gradient-to-br from-teal-500/20 to-pink-500/20 border border-teal-500/30">
                       <div className="text-teal-100 text-sm mb-1">AI Copilot Insights</div>
                       <div className="text-sm font-medium mt-2">
-                        Anomaly detected in supply chain routing. Recommend re-routing 3 shipments.
+                         Example insight: review a routing exception.
                       </div>
                     </div>
                   </div>
 
                   <div className="h-64 rounded-xl bg-white/5 border border-white/5 p-4 flex flex-col">
                     <div className="text-sm font-medium mb-4 flex justify-between">
-                      <span>Performance Overview</span>
-                      <span className="text-slate-400 text-xs">Last 30 days</span>
+                      <span>Illustrative activity overview</span>
+                      <span className="text-slate-400 text-xs">Sample data</span>
                     </div>
                     <div className="flex-1 flex items-end gap-2 px-2">
                       {[40, 60, 45, 80, 55, 90, 70, 100, 85, 95].map((h, i) => (
@@ -733,7 +681,7 @@ export default function HomePage() {
                           style={{ height: `${h}%` }}
                         >
                           <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-xs py-1 px-2 rounded hidden group-hover:block">
-                            {h}k
+                            Sample
                           </div>
                         </div>
                       ))}
@@ -1072,19 +1020,19 @@ export default function HomePage() {
 
                     <div>
                       <div className="text-[11px] font-semibold text-white">
-                        Good morning, Sarah
+                        Sample workspace
                       </div>
                       <div className="text-[9px] text-slate-500">
-                         Here&apos;s what&apos;s happening today
+                        Illustrative interface only
                       </div>
                     </div>
 
                     {/* KPI cards */}
                     <div className="grid grid-cols-3 gap-2">
                       {[
-                        { label: "Revenue", value: "$124.5K", delta: "+12.5%" },
-                        { label: "Active Clients", value: "1,284", delta: "+3.2%" },
-                        { label: "Open Tasks", value: "47", delta: "-8%" },
+                        { label: "Revenue", value: "Sample", delta: "Example" },
+                        { label: "Active Clients", value: "Sample", delta: "Example" },
+                        { label: "Open Tasks", value: "Sample", delta: "Example" },
                       ].map((k) => (
                         <div
                           key={k.label}
@@ -1104,7 +1052,7 @@ export default function HomePage() {
                     {/* Chart placeholder */}
                     <div className="rounded-md border border-white/10 bg-white/[0.02] p-2 h-20 relative overflow-hidden">
                       <div className="text-[8px] text-slate-500 uppercase tracking-wider mb-1">
-                        Pipeline · Last 30 days
+                         Illustrative activity trend
                       </div>
                       <svg viewBox="0 0 200 40" className="w-full h-12">
                         <defs>
@@ -1134,9 +1082,9 @@ export default function HomePage() {
                     {/* Activity */}
                     <div className="space-y-1">
                       {[
-                        { tag: "AI", text: "Lead scored 92 · Acme Corp", color: "bg-pink-500" },
-                        { tag: "OPS", text: "Workflow #284 completed", color: "bg-teal-500" },
-                        { tag: "FIN", text: "Invoice #1042 paid · $4,200", color: "bg-yellow-500" },
+                         { tag: "AI", text: "Example lead activity", color: "bg-pink-500" },
+                         { tag: "OPS", text: "Example workflow activity", color: "bg-teal-500" },
+                         { tag: "FIN", text: "Example billing activity", color: "bg-yellow-500" },
                       ].map((a) => (
                         <div
                           key={a.text}
@@ -1180,47 +1128,6 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* ── SOCIAL PROOF ───────────────────────────────────────── */}
-        <section className="container mx-auto px-6 py-24">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-16">
-            {STATS.map((stat) => (
-              <div
-                key={stat.label}
-                className="text-center p-6 border-r border-white/10 last:border-0"
-              >
-                <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-pink-500 mb-2">
-                  {stat.val}
-                </div>
-                <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t) => (
-              <div key={t.author} className="p-8 rounded-2xl glass-panel relative">
-                <div className="text-4xl text-teal-500/20 absolute top-4 right-6 font-serif">
-                  &ldquo;
-                </div>
-                <p className="text-slate-300 mb-6 relative z-10 leading-relaxed">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-slate-400">
-                    {t.author.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm">{t.author}</div>
-                    <div className="text-xs text-slate-500">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 

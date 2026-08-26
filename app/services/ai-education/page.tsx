@@ -20,28 +20,25 @@ export default function AIEducationPage() {
     "Tool selection & governance",
   ];
 
-  const caseStudies = [
+  const examples = [
     {
-      title: "SaaS Onboarding Automation",
-      description: "Built automated onboarding flow that reduced setup time by 75% for a 200-employee tech company.",
-      results: "3x faster employee productivity ramp-up",
+      title: "Onboarding workflow example",
+      description: "An illustrative workflow that combines welcome steps, checklists, and internal handoffs.",
     },
     {
-      title: "AI Training Workshop Series",
-      description: "Delivered hands-on AI training for marketing team, enabling them to use GPT-4 and automation tools effectively.",
-      results: "5 hours/week saved per team member",
+      title: "AI workshop example",
+      description: "An illustrative training format covering practical AI tools, prompts, and team governance.",
     },
     {
-      title: "Custom GPT Development",
-      description: "Created tailored GPT assistants for customer support, reducing response time and improving accuracy.",
-      results: "40% reduction in support tickets",
+      title: "AI assistant example",
+      description: "An illustrative assistant setup for organizing common questions and support workflows.",
     },
   ];
 
   const faqs = [
     {
       question: "How long does an AI audit take?",
-      answer: "Most AI audits are completed within 1-2 weeks, depending on the complexity of your current systems and workflows.",
+      answer: "Audit timing depends on the systems, workflows, and stakeholder availability involved. We confirm a project schedule after the discovery conversation.",
     },
     {
       question: "Do we need technical knowledge to implement AI solutions?",
@@ -69,7 +66,7 @@ export default function AIEducationPage() {
           </h1>
           
           <p className="text-xl text-gray-300 mb-8">
-            We turn AI into practical wins: audits, simple automations, and hands-on training your team can actually use.
+            We turn AI into practical workflows through audits, simple automations, and hands-on team training.
           </p>
 
           <div className="mb-12">
@@ -85,14 +82,16 @@ export default function AIEducationPage() {
           </div>
 
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 text-teal-300">Case Studies</h2>
+            <h2 className="text-2xl font-semibold mb-2 text-teal-300">Illustrative Project Examples</h2>
+            <p className="text-sm text-gray-400 mb-6">
+              These examples describe possible project formats, not customer results or guaranteed outcomes.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {caseStudies.map((study, index) => (
+              {examples.map((study, index) => (
                 <Card key={index} className="bg-black/60 border border-white/10">
                   <CardContent className="p-6">
                     <h3 className="text-lg font-semibold mb-2 text-gray-200">{study.title}</h3>
                     <p className="text-sm text-gray-400 mb-3">{study.description}</p>
-                    <p className="text-sm font-semibold text-teal-400">{study.results}</p>
                   </CardContent>
                 </Card>
               ))}

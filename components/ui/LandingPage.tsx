@@ -75,7 +75,7 @@ export function LandingPage(props: LandingPageProps) {
             <div className="mt-10 flex flex-wrap gap-6 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-teal-400" />
-                <span>Reply within 24 hours</span>
+                <span>Response timing confirmed after review</span>
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-teal-400" />
@@ -108,8 +108,8 @@ export function LandingPage(props: LandingPageProps) {
               Why Businesses Choose This System
             </h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Built for real business operations — not theory. Every system is designed to save
-              time, improve client experience, and create measurable results.
+              Built around your business operations. Each system is scoped to support your
+              workflow and agreed project goals.
             </p>
           </div>
 
@@ -140,8 +140,7 @@ export function LandingPage(props: LandingPageProps) {
               What&apos;s Included
             </h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Everything you need to launch fast and operate smarter. No fluff — only the parts
-              that move the needle.
+              A project scope can include the components needed to support your workflow.
             </p>
           </div>
 
@@ -171,8 +170,8 @@ export function LandingPage(props: LandingPageProps) {
               Built for These Industries
             </h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              We&apos;ve built systems for service businesses, property managers, logistics
-              teams, travel brands, and growing companies.
+              We design systems for service businesses, property managers, logistics teams,
+              travel brands, and growing companies.
             </p>
           </div>
 

@@ -91,7 +91,7 @@ export default function WebMarketingPage() {
 
   const paymentOptions = [
     "Split milestone payments",
-    "2–3 month development agreements",
+    "Phased development agreements based on the project schedule",
     "Ongoing monthly service retainers",
     "Future expansion phases",
   ];
@@ -106,26 +106,22 @@ export default function WebMarketingPage() {
     "Automation platforms",
   ];
 
-  const caseStudies = [
+  const examples = [
     {
-      title: "E-Commerce Site Redesign",
-      description: "Complete site overhaul with focus on conversion optimization and mobile-first design.",
-      results: "127% increase in online sales",
+      title: "E-commerce redesign example",
+      description: "An illustrative site structure focused on mobile usability, product discovery, and checkout flows.",
     },
     {
-      title: "SEO Campaign for Local Business",
-      description: "Comprehensive SEO strategy including technical optimization, content creation, and link building.",
-      results: "Page 1 rankings for 15 key terms",
+      title: "SEO planning example",
+      description: "An illustrative SEO plan covering technical review, content priorities, and measurement.",
     },
     {
-      title: "Brand Identity Launch",
-      description: "Full brand development including logo, website, messaging framework, and marketing collateral.",
-      results: "Successfully launched to 10k+ audience",
+      title: "Brand launch example",
+      description: "An illustrative brand project with a website, messaging framework, and marketing collateral.",
     },
     {
-      title: "Paid Social Campaign",
-      description: "Multi-platform ad campaign with A/B testing and conversion tracking for SaaS startup.",
-      results: "$2.50 cost per acquisition",
+      title: "Paid media workflow example",
+      description: "An illustrative campaign workflow with testing, conversion tracking, and reporting.",
     },
   ];
 
@@ -133,7 +129,7 @@ export default function WebMarketingPage() {
     {
       question: "How long does a website project take?",
       answer:
-        "Most websites are completed in 4-8 weeks, depending on complexity and content requirements. We work in sprints to deliver value quickly.",
+        "Project timing depends on scope, content readiness, approvals, and third-party services. We confirm the schedule in your project proposal.",
     },
     {
       question: "Do you provide ongoing marketing support?",
@@ -200,7 +196,7 @@ export default function WebMarketingPage() {
             </h1>
 
             <p className="text-xl text-gray-300 mb-12">
-              Websites and campaigns built for speed, clarity, and conversions—backed by clean engineering and sharp messaging.
+            Websites and campaigns designed around clear messaging, usable experiences, and measurable project goals.
             </p>
           </header>
 
@@ -418,14 +414,16 @@ export default function WebMarketingPage() {
 
           {/* Case Studies */}
           <div className="mb-20 max-w-4xl">
-            <h2 className="text-2xl font-semibold mb-6 text-teal-300">Case Studies</h2>
+            <h2 className="text-2xl font-semibold mb-2 text-teal-300">Illustrative Project Examples</h2>
+            <p className="text-sm text-gray-400 mb-6">
+              These examples describe possible project formats, not customer results or guaranteed outcomes.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {caseStudies.map((study, index) => (
+              {examples.map((study, index) => (
                 <Card key={index} className="bg-black/60 border border-white/10">
                   <CardContent className="p-6">
                     <h3 className="text-lg font-semibold mb-2 text-gray-200">{study.title}</h3>
                     <p className="text-sm text-gray-400 mb-3">{study.description}</p>
-                    <p className="text-sm font-semibold text-teal-400">{study.results}</p>
                   </CardContent>
                 </Card>
               ))}

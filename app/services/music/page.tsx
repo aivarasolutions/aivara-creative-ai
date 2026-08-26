@@ -26,31 +26,22 @@ export default function MusicPage() {
     { platform: "YouTube", url: "https://www.youtube.com", title: "Restaurant Theme Song" },
   ];
 
-  const portfolioClients = [
-    { name: "InnovateNow", logo: "/images/clients/innovatenow.png" },
-    { name: "Brew & Co", logo: "/images/clients/brew-co.png" },
-    { name: "PowerFit", logo: "/images/clients/powerfit.png" },
-    { name: "Luxury Homes", logo: "/images/clients/luxury-homes.png" },
-    { name: "ShopSmart", logo: "/images/clients/shopsmart.png" },
-    { name: "The Business Hour", logo: "/images/clients/business-hour.png" },
-  ];
-
   const faqs = [
     {
       question: "How long does it take to create a custom jingle?",
-      answer: "Most jingles are delivered within 2-3 weeks, including revisions. Rush delivery (1 week) is available for an additional fee.",
+      answer: "Timing depends on the brief, revisions, licensing needs, and current production schedule. We confirm delivery timing in the written project scope.",
     },
     {
       question: "What's included in the licensing?",
-      answer: "You receive full commercial rights for your custom music, including broadcast, digital, and in-store use. We provide multiple file formats and stems if needed.",
+      answer: "Licensing options and deliverables are set in the written agreement. Usage rights, file formats, and stems depend on the selected scope.",
     },
     {
       question: "Can you match a specific style or vibe?",
-      answer: "Absolutely! We work from your brand guidelines and reference tracks to create music that perfectly matches your vision.",
+      answer: "We can work from brand guidelines and reference tracks to develop music aligned with your brief.",
     },
     {
       question: "Do you offer revisions?",
-      answer: "Yes, all packages include 2-3 rounds of revisions to ensure you're completely satisfied with the final product.",
+      answer: "Revision rounds, if included, are defined in the written project scope.",
     },
   ];
 
@@ -115,21 +106,6 @@ export default function MusicPage() {
                       <span className="text-gray-400">{video.platform} Video</span>
                     </div>
                     <p className="text-sm text-gray-300">{video.title}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 text-teal-300">Trusted by Leading Brands</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {portfolioClients.map((client, index) => (
-                <Card key={index} className="bg-black/60 border border-white/10 hover:border-teal-400/50 transition-all">
-                  <CardContent className="p-6 text-center">
-                    <div className="h-20 flex items-center justify-center">
-                      <span className="text-gray-400 font-semibold">{client.name}</span>
-                    </div>
                   </CardContent>
                 </Card>
               ))}

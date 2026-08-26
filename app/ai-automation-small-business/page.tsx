@@ -21,10 +21,10 @@ export default function AIAutomationPage() {
       offer="AI Automation Starter System"
       service="AI & Education"
       badge="AI Automation Starter System"
-      headline="Stop Doing the Same Work Twice — Let AI Run It for You"
-      subheadline="Aivara Solutions builds practical AI automation systems for small businesses that save hours every week, respond to leads instantly, and turn repetitive tasks into hands-free workflows."
+       headline="Reduce Repetitive Work With AI"
+       subheadline="Aivara Solutions builds practical AI automation systems for small businesses, including chatbots, lead follow-up, and internal workflows."
       heroBullets={[
-        'AI chatbot that answers customer questions 24/7',
+        'AI chatbot configuration for common customer questions',
         'Automated lead capture and email follow-up',
         'Internal task automation for your team',
         'Custom AI usage guide for staff onboarding',
@@ -33,15 +33,15 @@ export default function AIAutomationPage() {
       benefits={[
         {
           icon: <Zap className="h-6 w-6" />,
-          title: 'Save 10+ Hours Per Week',
+          title: 'Reduce Repetitive Tasks',
           description:
             'Automate the repetitive tasks eating your day — customer questions, follow-ups, reminders, and routine admin work.',
         },
         {
           icon: <Bot className="h-6 w-6" />,
-          title: 'Respond Instantly, 24/7',
+          title: 'Support Common Questions',
           description:
-            'An AI assistant trained on your business answers leads and clients the moment they reach out — no missed opportunities.',
+            'An AI assistant can be configured to help handle common lead and client questions based on your approved business information.',
         },
         {
           icon: <Users className="h-6 w-6" />,
@@ -60,7 +60,7 @@ export default function AIAutomationPage() {
         'Custom AI prompt library for your team',
         'Staff usage guide and onboarding doc',
         'Performance dashboard and reporting',
-        '30 days of post-launch support',
+        'Post-launch support options defined in the project scope',
       ]}
       industries={[
         'Property Management',
@@ -93,14 +93,14 @@ export default function AIAutomationPage() {
           step: '04',
           title: 'Launch & Support',
           description:
-            'We launch the system, train your team, and provide 30 days of support to refine and tune it.',
+            'We launch the system, train your team, and discuss post-launch support options in the project scope.',
         },
       ]}
       faqs={[
         {
           question: 'How long does it take to launch an AI automation system?',
           answer:
-            'Most starter systems are live within 2–4 weeks depending on complexity. We move quickly so you start saving time fast.',
+            'Implementation timing depends on scope, data readiness, integrations, and approvals. Your project schedule is confirmed in the written proposal.',
         },
         {
           question: 'Do I need technical knowledge to use it?',
@@ -120,7 +120,7 @@ export default function AIAutomationPage() {
         {
           question: 'What does it cost?',
           answer:
-            'Starter systems typically range from $2,500–$7,500 depending on scope. Book a free strategy call and we’ll send you a custom quote within 24 hours.',
+            'Pricing depends on scope. Book a strategy call to discuss a tailored proposal and response timing.',
         },
         {
           question: 'Do you offer ongoing support?',
@@ -129,7 +129,7 @@ export default function AIAutomationPage() {
         },
       ]}
       formHeadline="Get a Free AI Automation Audit"
-      formSubheadline="Tell us about your business. We’ll send a custom plan and quote within 24 hours."
+      formSubheadline="Tell us about your business and we’ll follow up with next steps and a tailored proposal."
       formCta="Get My Free Audit"
       finalCtaHeadline="Ready to Let AI Do the Repetitive Work?"
       finalCtaText="Tell us what’s eating your time. We’ll show you exactly how to automate it."

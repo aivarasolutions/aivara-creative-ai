@@ -3,7 +3,7 @@ import { Target, BarChart3, Mail } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Google Ads Lead Generation System | Get More Qualified Leads | Aivara Solutions',
+       title: 'Google Ads Lead System | Aivara Solutions',
   description:
     'Done-for-you Google Ads system with conversion-focused landing pages, CRM capture, conversion tracking, and automated follow-up. Aivara Solutions builds lead engines that convert.',
   keywords: [
@@ -21,8 +21,8 @@ export default function GoogleAdsLeadSystemPage() {
       offer="Google Ads Lead System"
       service="Web & Marketing"
       badge="Done-for-You Google Ads Lead System"
-      headline="More Qualified Leads. Less Wasted Ad Spend."
-      subheadline="Aivara Solutions builds complete Google Ads lead systems — high-converting landing pages, CRM capture, conversion tracking, and automated follow-up. Everything you need to turn ad clicks into real customers."
+       headline="A Configurable Google Ads Lead System"
+       subheadline="Aivara Solutions builds Google Ads lead systems with landing pages, CRM capture, conversion tracking, and automated follow-up."
       heroBullets={[
         'Google Ads campaign setup and optimization',
         'Conversion-focused landing page built for your offer',
@@ -33,21 +33,21 @@ export default function GoogleAdsLeadSystemPage() {
       benefits={[
         {
           icon: <Target className="h-6 w-6" />,
-          title: 'Turn Clicks Into Leads',
+          title: 'Lead Capture Workflow',
           description:
-            'Most ad spend gets wasted on bad landing pages. Ours are built around one goal: capturing qualified leads.',
+            'Landing pages can be structured around a focused offer and lead-capture workflow.',
         },
         {
           icon: <Mail className="h-6 w-6" />,
           title: 'Automated Follow-Up',
           description:
-            'Most leads don’t buy on the first touch. Our follow-up sequences nurture them until they’re ready to talk.',
+            'Follow-up sequences can be configured to send approved messages after a lead submits a form.',
         },
         {
           icon: <BarChart3 className="h-6 w-6" />,
-          title: 'Track What Actually Works',
+          title: 'Campaign Measurement',
           description:
-            'Conversion tracking, GA4, and reporting dashboards show you exactly where leads come from and what to scale.',
+            'Conversion tracking, analytics, and reporting can help you review available campaign activity data.',
         },
       ]}
       features={[
@@ -62,7 +62,7 @@ export default function GoogleAdsLeadSystemPage() {
         'Automated email follow-up sequence',
         'Lead scoring and qualification flow',
         'Reporting dashboard with key metrics',
-        'First 30 days of campaign optimization',
+         'Campaign optimization scope discussed in proposal',
       ]}
       industries={[
         'Property Management',
@@ -95,14 +95,14 @@ export default function GoogleAdsLeadSystemPage() {
           step: '04',
           title: 'Optimize & Scale',
           description:
-            'We monitor performance, optimize keywords and creative, and refine the funnel for the first 30 days.',
+            'We review campaign activity and discuss optimization options based on the agreed scope.',
         },
       ]}
       faqs={[
         {
           question: 'How long until I start getting leads?',
           answer:
-            'Most clients see their first qualified leads within 7–14 days of campaign launch. We optimize aggressively in the first 30 days.',
+            'Lead timing and volume depend on audience, budget, competition, approval timing, and campaign conditions. We do not guarantee lead results.',
         },
         {
           question: 'Do I pay for the ad spend separately?',
@@ -112,22 +112,22 @@ export default function GoogleAdsLeadSystemPage() {
         {
           question: 'What’s the recommended ad budget?',
           answer:
-            'Most small businesses start with $1,000–$3,000/month in ad spend. We help you set the right budget for your goals during the strategy call.',
+            'Ad budget is determined after discussing your goals, audience, and competitive conditions.',
         },
         {
           question: 'What if my industry is competitive?',
           answer:
-            'We specialize in conversion-focused funnels — strong offers, better landing pages, and smart follow-up — so you can compete even in expensive niches.',
+            'We can scope landing pages and follow-up workflows to support your campaign strategy in competitive markets.',
         },
         {
           question: 'Do you offer ongoing campaign management?',
           answer:
-            'Yes. After the first 30 days, monthly management retainers are available for ongoing optimization, reporting, and scaling.',
+            'Ongoing management, optimization, and reporting options can be included in a monthly scope.',
         },
         {
           question: 'What does the buildout cost?',
           answer:
-            'Most lead system builds range from $3,500–$7,500. Book a strategy call for a custom quote within 24 hours.',
+            'Build pricing depends on scope. Book a strategy call to discuss a tailored proposal and response timing.',
         },
         {
           question: 'Who owns the landing page and assets?',
@@ -136,10 +136,10 @@ export default function GoogleAdsLeadSystemPage() {
         },
       ]}
       formHeadline="Get a Free Lead System Strategy"
-      formSubheadline="Tell us about your business and offer. We’ll send a custom plan and quote within 24 hours."
+      formSubheadline="Tell us about your business and offer, and we’ll follow up with next steps and a tailored proposal."
       formCta="Get My Lead System Quote"
-      finalCtaHeadline="Ready to Turn Ad Spend Into Real Customers?"
-      finalCtaText="Tell us about your offer. We’ll design the funnel that converts."
+      finalCtaHeadline="Ready to Plan Your Lead System?"
+      finalCtaText="Tell us about your offer and we’ll discuss a suitable campaign workflow."
     />
   );
 }
