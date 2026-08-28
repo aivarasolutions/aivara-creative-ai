@@ -14,6 +14,7 @@ const getSiteUrl = () => {
 };
 
 const siteUrl = getSiteUrl();
+const logoUrl = new URL("/images/aivara-logo.png", siteUrl);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/aivara-logo.png",
+        url: logoUrl,
         width: 1024,
         height: 1024,
         alt: "Aivara Solutions gradient logo",
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aivara Solutions — Technology + Creativity for the Modern Business",
     description: "Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.",
-    images: ["/images/aivara-logo.png"],
+    images: [logoUrl],
   },
   icons: {
     icon: [
@@ -51,6 +52,7 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
 };
 
 const organizationSchema = {
@@ -58,7 +60,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Aivara Solutions",
   url: siteUrl,
-  logo: new URL("/images/aivara-logo.png", siteUrl).toString(),
+  logo: logoUrl.toString(),
   email: "kevin@aivarasolutions.com",
   telephone: "+1-310-400-0032",
   description:

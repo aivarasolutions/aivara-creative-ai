@@ -1,0 +1,15 @@
+{
+  "name": "Aivara Solutions",
+  "short_name": "Aivara Solutions",
+  "description": "Technology and creative systems for modern businesses.",
+  "icons": [
+    {
+      "src": "/images/aivara-logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#050816",
+  "background_color": "#050816",
+  "display": "standalone"
+}
