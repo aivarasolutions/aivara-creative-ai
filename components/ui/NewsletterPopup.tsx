@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef, FormEvent } from 'react';
 import { usePathname } from 'next/navigation';
+import Image from "next/image";
 import { X } from 'lucide-react';
 import { trackEvent, trackNewsletterSignup } from '@/lib/analytics';
 
@@ -281,9 +282,13 @@ export function NewsletterPopup() {
           <div className="p-6 sm:p-8">
             {/* Logo */}
             <div className="flex justify-center mb-5">
-              <div className="rounded-xl bg-gradient-to-br from-pink-500 via-teal-400 to-yellow-300 px-5 py-3 text-center text-sm font-black tracking-[0.18em] text-black">
-                AIVARA
-              </div>
+              <Image
+                src="/images/aivara-logo.png"
+                alt="Aivara Solutions"
+                width={96}
+                height={96}
+                className="h-20 w-20 rounded-xl object-contain"
+              />
             </div>
 
             {status === 'success' ? (

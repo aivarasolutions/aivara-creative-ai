@@ -29,14 +29,27 @@ export const metadata: Metadata = {
     siteName: "Aivara Solutions",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/aivara-logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "Aivara Solutions gradient logo",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Aivara Solutions — Technology + Creativity for the Modern Business",
     description: "Aivara Solutions blends AI, web & marketing, logistics, and custom music to grow modern businesses.",
+    images: ["/images/aivara-logo.png"],
   },
   icons: {
-    icon: "/brand-mark.svg",
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/images/aivara-logo.png", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -45,6 +58,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Aivara Solutions",
   url: siteUrl,
+  logo: new URL("/images/aivara-logo.png", siteUrl).toString(),
   email: "kevin@aivarasolutions.com",
   telephone: "+1-310-400-0032",
   description:
