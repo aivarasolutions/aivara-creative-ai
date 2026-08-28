@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { trackPhoneClick, trackEmailClick } from "@/lib/analytics";
@@ -11,12 +12,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <span
-              aria-hidden="true"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500 via-teal-400 to-yellow-300 text-lg font-black text-black"
-            >
-              A
-            </span>
+            <Image
+              src="/images/aivara-logo.png"
+              alt="Aivara Solutions"
+              width={64}
+              height={64}
+              className="h-16 w-16 rounded-xl object-contain"
+            />
             <span className="font-semibold text-lg">Aivara Solutions</span>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed">

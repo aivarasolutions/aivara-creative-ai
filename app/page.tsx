@@ -24,6 +24,7 @@
  */
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { trackCTA, trackBookingClick } from "@/lib/analytics";
 import {
@@ -202,6 +203,9 @@ const TOOLS_HEADING = {
     "Product names are shown only to identify tools that may be used in a project. Aivara Solutions does not claim partnership, sponsorship, or endorsement unless expressly stated. Product names are trademarks of their respective owners.",
 };
 
+const simpleIcon = (slug: string) => `https://cdn.simpleicons.org/${slug}`;
+const simpleIconWhite = (slug: string) => `https://cdn.simpleicons.org/${slug}/ffffff`;
+
 const TOOL_CATEGORIES: {
   title: string;
   tools: { name: string; logo: string | null }[];
@@ -209,52 +213,52 @@ const TOOL_CATEGORIES: {
   {
     title: "AI Strategy & Automation",
     tools: [
-      { name: "ChatGPT", logo: null },
-      { name: "Manus", logo: null },
-      { name: "Runway", logo: null },
+      { name: "ChatGPT", logo: "/images/logos/chatgpt.svg" },
+      { name: "Manus", logo: "/images/logos/manus.svg" },
+      { name: "Runway", logo: "/images/logos/runway.svg" },
     ],
   },
   {
     title: "App & Portal Development",
     tools: [
-      { name: "Replit", logo: null },
-      { name: "Supabase", logo: null },
-      { name: "Vercel", logo: null },
-      { name: "GitHub", logo: null },
+      { name: "Replit", logo: simpleIcon("replit") },
+      { name: "Supabase", logo: simpleIcon("supabase") },
+      { name: "Vercel", logo: simpleIconWhite("vercel") },
+      { name: "GitHub", logo: simpleIconWhite("github") },
     ],
   },
   {
     title: "Email & Client Communication",
     tools: [
-      { name: "Resend", logo: null },
-      { name: "Mailchimp", logo: null },
-      { name: "Google Workspace", logo: null },
-      { name: "Slack", logo: null },
+      { name: "Resend", logo: simpleIconWhite("resend") },
+      { name: "Mailchimp", logo: simpleIcon("mailchimp") },
+      { name: "Google Workspace", logo: simpleIcon("google") },
+      { name: "Slack", logo: "/images/logos/slack.svg" },
     ],
   },
   {
     title: "Creative Production",
     tools: [
-      { name: "Canva", logo: null },
-      { name: "CapCut", logo: null },
-      { name: "Runway", logo: null },
+      { name: "Canva", logo: "/images/logos/canva.svg" },
+      { name: "CapCut", logo: "/images/logos/capcut.svg" },
+      { name: "Runway", logo: "/images/logos/runway.svg" },
     ],
   },
   {
     title: "Payments & Financial Operations",
     tools: [
-      { name: "Stripe", logo: null },
-      { name: "PayPal", logo: null },
-      { name: "QuickBooks", logo: null },
-      { name: "Square", logo: null },
+      { name: "Stripe", logo: simpleIcon("stripe") },
+      { name: "PayPal", logo: simpleIcon("paypal") },
+      { name: "QuickBooks", logo: simpleIcon("quickbooks") },
+      { name: "Square", logo: simpleIconWhite("square") },
     ],
   },
   {
     title: "Websites, Domains & Infrastructure",
     tools: [
-      { name: "Squarespace", logo: null },
-      { name: "GoDaddy", logo: null },
-      { name: "Vercel", logo: null },
+      { name: "Squarespace", logo: simpleIconWhite("squarespace") },
+      { name: "GoDaddy", logo: simpleIcon("godaddy") },
+      { name: "Vercel", logo: simpleIconWhite("vercel") },
     ],
   },
 ];
@@ -282,6 +286,7 @@ type PortfolioItem = {
   description: string;
   chips: string[];
   gradient: string;
+  image: string;
   url: string;
 };
 
@@ -294,6 +299,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An internal interface example for organizing requests, files, approvals, and updates.",
     chips: ["Portal", "Automation", "Client System"],
     gradient: "from-pink-500 via-purple-500 to-blue-500",
+    image: "/images/portfolio/site-aivara-portal.png",
     url: "/contact",
   },
   {
@@ -304,6 +310,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative dashboard concept for reviewing operational activity and reporting.",
     chips: ["Logistics", "Dashboard", "Reporting"],
     gradient: "from-blue-500 via-teal-500 to-green-500",
+    image: "/images/portfolio/site-freightsync.png",
     url: "/contact",
   },
   {
@@ -314,6 +321,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative portal concept for coordinating property operations and reporting.",
     chips: ["Property Management", "Portal", "Reporting"],
     gradient: "from-teal-500 via-green-500 to-yellow-400",
+    image: "/images/portfolio/ai-ipm-apollo.png",
     url: "/contact",
   },
   {
@@ -324,6 +332,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative example of a booking workflow with campaign pages and reporting.",
     chips: ["Booking", "Marketing", "Analytics"],
     gradient: "from-cyan-400 via-blue-500 to-purple-500",
+    image: "/images/portfolio/site-wavesandy.png",
     url: "/contact",
   },
   {
@@ -334,6 +343,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An internal interface example for organizing lead capture, follow-up, and reporting.",
     chips: ["Lead Generation", "Tracking", "Automation"],
     gradient: "from-yellow-400 via-orange-500 to-pink-500",
+    image: "/images/portfolio/site-aivara.jpg",
     url: "/contact",
   },
   {
@@ -344,6 +354,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative concept for presenting destination content in a branded digital journey.",
     chips: ["Travel Tech", "Funnel", "Digital Product"],
     gradient: "from-purple-500 via-pink-500 to-orange-400",
+    image: "/images/portfolio/site-richaf.png",
     url: "/contact",
   },
   {
@@ -354,6 +365,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative example of creative assets for guest-facing marketing.",
     chips: ["Creative", "Tourism", "Branding"],
     gradient: "from-green-500 via-teal-500 to-cyan-500",
+    image: "/images/portfolio/site-hiddenjade.png",
     url: "/contact",
   },
   {
@@ -364,6 +376,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An illustrative workflow for answering common questions and routing requests.",
     chips: ["AI", "Support", "Lead Capture"],
     gradient: "from-pink-500 via-purple-500 to-teal-500",
+    image: "/images/portfolio/ai-richaf-bot.png",
     url: "/contact",
   },
   {
@@ -374,6 +387,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "An internal example of how audio branding and theme music can be scoped for a project.",
     chips: ["Creative Media", "Audio", "Branding"],
     gradient: "from-orange-500 via-pink-500 to-purple-500",
+    image: "/images/portfolio/site-aivara-music.png",
     url: "/contact",
   },
 ];
@@ -447,12 +461,14 @@ export default function HomePage() {
       <header className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span
-              aria-hidden="true"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 via-teal-400 to-yellow-300 text-sm font-black text-slate-950"
-            >
-              A
-            </span>
+            <Image
+              src="/images/aivara-logo.png"
+              alt="Aivara Solutions"
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-lg object-contain"
+              priority
+            />
             <span className="font-bold text-xl tracking-tight hidden sm:block">
               {HEADER.brand}
             </span>
@@ -836,21 +852,13 @@ export default function HomePage() {
                       <div
                         className={`relative aspect-video overflow-hidden bg-gradient-to-br ${item.gradient}`}
                       >
-                        <div aria-hidden="true" className="absolute inset-0 p-5">
-                          <div className="h-full rounded-xl border border-white/30 bg-slate-950/45 p-3 backdrop-blur-sm">
-                            <div className="mb-3 flex gap-1.5">
-                              <span className="h-2 w-2 rounded-full bg-white/70" />
-                              <span className="h-2 w-2 rounded-full bg-white/40" />
-                              <span className="h-2 w-2 rounded-full bg-white/20" />
-                            </div>
-                            <div className="grid h-[calc(100%-20px)] grid-cols-3 gap-2">
-                              <span className="rounded-md bg-white/20" />
-                              <span className="col-span-2 rounded-md bg-white/10" />
-                              <span className="col-span-2 rounded-md bg-white/10" />
-                              <span className="rounded-md bg-teal-300/25" />
-                            </div>
-                          </div>
-                        </div>
+                        <Image
+                          src={item.image}
+                          alt={`${item.title} project preview`}
+                          fill
+                          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
                         <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur border border-white/20 text-[10px] uppercase tracking-wider font-semibold text-white">
                           {item.badge}
                         </div>
@@ -1155,7 +1163,13 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-10 mb-16">
             <div className="col-span-2">
-              <div className="mb-4 text-lg font-black tracking-[0.18em] text-white">AIVARA OS</div>
+              <Image
+                src="/images/aivara-logo.png"
+                alt="Aivara Solutions"
+                width={72}
+                height={72}
+                className="mb-4 h-16 w-16 rounded-xl object-contain"
+              />
               <p className="text-slate-400 text-sm mb-6 max-w-xs">{FOOTER.blurb}</p>
             </div>
             {FOOTER.columns.map((col) => (

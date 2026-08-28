@@ -1,0 +1,16 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ipm-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#14b8a6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="#000000"/>
+  <rect width="400" height="400" fill="url(#ipm-grad)" opacity="0.2"/>
+  <text x="200" y="160" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff" text-anchor="middle">LIVE LIKE YOU</text>
+  <text x="200" y="200" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff" text-anchor="middle">OWN IT</text>
+  <text x="200" y="240" font-family="Arial, sans-serif" font-size="20" fill="#14b8a6" text-anchor="middle">IPM Theme Song</text>
+  <circle cx="200" cy="300" r="40" fill="none" stroke="url(#ipm-grad)" stroke-width="4"/>
+  <polygon points="190,290 190,310 210,300" fill="#14b8a6"/>
+</svg>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 export function Header() {
@@ -20,12 +21,14 @@ export function Header() {
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/50 border-b border-white/10">
       <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <span
-            aria-hidden="true"
-            className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500 via-teal-400 to-yellow-300 text-lg font-black text-black"
-          >
-            A
-          </span>
+          <Image
+            src="/images/aivara-logo.png"
+            alt="Aivara Solutions"
+            width={64}
+            height={64}
+            className="h-12 w-12 rounded-xl object-contain"
+            priority
+          />
           <span className="text-lg font-semibold tracking-wide">Aivara Solutions</span>
         </Link>
 

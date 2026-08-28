@@ -64,6 +64,7 @@ export default function PortfolioPage() {
                 <PortfolioCard 
                   title={item.title}
                   category={item.category}
+                  image={item.image}
                   description={item.summary}
                 />
               </a>
