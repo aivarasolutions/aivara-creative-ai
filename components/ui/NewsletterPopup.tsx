@@ -8,7 +8,8 @@ import { trackEvent, trackNewsletterSignup } from '@/lib/analytics';
 
 const STORAGE_KEY = 'aivara_popup_state_v1';
 const DISMISS_DAYS = 7;
-const SHOW_DELAY_MS = 8000;
+const SHOW_DELAY_MS = 60_000;
+const CLICK_THRESHOLD = 3;
 const MOBILE_SCROLL_PCT = 0.4;
 
 // Routes where the newsletter popup must never appear (e.g. legal pages that
@@ -80,13 +81,16 @@ export function NewsletterPopup() {
     []
   );
 
-  // Trigger logic: timer, exit-intent (desktop), scroll 40% (mobile)
+  // Trigger logic: after 60 seconds, or after three page clicks. Exit intent
+  // and mobile scroll are engagement signals, but cannot bypass those guards.
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (isExcluded) return;
     if (shouldSuppress(readState())) return;
 
     let shown = false;
+    let clickCount = 0;
+    const startedAt = Date.now();
     const show = () => {
       if (shown) return;
       shown = true;
@@ -95,22 +99,32 @@ export function NewsletterPopup() {
       setOpen(true);
       track('newsletter_popup_view', { page_path: window.location.pathname });
     };
+    const tryShow = () => {
+      const delayElapsed = Date.now() - startedAt >= SHOW_DELAY_MS;
+      if (delayElapsed || clickCount >= CLICK_THRESHOLD) show();
+    };
 
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-    const timer = window.setTimeout(show, SHOW_DELAY_MS);
+    const timer = window.setTimeout(tryShow, SHOW_DELAY_MS);
+
+    const onClick = () => {
+      clickCount += 1;
+      tryShow();
+    };
 
     const onMouseOut = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !shown) show();
+      if (e.clientY <= 0 && !shown) tryShow();
     };
 
     const onScroll = () => {
       const docH = document.documentElement.scrollHeight - window.innerHeight;
       if (docH <= 0) return;
       const pct = window.scrollY / docH;
-      if (pct >= MOBILE_SCROLL_PCT) show();
+      if (pct >= MOBILE_SCROLL_PCT) tryShow();
     };
 
+    document.addEventListener('click', onClick, true);
     if (!isMobile) {
       document.addEventListener('mouseout', onMouseOut);
     } else {
@@ -119,6 +133,7 @@ export function NewsletterPopup() {
 
     return () => {
       window.clearTimeout(timer);
+      document.removeEventListener('click', onClick, true);
       document.removeEventListener('mouseout', onMouseOut);
       window.removeEventListener('scroll', onScroll);
     };
